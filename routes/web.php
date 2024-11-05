@@ -14,6 +14,7 @@ use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\User\TransactionController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Artisan;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,9 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('test-email', [HomeController::class, 'testEmail'])->name('test.email');
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return Inertia::render('Welcome');
+})->name('home');
 Route::get('/admin', function () {
     return redirect('/admin/login');
 });

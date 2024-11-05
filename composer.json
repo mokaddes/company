@@ -6,9 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.1.0",
+        "ext-json": "*",
         "barryvdh/laravel-dompdf": "^2.2",
         "brian2694/laravel-toastr": "^5.57",
         "guzzlehttp/guzzle": "^7.0.1",
+        "inertiajs/inertia-laravel": "^1.3",
         "intervention/image": "^2.7",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^11.0",
@@ -17,8 +19,7 @@
         "laravel/ui": "^4.0",
         "spatie/laravel-permission": "*",
         "srmklive/paypal": "~3.0",
-        "stevebauman/location": "^7.2",
-        "ext-json": "*"
+        "stevebauman/location": "^7.2"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.0",

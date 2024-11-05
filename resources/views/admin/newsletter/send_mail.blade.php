@@ -1,3 +1,4 @@
+{{--
 @extends('admin.layouts.master')
 @section('title')
     {{ __('send_mail') }}
@@ -127,3 +128,4 @@
         });
 </script>
 @endsection
+--}}
