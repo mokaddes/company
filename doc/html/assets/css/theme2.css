@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'verdana';
+    src: url('../fonts/verdana.eot') format('embedded-opentype'),
+         url('../fonts/verdana.otf') format('otf'),
+         url('../fonts/verdana.woff2') format('woff2'),
+         url('../fonts/verdana.woff') format('woff'),
+         url('../fonts/verdana.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body{
+    font-family:'verdana', sans-serif;
+}
+
+.template {
+    max-width: 480px;
+    margin: auto;
+    background: #ffffff;
+}
+
+.banner {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.user_pic {
+    position: absolute;
+    bottom: -57px;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.user_pic img {
+    border: 1px solid #ddd;
+    background: #fafafa;
+    width: 130px;
+    height: 130px;
+}
+
+.profile_info h2 {
+    font-size: 28px;
+    color: #212121;
+    font-weight: 500;
+}
+
+.profile_info h4 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.copyright p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-btn a {
+    font-size: 18px;
+    padding: 10px 30px;
+    color: #fff !important;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 400;
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    position: fixed;
+    bottom: 8px;
+    right: 0;
+    left: 0;
+    max-width: 237px;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+.contact_modal.offcanvas-bottom {
+    width: 441px;
+    height: 700px;
+    border: none !important;
+    animation-delay: 0s;
+    animation: bounce;
+    animation-duration: 2s;
+    background: rgb(255, 255, 255);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    bottom: -20px;
+    color: rgb(51, 51, 51);
+    margin: 0px auto;
+    transform-origin: center bottom;
+    transition: all 0.1s ease-in-out !important;
+    -webkit-transition: all 0.1s ease-in-out !important;
+    -moz-transition: all 0.1s ease-in-out !important;
+    -ms-transition: all 0.1s ease-in-out !important;
+    -o-transition: all 0.1s ease-in-out !important;
+}
+
+.contact_modal .offcanvas-header button {
+    -webkit-box-align: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    font-size: 60px;
+    height: 70px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 9px;
+    line-height: 0px;
+    transform: translate3d(-50%, -50%, 0px);
+    width: 70px;
+    border: none;
+    border: 1px solid #FFF;
+}
+
+
+.contact_modal .contact_body {
+    padding: 12px 30px 0px 30px;
+}
+
+.form-control {
+    border: 1px solid #c0c0c0;
+    outline: none;
+    box-shadow: none !important;
+    font-size: 14px;
+    padding: 12px 12px;
+    border-radius: 6px;
+}
+
+.form-control::placeholder {
+    color: #DDD;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.social_list a {
+    color: #212121;
+}
+
+.social_list .icon {
+    background: #212529;
+    color: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    padding-top: 6px;
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    margin: auto;
+}
+
+.content a:hover .icon {
+    transform: scale(1.05);
+}
+
+.social_list .content span {
+    font-size: 13px;
+    color: #212121;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.content a:hover .icon {
+    color: #fff !important;
+    background: #212121;
+}
+
+.content a:hover span {
+    color: #212121 !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.icon-wrap {
+    border: 1px solid #EEE;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out !important;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    -moz-transition: all 0.3s ease-in-out !important;
+    -ms-transition: all 0.3s ease-in-out !important;
+    -o-transition: all 0.3s ease-in-out !important;
+}
+
+.icon-wrap:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 10px !important;
+}
+
+.facebook{
+    background-color: #3B5999 !important;
+}
+
+.twitter{
+    background-color: #000000 !important;
+}
+.linkedin{
+    background-color: #0976b4 !important;
+}
+.whatsapp{
+    background-color: #00e676 !important;
+}
+.pinterest{
+    background-color: #d20000dd !important;
+}
+.instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+}
+.telegram{
+    background-color: #0088cc !important;
+}
+.spotify{
+    background-color: #1DB954 !important;
+}
+
+.twitch{
+    background-color: #6441a5 !important;
+}
+.xing{
+    background-color: #006567 !important;
+}
+
+.icon-wrap .title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #212121;
+    margin-bottom: 1px;
+}
+
+.icon-wrap .description {
+    font-size: 16px;
+    color: #444;
+}
+
+
+.icon-wrap .fa_icon {
+    font-size: 28px;
+    color: #3b3b3b;
+}
+
+
+.modal-content {
+    border: none !important;
+    border-radius: 6px;
+}
+
+.modal-header {
+    background: #fafafa;
+}
+
+.modal-header .btn-close, .btn-close {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.copyright p a {
+    font-size: 14px;
+    color: #666;
+}
+
+.language .form-control {
+    width: 74px;
+    border: 1px dashed #DDD;
+    padding: 6px 10px;
+}
+
+.offcanvas {
+    height: 300px !important;
+}

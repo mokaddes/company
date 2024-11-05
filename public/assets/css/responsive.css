@@ -1,0 +1,105 @@
+@media screen and (min-width:1200px) {}
+
+@media screen and (max-width:1199px) {
+    .banner-content .title {
+        font-size: 32px !important;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .header-sec .nav-link {
+        padding: 8px 0px !important;
+        border-bottom: 1px solid #EEE;
+    }
+
+    .navbar-nav {
+        margin-top: 20px;
+    }
+
+    .pb-100 {
+        padding-bottom: 80px;
+    }
+
+    .pt-100 {
+        padding-top: 80px;
+
+    }
+
+    .pb-8 {
+        padding-bottom: 50px;
+    }
+
+    .pt-8 {
+        padding-top: 50px;
+    }
+
+    .banner-section .custom-shape-divider-bottom-1716635912 svg {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .pb-100 {
+        padding-bottom: 50px;
+    }
+
+    .pt-100 {
+        padding-top: 50px;
+    }
+
+    .pb-8 {
+        padding-bottom: 40px;
+    }
+
+    .pt-8 {
+        padding-top: 40px;
+    }
+
+    .banner-section .custom-shape-divider-bottom-1716635912 svg {
+        height: 45px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .banner-content .title {
+        font-size: 26px !important;
+    }
+
+    .banner-section .custom-shape-divider-bottom-1716635912 svg {
+        height: 35px;
+    }
+
+    .section-header .title {
+        font-size: 22px;
+    }
+
+    .section-header .subheading {
+        font-size: 16px;
+    }
+
+    .navbar-brand img {
+        height: 56px !important;
+    }
+    .hero-content h4{
+        font-size:22px !important;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .banner-content .title {
+        font-size: 21px !important;
+    }
+
+    .banner-content .subtitle {
+        font-size: 16px !important;
+    }
+
+    .header-sec .btn-primary {
+        font-size: 0;
+        padding: 10px 14px;
+    }
+
+    .header-sec .btn-primary i {
+        font-size: 18px;
+    }
+}

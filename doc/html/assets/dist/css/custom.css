@@ -1,0 +1,91 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+[class*=sidebar-dark] .brand-link {
+    border-bottom: 1px solid #ffffff;
+}
+
+[class*=sidebar-dark-] {
+    background: linear-gradient(180deg, #2196F3, #007bff45);
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.nav-sidebar .nav-item>.nav-link {
+    font-size: 16px;
+    color: #fff;
+}
+.info-box .info-box-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.dropdown-menu {
+    border: 1px solid #DDD;
+    padding: 0 !important;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 6px 13px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+th {
+    font-size: 14px;
+}
+
+td {
+    vertical-align: middle !important;
+}
+
+.contact_info td {
+    font-size: 14px;
+}
+
+.card_theme input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.card_theme label img {
+    border-radius: 10px;
+}
+
+.card_theme .form-check {
+    padding: 0;
+}
+
+.card_theme .form-check-input[type=radio] {
+    display: none;
+}
+
+.card_theme label {
+    border: 2px solid transparent;
+    width: 100%;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 100%;
+    z-index: 1;
+    box-shadow: rgb(99 99 99 / 9%) 0px 2px 8px 0px;
+    background: #0d6efd03 !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card_theme label:has(input:checked) {
+    border: 2px solid #007bff;
+}

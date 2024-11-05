@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <!-- meta -->
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="author" content="Arobil">
+    <meta name="robots" content="index,follow">
+    <meta name="Developed By" content="Arobil Limited">
+    <meta name="Developer" content="Arobil">
+    <meta name="description" content="Welcome to venmeo">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="400">
+    <meta property="og:site_name" content="venmeo">
+    <meta property="og:url" content="venmeo.de">
+    <meta property="og:type" content="website">
+    <!-- favicon -->
+    <link type="image/x-icon" rel="icon" href="../assets/images/faq.png">
+    <!-- css -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/dist/css/custom.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link p-0 mr-3" data-toggle="dropdown" href="#">
+                        <img src="../assets/images/user.jpg" width="35" alt="" class="rounded border">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fa fa-user"></i>
+                            Profile
+                        </a>
+                        <a href="#" class="dropdown-item text-danger">
+                            <i class="fa fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="dashboard.html" class="brand-link text-center">
+                <span>Venmeo.de</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item mb-2">
+                            <a href="dashboard.html" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="20" height="20"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+                                </svg>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="card.html" class="nav-link active">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-id-badge"
+                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M5 3m0 3a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-8a3 3 0 0 1 -3 -3z">
+                                    </path>
+                                    <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                    <path d="M10 6h4"></path>
+                                    <path d="M9 18h6"></path>
+                                </svg>
+                                <p>
+                                    Cards
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="contact.html" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-id-badge"
+                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M5 3m0 3a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-8a3 3 0 0 1 -3 -3z">
+                                    </path>
+                                    <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                                    <path d="M10 6h4"></path>
+                                    <path d="M9 18h6"></path>
+                                </svg>
+                                <p>
+                                    Contacts
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="transaction.html" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-receipt-dollar" width="20" height="20"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2">
+                                    </path>
+                                    <path
+                                        d="M14.8 8a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1">
+                                    </path>
+                                    <path d="M12 6v10"></path>
+                                </svg>
+                                <p>
+                                    Transactions
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="analytics.html" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon icon-tabler icon-tabler-report-analytics" width="20" height="20"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2">
+                                    </path>
+                                    <path
+                                        d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z">
+                                    </path>
+                                    <path d="M9 17v-5"></path>
+                                    <path d="M12 17v-1"></path>
+                                    <path d="M15 17v-3"></path>
+                                </svg>
+                                <p>
+                                    Analytics
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mb-2">
+                            <a href="setting.html" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="bevel">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                    </path>
+                                </svg>
+                                <p>
+                                    Settings
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout-2"
+                                    width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2">
+                                    </path>
+                                    <path d="M15 12h-12l3 -3"></path>
+                                    <path d="M6 15l-3 -3"></path>
+                                </svg>
+                                <p>
+                                    Logout
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Cards</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Cards</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="card-title">Cards</h4>
+                                        </div>
+                                        <div>
+                                            <a href="theme.html" class="btn btn-sm btn-primary">Add New Card <i
+                                                    class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive">
+                                    <table id="dataTables" class="table table-bordered table-striped" style="min-width:1000px;">
+                                        <thead>
+                                            <tr>
+                                                <th>SN</th>
+                                                <th>Card Name</th>
+                                                <th>Image</th>
+                                                <th>Link</th>
+                                                <th>Views</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>Ashley James Fletcher</td>
+                                                <td>
+                                                    <img src="../assets/images/user2.png" width="50" class="rounded-pill" alt="">
+                                                </td>
+                                                <td><a href="#" class="text-info" target="_blank">6626414acf5c5</a></td>
+                                                <td>05</td>
+                                                <td>05 Feb, 2024</td>
+                                                <td>
+                                                    <span class="badge badge-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                           Actions
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a href="../theme1.html" target="_blank" class="dropdown-item">Preview</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item text-success">Set as Live</a>
+                                                            <a href="card-edit.html" class="dropdown-item text-primary">Edit</a>
+                                                            <a href="#" onclick="return confirm('Are you sure you want to delete this card?')" class="dropdown-item text-danger">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>Heidi Klum</td>
+                                                <td>
+                                                    <img src="../assets/images/user3.png" width="50" class="rounded-pill" alt="">
+                                                </td>
+                                                <td><a href="#" class="text-info" target="_blank">6626414acf5c5</a></td>
+                                                <td>12</td>
+                                                <td>24 Feb, 2024</td>
+                                                <td>
+                                                    <span class="badge badge-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                           Actions
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a href="../theme1.html" target="_blank" class="dropdown-item">Preview</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item text-success">Set as Live</a>
+                                                            <a href="card-edit.html" class="dropdown-item text-primary">Edit</a>
+                                                            <a href="#" onclick="return confirm('Are you sure you want to delete this card?')" class="dropdown-item text-danger">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>Angela Merkel</td>
+                                                <td>
+                                                    <img src="../assets/images/avatar.png" width="50" class="rounded-pill" alt="">
+                                                </td>
+                                                <td><a href="#" class="text-info" target="_blank">6626414acf5c5</a></td>
+                                                <td>12</td>
+                                                <td>24 Feb, 2024</td>
+                                                <td>
+                                                    <span class="badge badge-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                           Actions
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a href="../theme1.html" target="_blank" class="dropdown-item">Preview</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item text-success">Set as Live</a>
+                                                            <a href="card-edit.html" class="dropdown-item text-primary">Edit</a>
+                                                            <a href="#" onclick="return confirm('Are you sure you want to delete this card?')" class="dropdown-item text-danger">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>Karl Marx</td>
+                                                <td>
+                                                    <img src="../assets/images/user.jpg" width="50" class="rounded-pill" alt="">
+                                                </td>
+                                                <td><a href="#" class="text-info" target="_blank">6626414acf5c5</a></td>
+                                                <td>12</td>
+                                                <td>24 Feb, 2024</td>
+                                                <td>
+                                                    <span class="badge badge-success">Active</span>
+                                                </td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                           Actions
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a href="../theme1.html" target="_blank" class="dropdown-item">Preview</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item text-success">Set as Live</a>
+                                                            <a href="card-edit.html" class="dropdown-item text-primary">Edit</a>
+                                                            <a href="#" onclick="return confirm('Are you sure you want to delete this card?')" class="dropdown-item text-danger">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer text-center">
+            © 2024 venmeo.de All rights reserved
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../assets/dist/js/adminlte.min.js"></script>
+    <script src="../assets/dist/js/custom.js"></script>
+</body>
+
+</html>
