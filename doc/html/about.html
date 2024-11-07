@@ -1,158 +1,542 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- meta -->
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="author" content="Arobil">
-    <meta name="robots" content="index,follow">
-    <meta name="Developed By" content="Arobil Limited">
-    <meta name="Developer" content="Arobil">
-    <meta name="description" content="Welcome to venmeo">
-    <meta property="og:image:width" content="700">
-    <meta property="og:image:height" content="400">
-    <meta property="og:site_name" content="venmeo">
-    <meta property="og:url" content="venmeo.com">
-    <meta property="og:type" content="website">
-    <!-- favicon -->
-    <link type="image/x-icon" rel="icon" href="assets/images/faq.png">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Home | Cheil UK</title>
+
+    <style type="text/css">
+
+        @font-face {
+            font-family: "Roman";
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot");
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot?#iefix") format("embedded-opentype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff") format("woff"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff2") format("woff2"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.ttf") format("truetype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.svg#Roman") format("svg");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .animatedButton {
+            position: relative;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .animatedButton::before,
+        .animatedButton::after {
+            content: '';
+            position: absolute;
+            width: 4px; /* Matches the border width */
+            height: 100%;
+            background-color: #EF89C1;
+            transition: transform 0.3s ease;
+        }
+
+        /* Left border animation */
+        .animatedButton::before {
+            left: 0;
+            top: -100%;
+            transform-origin: top;
+            transform: translateY(0);
+        }
+
+        /* Right border animation */
+        .animatedButton::after {
+            right: 0;
+            bottom: -100%;
+            transform-origin: bottom;
+            transform: translateY(0);
+        }
+
+        /* On hover, animate the borders into view */
+        .animatedButton:hover::before {
+            transform: translateY(100%);
+        }
+
+        .animatedButton:hover::after {
+            transform: translateY(-100%);
+        }
+
+        /* Button background color on hover */
+        .animatedButton:hover {
+            background-color: #ef89c199;
+        }
+
+        #mobileMenu {
+            transition: left .5s ease-in-out;
+        }
+
+    </style>
+
+    <script src="https://js-eu1.hs-banner.com/v2/139551920/banner.js" type="text/javascript" id="cookieBanner-139551920"
+            data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="139551920"
+            data-hsjs-env="prod" data-hsjs-hublet="eu1"></script>
+    <script src="https://js-eu1.hscollectedforms.net/collectedforms.js" type="text/javascript"></script>
+    <script src="https://js-eu1.hs-analytics.net/analytics/1730804400000/139551920.js" type="text/javascript"
+            id="hs-analytics"></script>
+    <script type="text/javascript" id="hs-script-loader" async="" defer=""
+            src="//js-eu1.hs-scripts.com/139551920.js"></script>
+    <script type="text/javascript" src="https://secure.24-astute.com/js/796111.js"></script>
+    <noscript>
+        <img src="https://secure.24-astute.com/796111.png" style="display:none"/>
+    </noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-
-    <!-- ======================= header start  ============================ -->
-    <header class="header-sec border-bottom bg-body-tertiary sticky-top">
-        <nav class="navbar navbar-expand-lg p-0">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/logo.png" class="img-fluid" style="height: 70px;" alt="Image">
-                </a>
-                <div class="d-flex align-items-center">
-                    <div class="me-2">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="d-block d-lg-none">
-                        <a class="btn btn-sm btn-primary" href="login.html">
-                            <i class="fa fa-plus"></i>
-                            Create Card
-                        </a>
+<div id="__next">
+    <div class="w-full flex flex-col h-full">
+        <nav class="w-full flex flex-col bg-white sticky top-0 z-30 drop-shadow-md">
+            <div class="hidden">
+                <div class="bg-blue text-blue">1</div>
+                <div class="bg-green text-green">1</div>
+                <div class="bg-pink text-pink">1</div>
+                <div class="bg-yellow text-yellow">1</div>
+                <div class="bg-orange text-orange">1</div>
+                <div class="row-span-1 row-span-2 row-span-3"></div>
+            </div>
+            <div
+                class="flex flex-row lg:hidden fixed h-screen w-full top-0 bg-black text-white ease-in-out duration-200 z-50 "
+                id="mobileBtn" onclick="toggleMobileMenu()"
+                style="left: 100%; transition-property: opacity, left; min-height: -webkit-fill-available;">
+                <div class="bg-white h-full w-[min(21.5%,155px)]">
+                    <div class="h-[75px] justify-center flex">
+                        <div class="flex lg:hidden aspect-square w-10 mx-auto z-40 cursor-pointer">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="xMidYMid meet"
+                                     style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                                    <defs>
+                                        <clipPath id="__lottie_element_13">
+                                            <rect width="300" height="300" x="0" y="0"></rect>
+                                        </clipPath>
+                                    </defs>
+                                    <g clip-path="url(#__lottie_element_13)">
+                                        <g transform="matrix(1,0,0,1,146.5,302)" opacity="1" style="display: block;">
+                                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                      d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                      stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                      stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            </g>
+                                        </g>
+                                        <g transform="matrix(1,0,0,1,146.5,235)" opacity="1" style="display: block;">
+                                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                      d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                      stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                      stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            </g>
+                                        </g>
+                                        <g transform="matrix(1,0,0,1,146.5,168)" opacity="1" style="display: block;">
+                                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                      d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                      stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                      stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto d-flex align-items-lg-center">
-                        <a class="nav-link" href="index.html">Home</a>
-                        <a class="nav-link" href="about.html">About Us</a>
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                        <a class="nav-link" href="faq.html">Faq</a>
-                        <a class="nav-link" href="contact.html">Contact</a>
-                       <a class="btn btn-sm btn-primary d-none d-lg-block" href="login.html">
-                            Create Card
-                        </a>
+                <div
+                    class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]">
+                    <a href="/about"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">About Us</p>
+                    </a><a href="/work"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Work</p>
+                </a><a href="/blog"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">News &amp;
+                    Views</p></a><a href="/services"><p
+                    class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Services</p></a><a href="/shift">
+                    <p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">SHIFT</p></a><a
+                    href="/contact"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Contact Us</p>
+                </a></div>
+                <div class="absolute bottom-[-10vh] right-[-33vw]"><img alt="Slats" loading="lazy" width="644"
+                                                                        height="410" decoding="async" data-nimg="1"
+                                                                        style="color:transparent"
+                                                                        srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSlats.63e43b17.png&amp;w=750&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSlats.63e43b17.png&amp;w=1920&amp;q=75 2x"
+                                                                        src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSlats.63e43b17.png&amp;w=1920&amp;q=75">
+                </div>
+            </div>
+            <div
+                class="w-full flex flex-row justify-between px-[min(6.99vw,50px)] lg:pl-12 lg:pr-[140px] h-[75px] lg:h-[100px] items-center mx-auto"
+                style="max-width:1920px">
+                <a href="/index.html">
+                    <img alt="Cheil Worldwide Logo" loading="eager" width="125"
+                         height="39" decoding="async" data-nimg="1"
+                         class="max-h-[25.5px] lg:max-h-[40px]"
+                         style="color:transparent"
+                         src="/assets/images/Cheil_Worldwide_logo.ccf58f6e.svg">
+                </a>
+                <div class="gap-[40px] hidden lg:flex">
+                    <a href="/about.html">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">About Us</p>
+                    </a>
+                    <a href="/work">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Work</p>
+                    </a>
+                    <a href="/blog">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">News &amp; Views
+                        </p>
+                    </a>
+                    <a href="/services">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Services</p>
+                    </a>
+                    <a href="/shift">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">SHIFT</p>
+                    </a>
+                    <a href="/contact">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Contact Us</p>
+                    </a>
+                </div>
+                <div class="flex lg:hidden aspect-square w-10 z-40 cursor-pointer dex_btn">
+                    <div onclick="toggleMobileMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="xMidYMid meet"
+                             style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                            <defs>
+                                <clipPath id="__lottie_element_2">
+                                    <rect width="300" height="300" x="0" y="0"></rect>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_2)">
+                                <g transform="matrix(1,0,0,1,146.5,302)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                                <g transform="matrix(1,0,0,1,146.5,235)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                                <g transform="matrix(1,0,0,1,146.5,168)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
         </nav>
-    </header>
-    <!-- ======================= header end  ============================ -->
-
-    <!-- ======================= breadcrumb start  ============================ -->
-    <div class="page-breadcrumb py-3">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">About Us</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- ======================= breadcrumb end  ============================ -->
-
-    <!-- ======================= about start  ============================ -->
-    <div class="about-section pt-5 pb-5">
-        <div class="container">
-             <div class="row gy-4 gy-lg-0 d-flex align-items-center">
-                <div class="col-lg-5 order-lg-2">
-                    <div class="about-img">
-                        <img src="assets/images/about.jpg" class="img-fluid rounded" alt="Image">
-                    </div>
-                </div>
-                <div class="col-lg-7 order-lg-1">
-                    <div class="about_content">
-                        <h1 class="mb-4">Who Are We?</h1> 
-                        <div class="desc">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex architecto aut eligendi fuga perferendis porro voluptatem vero placeat dolores. Nobis?
-                            </p>
-                            <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto voluptates sequi porro magnam aliquid modi, cum dignissimos quidem dolore culpa asperiores! Aut distinctio dolor ea quas laborum quis, praesentium veritatis saepe ullam iusto, ipsam nemo quae? Ea totam est voluptate amet dicta beatae consequuntur, quae unde tempora non rem quia deleniti natus inventore laborum fuga minus ducimus commodi nobis fugit. Iure magnam accusamus similique inventore quae quisquam nesciunt saepe, expedita dignissimos. Quo mollitia exercitationem ratione perferendis dolorem magnam provident, maxime, accusamus fuga deserunt ad quas nam beatae. Officia enim incidunt voluptas magni itaque magnam odio placeat hic nostrum maiores?
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum blanditiis ipsa possimus perferendis molestiae consectetur aliquam laudantium deserunt ipsam id, minus sit repellendus dolorum officia nostrum illo eligendi iste?
-                            </p>
+        <div
+            class="flex flex-row lg:hidden fixed h-screen w-full top-0 bg-black text-white ease-in-out duration-200 z-50 mobile_menu"
+            id="mobileMenu"
+            style="left: 100%; transition-property: opacity, left; min-height: -webkit-fill-available;">
+            <div class="bg-white h-full w-[min(21.5%,155px)]">
+                <div class="h-[75px] justify-center flex">
+                    <div class="flex lg:hidden aspect-square w-10 mx-auto z-40 cursor-pointer">
+                        <div onclick="toggleMobileMenu()">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="xMidYMid meet"
+                                 style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                                <defs>
+                                    <clipPath id="__lottie_element_13">
+                                        <rect width="300" height="300" x="0" y="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#__lottie_element_13)">
+                                    <g transform="matrix(1,0,0,1,146.5,302)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,146.5,235)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,146.5,168)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </div>
-             </div>
-        </div>
-    </div>
-    <!-- ======================= about end  ============================ -->
-
-    <!-- ======================= hero start  ============================ -->
-    <div class="hero-section pt-8 pb-8">
-        <div class="container">
-            <div class="hero-content text-center">
-                <h4 class="mb-4">Ready to dive in? Create Your Card today.</h4>
-                <a href="#" class="btn btn-primary">Start Now</a>
             </div>
+            <div class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]"><a
+                href="/about"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">About Us</p></a><a
+                href="/work"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Work</p></a><a
+                href="/blog"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">News &amp; Views</p>
+            </a><a href="/services"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Services</p>
+            </a><a href="/shift"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">SHIFT</p></a><a
+                href="/contact"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Contact Us</p></a>
+            </div>
+            <div class="absolute bottom-[-10vh] right-[-33vw]"><img alt="Slats" loading="lazy" width="644" height="410"
+                                                                    decoding="async" data-nimg="1"
+                                                                    style="color:transparent"
+                                                                    src="/assets/images/Slats.png"></div>
         </div>
-    </div>
-    <!-- ======================= hero end  ============================ -->
-
-    <!-- ======================= footer start  ============================ -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="d-sm-flex align-items-center justify-content-between text-center text-sm-start">
-                <div class="copyright mb-3 mb-sm-0">
-                    <p class="m-0">© 2024 Venmeo.de All rights reserved.</p>
-                </div>
-                <div class="">
-                    <div class="footer-link">
-                        <ul>
-                          <li class="me-3"><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-condition.html">Terms & Conditions</a></li>
-                        </ul>
+        <div class="w-full bg-black flex flex-col justify-center ">
+            <main class="w-full mx-auto">
+                <div class="w-full  relative flex flex-col justify-center">
+                    <section
+                        class="relative bg-black w-full max-w-[1920px]    text-white flex flex-col mx-auto overflow-hidden">
+                        <div class="h-full lg:h-auto left-0 top-0  absolute lg:relative w-full object-cover">
+                            <div class="absolute lg:relative w-full h-full cover-video">
+                                <video src="/about/Video-About-us-background-xs.mp4"
+                                       poster="/about/Video-About-us-backgroundPoster.png"
+                                       class="left-[50%] translate-x-[-50%] h-full lg:h-auto lg:w-full lg:left-0 lg:translate-x-0 absolute lg:relative  "
+                                       width="auto" autoplay="" loop="" playsinline=""></video>
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full bg-black bg-opacity-80 "></div>
+                        <div
+                            class="relative px-[min(14%,104px)] pt-[min(113px,16vw)] lg:pt-0 lg:px-0 lg:absolute lg:top-[23%] lg:left-[8.33%]">
+                            <h2 class="font-Calibri font-bold tracking-widest text-[min(60px,8.3vw)] lg:text-[58px] mb-[min(273px,38vw)] lg:mb-0">
+                                ABOUT US</h2></div>
+                        <div
+                            class="max-w-[644px] lg:max-w-[943px] block absolute w-[100%] lg:w-[min(943px,49vw)] right-[-35%] top-[0%]  lg:left-[13%] lg:top-[22.6%]">
+                            <img alt="Slats" loading="eager" width="943" height="685" decoding="async" data-nimg="1"
+                                 class="w-full" src="/assets/images/Slats.png"
+                                 style="color: transparent;"></div>
+                        <div
+                            class="relative lg:absolute w-full px-[min(14%,104px)] lg:px-0 lg:w-[41.7%] lg:left-[53.75%] lg:top-[40.9%] mb-[min(87px,12vw)] lg:mb-0">
+                            <p class="text-[min(34px,4.72vw)] lg:text-[min(26px,1.7vw)] xl:text-22px my-4 xl:my-11">At
+                                Cheil, we aren’t defined by channel, capability or output. We are defined by doing what
+                                works.</p>
+                            <p class="text-[min(34px,4.72vw)] lg:text-[min(26px,1.7vw)] xl:text-22px my-4 xl:my-11">To
+                                drive growth for brands, we operate using performance principles - constantly learning,
+                                optimising and evolving. We believe in the power of collaboration, working together to
+                                see the bigger picture to redefine what’s possible.</p>
+                            <p class="text-[min(34px,4.72vw)] lg:text-[min(26px,1.7vw)] xl:text-22px my-4 xl:my-11">With
+                                a team of 180+ experts in the fields of ecommerce, retail, experiential, media and
+                                emerging technologies, we have the knowledge to create deeper, more rewarding
+                                experiences for your customers.</p></div>
+                    </section>
+                    <section
+                        class="w-full  bg-white text-black pt-[min(141px,19.58vw)] pb-[min(256px,35.5vw)] lg:py-44 flex flex-col px-0">
+                        <div class="flex flex-col mx-auto w-full" style="max-width: 1920px;">
+                            <div class="w-full max-w-[1480px] mx-auto  px-[min(14%,104px)] xl:px-0"
+                                 style="opacity: 1; transform: none;"><h2
+                                class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px]  mb-[min(66px,9.16vw)] lg:mb-28">
+                                MEET THE<span class="inline lg:hidden"><br></span> TEAM</h2></div>
+                            <div
+                                class=" w-full hidden lg:flex flex-row gap-[50px] overflow-x-scroll noScrollbars snap-x snap-mandatory"
+                                style="opacity: 1; transform: none;"><img alt="" loading="lazy" width="570" height="300"
+                                                                          decoding="async" data-nimg="1"
+                                                                          class="min-w-[570px]"
+                                                                          srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_01.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_01.jpg&amp;w=1200&amp;q=75 2x"
+                                                                          src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_01.jpg&amp;w=1200&amp;q=75"
+                                                                          style="color: transparent;"><img alt=""
+                                                                                                           loading="lazy"
+                                                                                                           width="570"
+                                                                                                           height="300"
+                                                                                                           decoding="async"
+                                                                                                           data-nimg="1"
+                                                                                                           class="min-w-[570px]"
+                                                                                                           srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_03.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_03.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                           src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_03.jpg&amp;w=1200&amp;q=75"
+                                                                                                           style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_04.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_04.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_04.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"><img alt="" loading="lazy" width="570" height="300"
+                                                                 decoding="async" data-nimg="1" class="min-w-[570px]"
+                                                                 srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_05.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_05.jpg&amp;w=1200&amp;q=75 2x"
+                                                                 src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_05.jpg&amp;w=1200&amp;q=75"
+                                                                 style="color: transparent;"><img alt="" loading="lazy"
+                                                                                                  width="570"
+                                                                                                  height="300"
+                                                                                                  decoding="async"
+                                                                                                  data-nimg="1"
+                                                                                                  class="min-w-[570px]"
+                                                                                                  srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_06.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_06.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                  src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_06.jpg&amp;w=1200&amp;q=75"
+                                                                                                  style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_07.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_07.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_07.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"><img alt="" loading="lazy" width="570" height="300"
+                                                                 decoding="async" data-nimg="1" class="min-w-[570px]"
+                                                                 srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_08.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_08.jpg&amp;w=1200&amp;q=75 2x"
+                                                                 src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_08.jpg&amp;w=1200&amp;q=75"
+                                                                 style="color: transparent;"><img alt="" loading="lazy"
+                                                                                                  width="570"
+                                                                                                  height="300"
+                                                                                                  decoding="async"
+                                                                                                  data-nimg="1"
+                                                                                                  class="min-w-[570px]"
+                                                                                                  srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_09.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_09.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                  src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_09.jpg&amp;w=1200&amp;q=75"
+                                                                                                  style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_10.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_10.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_10.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"><img alt="" loading="lazy" width="570" height="300"
+                                                                 decoding="async" data-nimg="1" class="min-w-[570px]"
+                                                                 srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_11.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_11.jpg&amp;w=1200&amp;q=75 2x"
+                                                                 src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_11.jpg&amp;w=1200&amp;q=75"
+                                                                 style="color: transparent;"><img alt="" loading="lazy"
+                                                                                                  width="570"
+                                                                                                  height="300"
+                                                                                                  decoding="async"
+                                                                                                  data-nimg="1"
+                                                                                                  class="min-w-[570px]"
+                                                                                                  srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_12.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_12.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                  src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_12.jpg&amp;w=1200&amp;q=75"
+                                                                                                  style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_13.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_13.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_13.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"><img alt="" loading="lazy" width="570" height="300"
+                                                                 decoding="async" data-nimg="1" class="min-w-[570px]"
+                                                                 srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_14.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_14.jpg&amp;w=1200&amp;q=75 2x"
+                                                                 src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_14.jpg&amp;w=1200&amp;q=75"
+                                                                 style="color: transparent;"><img alt="" loading="lazy"
+                                                                                                  width="570"
+                                                                                                  height="300"
+                                                                                                  decoding="async"
+                                                                                                  data-nimg="1"
+                                                                                                  class="min-w-[570px]"
+                                                                                                  srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_15.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_15.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                  src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_15.jpg&amp;w=1200&amp;q=75"
+                                                                                                  style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_16.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_16.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_16.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"><img alt="" loading="lazy" width="570" height="300"
+                                                                 decoding="async" data-nimg="1" class="min-w-[570px]"
+                                                                 srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_17.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_17.jpg&amp;w=1200&amp;q=75 2x"
+                                                                 src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_17.jpg&amp;w=1200&amp;q=75"
+                                                                 style="color: transparent;"><img alt="" loading="lazy"
+                                                                                                  width="570"
+                                                                                                  height="300"
+                                                                                                  decoding="async"
+                                                                                                  data-nimg="1"
+                                                                                                  class="min-w-[570px]"
+                                                                                                  srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_19.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_19.jpg&amp;w=1200&amp;q=75 2x"
+                                                                                                  src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_19.jpg&amp;w=1200&amp;q=75"
+                                                                                                  style="color: transparent;"><img
+                                alt="" loading="lazy" width="570" height="300" decoding="async" data-nimg="1"
+                                class="min-w-[570px]"
+                                srcset="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_20.jpg&amp;w=640&amp;q=75 1x, /_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_20.jpg&amp;w=1200&amp;q=75 2x"
+                                src="/_next/image?url=%2Fabout%2Fgallery%2FDT%2Fabout_us_image_20.jpg&amp;w=1200&amp;q=75"
+                                style="color: transparent;"></div>
+                        </div>
+                    </section>
+                    <div class="block lg:hidden w-full aspect-square relative"><img alt="photo1" loading="lazy"
+                                                                                    decoding="async" data-nimg="fill"
+                                                                                    sizes="100vw"
+                                                                                    srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=640&amp;q=75 640w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=750&amp;q=75 750w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=828&amp;q=75 828w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=3840&amp;q=75 3840w"
+                                                                                    src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FPhoto-01-720x720.cdc336d6.webp&amp;w=3840&amp;q=75"
+                                                                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
                     </div>
+                    <section class="w-full  bg-black text-white pt-[min(138px,19vw)] lg:pt-[144px] pb-52 flex flex-col">
+                        <div class="flex flex-col lg:flex-row mx-auto w-full px-[min(14%,104px)] xl:px-0"
+                             style="max-width: 1480px;">
+                            <div
+                                class="mx-auto lg:mx-0 w-[60%] lg:w-1/3 self-start flex justify-center lg:justify-end pr-0 lg:pr-[35px] mb-[min(60px,8.33vw)]">
+                                <img alt="Cheil Connect Logo" loading="lazy" width="284" height="69" decoding="async"
+                                     data-nimg="1" src="/_next/static/media/ConnecPlus.da9473c3.svg"
+                                     style="color: transparent;"></div>
+                            <div class="w-full lg:w-2/3 ">
+                                <div class="text-[min(34px,4.72vw)] lg:text-[22px] flex flex-col gap-7 mb-16"><p>
+                                    Collaboration doesn’t stop at our agency’s front door. With our Cheil Connec+
+                                    network, you’ll also have access to a wealth of expertise across the globe, all
+                                    working together to create bespoke customer experiences across multiple disciplines,
+                                    channels and touchpoints</p>
+                                    <p>Want to find out more about our Cheil Connec+ Network?</p></div>
+                                <a target="_blank" href="https://www.cheilconnect.com/">
+                                    <button
+                                        class=" border-y-4 border-x-0 border-[#EF89C1] border-solid text-[18px] font-Calibri tracking-[2.5px] uppercase px-[24.5px] py-[18.5px] relative overflow-hidden animatedButton ">
+                                        Learn more
+                                    </button>
+                                </a></div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+        <footer class="w-full bg-white flex flex-col">
+            <div class="w-full flex flex-col lg:flex-row-reverse p-0 justify-between mx-auto  relative"
+                 style="max-width:1920px">
+                <div class="max-w-full w-auto relative block lg:h-[232px]"
+                     style="aspect-ratio:318.84 / 141.71;transform:scale(1.003)"><img alt="Cheil Logo" loading="lazy"
+                                                                                      decoding="async" data-nimg="fill"
+                                                                                      style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                                                                      src="/assets/images/logo-signature-cheil-02.svg">
+                </div>
+                <div
+                    class="w-full flex flex-col w-min-[30%] lg:w-1/3 pl-[min(5rem,3%)] lg:pl-20 py-11 lg:h-full justify-center items-center lg:items-start">
+                    <img alt="Cheil Worldwide Logo" loading="lazy" width="125" height="39" decoding="async"
+                         data-nimg="1" style="color:transparent"
+                         src="/assets/images/Cheil_Worldwide_logo.ccf58f6e.svg">
+                    <div
+                        class="flex flex-col lg:flex-row gap-7 mt-6 mb-5 justify-center lg:justify-start text-center ">
+                        <a href="/about">
+                            <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">About Us</p>
+                        </a><a href="/work">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Work</p>
+                    </a><a href="/network">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Network</p>
+                    </a><a href="/shift">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">SHIFT</p>
+                    </a><a href="/contact">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Contact Us</p>
+                    </a></div>
+                    <p class="font-CheilRoman mt-4 text-sm">© <!-- -->2024<!-- --> Cheil UK<!-- --> <a
+                        href="/legal">Legal Stuff</a></p>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- ======================= footer end  ============================ -->
+        </footer>
+    </div>
+</div>
+<script !src="">
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const Btn = document.getElementById('mobileBtn');
+        if (menu.style.left === '0px') {
+            menu.style.left = '100%';
+        } else {
+            menu.style.left = '0px'; // Show menu
+        }
+    }
 
-    <!-- js -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+</script>
 </body>
 
 </html>

@@ -4,13 +4,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('frontend.home') }}">
                 <img src="{{ asset($settings->site_logo) }}" width="110" height="32" alt="{{ $settings->site_name }}"
                     class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
-           
+
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu">

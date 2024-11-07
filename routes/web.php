@@ -26,9 +26,16 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return Inertia::render('Welcome');
-})->name('home');
+
 Route::get('/admin', function () {
     return redirect('/admin/login');
 });
+
+Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
+Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
+Route::get('/work', [HomeController::class, 'work'])->name('frontend.work');
+Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
+Route::post('/contact', [HomeController::class, 'contactSubmit'])->name('frontend.contact.submit');
+Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');
+Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');
+Route::get('/shift', [HomeController::class, 'shift'])->name('frontend.shift');

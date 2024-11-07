@@ -54,7 +54,7 @@ class PayPalController extends Controller
     public function processTransaction(Request $request)
     {
 
- 
+
         $plan = Plan::find($request->planId);
         $userPlan = auth()->user()->current_pan_id;
         // dd($userPlan);
@@ -110,7 +110,7 @@ class PayPalController extends Controller
             ->with('error', $response['message'] ?? 'Something went wrong.');
         }
 
-     
+
     }
     /**
      * success transaction.
@@ -198,7 +198,7 @@ class PayPalController extends Controller
             //         'details' => route('invoice.download', $transaction->id),
             //     ]
             // ];
-            
+
             // Mail::to($user->email)->send(new PlanPurchaseMail($mailData));
 
             // Send Contact Mail
@@ -211,7 +211,7 @@ class PayPalController extends Controller
                 'link'        => route('admin.transaction.index'),
                 'msg'         => 'Click here to navigate to the transaction',
                 'thanks'      => 'Thank you and stay with ' . ' ' . config('app.name'),
-                'site_url'    => route('home'),
+                'site_url'    => route('frontend.home'),
                 'footer'      => '0',
                 'site_name'   => config('app.name'),
                 'copyright'   => ' © ' . ' ' . Carbon::now()->format('Y') .' '. config('app.name') . ' ' . 'All rights reserved.',

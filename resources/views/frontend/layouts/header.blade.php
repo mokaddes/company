@@ -29,8 +29,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto d-flex align-items-lg-center">
-                    <a class="nav-link {{Route::currentRouteName() == 'home' ? 'nav-active' : ''}}"
-                        href="{{route('home')}}">{{ __('messages.nav.home') }}</a>
+                    <a class="nav-link {{Route::currentRouteName() == 'frontend.home' ? 'nav-active' : ''}}"
+                        href="{{route('frontend.home')}}">{{ __('messages.nav.home') }}</a>
                     <a class="nav-link {{Route::currentRouteName() == 'frontend.about' ? 'nav-active' : ''}}"
                         href="{{route('frontend.about')}}">{{ __('messages.nav.about') }}</a>
                     <a class="nav-link {{Route::currentRouteName() == 'frontend.pricing' ? 'nav-active' : ''}}"

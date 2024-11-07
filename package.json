@@ -10,19 +10,20 @@
         "@popperjs/core": "^2.11.6",
         "@tailwindcss/forms": "^0.5.3",
         "@vitejs/plugin-vue": "^5.0.0",
-        "autoprefixer": "^10.4.12",
+        "autoprefixer": "^10.4.20",
         "axios": "^1.6.1",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^1.0.0",
-        "postcss": "^8.4.31",
+        "postcss": "^8.4.47",
         "sass": "^1.56.1",
-        "tailwindcss": "^3.2.1",
+        "tailwindcss": "^3.4.14",
         "vite": "^5.0.0",
         "vue": "^3.5.12"
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
-        "swiper": "^11.1.7"
+        "swiper": "^11.1.7",
+        "ziggy": "^2.4.0"
     }
 }

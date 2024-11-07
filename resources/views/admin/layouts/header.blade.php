@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('home') }}" target="_blank" class="nav-link">
+            <a href="{{ route('frontend.home') }}" target="_blank" class="nav-link">
                 <i class="fas fa-globe fa-2"></i>
             </a>
         </li>
@@ -27,7 +27,7 @@
         @php
             $lang_code = checkFrontLanguageSession() ?? geDefaultLanguage()->iso_code;
         @endphp
-        
+
         <li class="nav-link">
             <div class="dropdown">
                 <a class="dropdown-toggle px-0 text-light" href="#" role="button" id="dropdownMenuLink"

@@ -1,454 +1,441 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- meta -->
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="author" content="Arobil">
-    <meta name="robots" content="index,follow">
-    <meta name="Developed By" content="Arobil Limited">
-    <meta name="Developer" content="Arobil">
-    <meta name="description" content="Welcome to venmeo">
-    <meta property="og:image:width" content="700">
-    <meta property="og:image:height" content="400">
-    <meta property="og:site_name" content="venmeo">
-    <meta property="og:url" content="venmeo.com">
-    <meta property="og:type" content="website">
-    <!-- favicon -->
-    <link type="image/x-icon" rel="icon" href="assets/images/faq.png">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Home | Cheil UK</title>
+
+    <style type="text/css">
+
+        @font-face {
+            font-family: "Roman";
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot");
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot?#iefix") format("embedded-opentype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff") format("woff"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff2") format("woff2"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.ttf") format("truetype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.svg#Roman") format("svg");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .animatedButton {
+            position: relative;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .animatedButton::before,
+        .animatedButton::after {
+            content: '';
+            position: absolute;
+            width: 4px; /* Matches the border width */
+            height: 100%;
+            background-color: #EF89C1;
+            transition: transform 0.3s ease;
+        }
+
+        /* Left border animation */
+        .animatedButton::before {
+            left: 0;
+            top: -100%;
+            transform-origin: top;
+            transform: translateY(0);
+        }
+
+        /* Right border animation */
+        .animatedButton::after {
+            right: 0;
+            bottom: -100%;
+            transform-origin: bottom;
+            transform: translateY(0);
+        }
+
+        /* On hover, animate the borders into view */
+        .animatedButton:hover::before {
+            transform: translateY(100%);
+        }
+
+        .animatedButton:hover::after {
+            transform: translateY(-100%);
+        }
+
+        /* Button background color on hover */
+        .animatedButton:hover {
+            background-color: #ef89c199;
+        }
+
+        #mobileMenu {
+            transition: left .5s ease-in-out;
+        }
+
+    </style>
+
+    <script src="https://js-eu1.hs-banner.com/v2/139551920/banner.js" type="text/javascript" id="cookieBanner-139551920"
+            data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="139551920"
+            data-hsjs-env="prod" data-hsjs-hublet="eu1"></script>
+    <script src="https://js-eu1.hscollectedforms.net/collectedforms.js" type="text/javascript"></script>
+    <script src="https://js-eu1.hs-analytics.net/analytics/1730804400000/139551920.js" type="text/javascript"
+            id="hs-analytics"></script>
+    <script type="text/javascript" id="hs-script-loader" async="" defer=""
+            src="//js-eu1.hs-scripts.com/139551920.js"></script>
+    <script type="text/javascript" src="https://secure.24-astute.com/js/796111.js"></script>
+    <noscript>
+        <img src="https://secure.24-astute.com/796111.png" style="display:none"/>
+    </noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-
-    <!-- ======================= header start  ============================ -->
-    <header class="header-sec border-bottom bg-body-tertiary sticky-top">
-        <nav class="navbar navbar-expand-lg p-0">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/images/logo.png" class="img-fluid" style="height: 70px;" alt="Image">
+<div id="__next">
+    <div class="w-full flex flex-col h-full">
+        <nav class="w-full flex flex-col bg-white sticky top-0 z-30 drop-shadow-md">
+            <div class="hidden">
+                <div class="bg-blue text-blue">1</div>
+                <div class="bg-green text-green">1</div>
+                <div class="bg-pink text-pink">1</div>
+                <div class="bg-yellow text-yellow">1</div>
+                <div class="bg-orange text-orange">1</div>
+                <div class="row-span-1 row-span-2 row-span-3"></div>
+            </div>
+            <div
+                class="w-full flex flex-row justify-between px-[min(6.99vw,50px)] lg:pl-12 lg:pr-[140px] h-[75px] lg:h-[100px] items-center mx-auto"
+                style="max-width:1920px">
+                <a href="/index.html">
+                    <img alt="Cheil Worldwide Logo" loading="eager" width="125"
+                         height="39" decoding="async" data-nimg="1"
+                         class="max-h-[25.5px] lg:max-h-[40px]"
+                         style="color:transparent"
+                         src="assets/images/Cheil_Worldwide_logo.ccf58f6e.svg">
                 </a>
-                <div class="d-flex align-items-center">
-                    <div class="me-2">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                    <div class="d-block d-lg-none">
-                        <a class="btn btn-sm btn-primary" href="login.html">
-                            <i class="fa fa-plus"></i>
-                            Create Card
-                        </a>
-                    </div>
+                <div class="gap-[40px] hidden lg:flex">
+                    <a href="/about.html">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">About Us</p>
+                    </a>
+                    <a href="/work">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Work</p>
+                    </a>
+                    <a href="/blog">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">News &amp; Views
+                        </p>
+                    </a>
+                    <a href="/services">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Services</p>
+                    </a>
+                    <a href="/shift">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">SHIFT</p>
+                    </a>
+                    <a href="/contact">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Contact Us</p>
+                    </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto d-flex align-items-lg-center">
-                        <a class="nav-link" href="index.html">Home</a>
-                        <a class="nav-link" href="about.html">About Us</a>
-                        <a class="nav-link" href="pricing.html">Pricing</a>
-                        <a class="nav-link" href="faq.html">Faq</a>
-                        <a class="nav-link" href="contact.html">Contact</a>
-                       <a class="btn btn-sm btn-primary d-none d-lg-block" href="login.html">
-                            Create Card
-                        </a>
+                <div class="flex lg:hidden aspect-square w-10 z-40 cursor-pointer dex_btn">
+                    <div onclick="toggleMobileMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                             viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="xMidYMid meet"
+                             style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                            <defs>
+                                <clipPath id="__lottie_element_2">
+                                    <rect width="300" height="300" x="0" y="0"></rect>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_2)">
+                                <g transform="matrix(1,0,0,1,146.5,302)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                                <g transform="matrix(1,0,0,1,146.5,235)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                                <g transform="matrix(1,0,0,1,146.5,168)" opacity="1" style="display: block;">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path fill="rgb(255,255,255)" fill-opacity="1"
+                                              d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                              stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                              stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
         </nav>
-    </header>
-    <!-- ======================= header end  ============================ -->
-
-    <!-- ======================= banner start  ============================ -->
-    <div class="banner-section pt-8 pb-8 mb-5 bg-body-tertiary position-relative">
-        <!-- shape-divider -->
-        <div class="custom-shape-divider-bottom-1716635912">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-        <!-- shape-divider -->
-        <div class="container">
-            <div class="row d-flex align-items-center text-center text-lg-start">
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <div class="banner-content">
-                        <h1 class="title mb-4">Modernize Your Connections with Personalized Digital vCards</h1>
-                        <h4 class="subtitle mb-5">Quick, Convenient, and Customizable Digital vCards for Professionals
-                        </h4>
-                        <a href="#" class="btn btn-primary">Create your Card</a>
+        <div
+            class="flex flex-row lg:hidden fixed h-screen w-full top-0 bg-black text-white ease-in-out duration-200 z-50 mobile_menu" id="mobileMenu"
+            style="left: 100%; transition-property: opacity, left; min-height: -webkit-fill-available;">
+            <div class="bg-white h-full w-[min(21.5%,155px)]">
+                <div class="h-[75px] justify-center flex">
+                    <div class="flex lg:hidden aspect-square w-10 mx-auto z-40 cursor-pointer">
+                        <div onclick="toggleMobileMenu()">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 300 300" width="300" height="300" preserveAspectRatio="xMidYMid meet"
+                                 style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                                <defs>
+                                    <clipPath id="__lottie_element_13">
+                                        <rect width="300" height="300" x="0" y="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#__lottie_element_13)">
+                                    <g transform="matrix(1,0,0,1,146.5,302)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,146.5,235)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,146.5,168)" opacity="1" style="display: block;">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path fill="rgb(255,255,255)" fill-opacity="1"
+                                                  d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="miter" fill-opacity="0"
+                                                  stroke-miterlimit="4" stroke="rgb(0,0,0)" stroke-opacity="1"
+                                                  stroke-width="20" d=" M-102,-85 C-102,-85 109,-85 109,-85"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="banner-img">
-                        <img src="assets/images/banner.png" class="img-fluid" alt="Banner image">
-                    </div>
-                </div>
+            </div>
+            <div class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]"><a
+                href="/about"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">About Us</p></a><a
+                href="/work"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Work</p></a><a
+                href="/blog"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">News &amp; Views</p>
+            </a><a href="/services"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Services</p>
+            </a><a href="/shift"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">SHIFT</p></a><a
+                href="/contact"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Contact Us</p></a>
             </div>
         </div>
-    </div>
-    <!-- ======================= banner end  ============================ -->
-
-    <!-- ======================= how it work start  ============================ -->
-    <div class="how-it-work pb-5">
-        <div class="container">
-            <div class="section-header text-center pb-5">
-                <h3 class="title mb-4">How it Work</h3>
-                <h4 class="subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                    fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis corrupti.</h4>
-            </div>
-            <div class="row gy-4 gy-xl-0">
-                <div class="col-xl-6">
-                    <div class="row gy-4 gy-lg-0">
-                        <div class="col-md-6">
-                            <div class="how_it_work_card shadow-sm text-center text-md-start">
-                                <div class="card-body">
-                                    <div class="icon mb-3">
-                                        <img src="assets/images/icons/1.png" class="img-fluid" width="150" alt="Image">
-                                    </div>
-                                    <h4>Create your Account</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tenetur
-                                        praesentium blanditiis.
-                                    </p>
-                                </div>
+        <div class="w-full bg-black flex flex-col justify-center ">
+            <main class="w-full mx-auto">
+                <div class="w-full relative flex flex-col justify-center">
+                    <section
+                        class="relative bg-black w-full max-w-[1920px] text-white flex flex-col mx-auto pb-[min(227px,31.5vw)] lg:pb-96 overflow-hidden">
+                        <div class="h-full lg:h-auto left-0 top-0  relative w-full object-cover lg:aspect-video">
+                            <div class="relative w-full h-full cover-video  overflow-hidden lg:overflow-visible ">
+                                <video src="assets/images/coverVideoV2.mp4"
+                                       class="block lg:hidden w-full" autoplay loop="" playsinline=""></video>
+                                <video
+                                    src="assets/images/coverVideoV2.mp4"
+                                    class="hidden lg:block left-[50%] translate-x-[-50%] h-full lg:h-auto lg:w-full lg:left-0 lg:translate-x-0 absolute lg:relative"
+                                    width="auto" autoplay loop="" playsinline=""></video>
+                                <div
+                                    class="absolute z-10 left-[-22%] top-[-4.5vh] lg:left-auto lg:right-0 lg:top-[-200px] w-[75%] lg:w-auto">
+                                    <img alt="Slats" loading="lazy" width="644" height="410" decoding="async"
+                                         data-nimg="1"
+                                         src="assets/images/Slats.png"
+                                         style="color: transparent;"></div>
+                                <div class="hidden lg:block absolute z-10 right-[50%] bottom-[-200px]"><img
+                                    alt="Slats" loading="lazy" width="644" height="410" decoding="async"
+                                    data-nimg="1"
+                                    src="assets/images/Slats.png"
+                                    style="color: transparent;"></div>
                             </div>
+                            <div
+                                class="block lg:hidden absolute z-10 right-[-22%] bottom-[-8.5vh] w-[75%] lg:w-auto">
+                                <img alt="Slats" loading="lazy" width="644" height="410" decoding="async"
+                                     data-nimg="1"
+                                     src="assets/images/Slats.png"
+                                     style="color: transparent;"></div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="how_it_work_card shadow-sm mt-lg-5 text-center text-md-start">
-                                <div class="card-body">
-                                    <div class="icon mb-3">
-                                        <img src="assets/images/icons/2.png" class="img-fluid" width="150" alt="Image">
-                                    </div>
-                                    <h4>Login your Dashboard</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tenetur
-                                        praesentium blanditiis.
-                                    </p>
+                    </section>
+                    <section class="w-full bg-black text-white pb-[min(184px,25.5vw)] lg:pb-52 flex flex-col">
+                        <div class="flex flex-col lg:flex-row mx-auto w-full px-[min(14%,104px)] xl:px-0"
+                             style="max-width: 1480px;">
+                            <div class="w-full lg:w-1/3" style="opacity: 1; transform: none;">
+                                <h2
+                                    class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] lg:text-[58px] mb-10">
+                                    A LITTLE BIT<br>ABOUT US</h2>
+                            </div>
+                            <div class="w-full lg:w-2/3" style="opacity: 1; transform: none;">
+                                <div class="text-[min(28px,3.88vw)] lg:text-[22px] flex flex-col gap-7 mb-16">
+                                    <p>An integrated agency with commerce at its heart, we bridge the three worlds
+                                        of physical, digital and immersive, redefining what is possible to forge
+                                        deeper, more rewarding connected experiences that deliver.</p>
+                                    <p>We’re award winners, fast thinkers, makers and doers, tailoring solutions to
+                                        create connections, drive commerce and build community.</p>
+                                    <p>Find out more about us.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="how_it_work_card shadow-sm text-center text-md-start">
-                                <div class="card-body">
-                                    <div class="icon mb-3">
-                                        <img src="assets/images/icons/3.png" class="img-fluid" width="150" alt="Image">
-                                    </div>
-                                    <h4>Create your vCard</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tenetur
-                                        praesentium blanditiis.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="how_it_work_card shadow-sm mb-lg-5 mt-lg-5 text-center text-md-start">
-                                <div class="card-body">
-                                    <div class="icon mb-3">
-                                        <img src="assets/images/icons/4.png" class="img-fluid" width="150" alt="Image">
-                                    </div>
-                                    <h4>Share your vCard</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tenetur
-                                        praesentium blanditiis.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1">
-                    <div class="how_it_work_content mt-0 mt-xl-5">
-                        <h3 class="mb-4">Get all of your steps, exercise, sleep and meds in one place.</h3>
-                        <p>
-                            The full service we are offering is specifically designed to meet your
-                            business needs.
-                        </p>
-                        <p>
-                            Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus
-                            eget
-                            urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non
-                            commodo luctus, nisi erat ligula.
-                        </p>
-                        <a href="about.html" class="btn btn-primary rounded mt-3">
-                            More Details
-                            <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ======================= how it work end  ============================ -->
-
-    <!-- ======================= pricing start  ============================ -->
-    <div class="pricing-section pt-8 pb-5 bg-body-tertiary">
-        <div class="container">
-            <div class="section-header text-center pb-5">
-                <h3 class="title mb-4">Pricing</h3>
-                <h4 class="subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                    fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis corrupti.</h4>
-            </div>
-            <div class="row gy-4 gy-lg-0">
-                <div class="col-lg-4">
-                    <div class="card pricing border-0 rounded shadow-sm h-100">
-                        <div class="card-body p-5">
-                            <div class="text-center">
-                                <h4 class="mb-4">Free</h4>
-                                <div class="pricing-price">
-                                    <sup>$</sup>
-                                    0
-                                    <span class="pricing-price-period">/ Monthly</span>
-                                </div>
-                            </div>
-                            <ul class="fa-ul pricing-list mt-4">
-                                <li>1 user</li>
-                                <li>Community support</li>
-                                <li>Style customizer</li>
-                                <li>Custom components</li>
-                                <li>Expanded utilities</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Third-party integration</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Layout options</li>
-                            </ul>
-                            <div class="choose-plan mt-5 text-center">
-                                <a href="#" class="btn btn-primary">Choose Plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card pricing border-0 rounded shadow-sm h-100">
-                        <div class="card-body p-5">
-                            <div class="text-center">
-                                <h4 class="mb-4">Standard</h4>
-                                <div class="pricing-price">
-                                    <sup>$</sup>
-                                    99
-                                    <span class="pricing-price-period">/ Monthly</span>
-                                </div>
-                            </div>
-                            <ul class="fa-ul pricing-list mt-4">
-                                <li>1 user</li>
-                                <li>Community support</li>
-                                <li>Style customizer</li>
-                                <li>Custom components</li>
-                                <li>Expanded utilities</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Third-party integration</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Layout options</li>
-                            </ul>
-                            <div class="choose-plan mt-5 text-center">
-                                <a href="#" class="btn btn-primary">Choose Plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card pricing border-0 rounded shadow-sm h-100">
-                        <div class="card-body p-5">
-                            <div class="text-center">
-                                <h4 class="mb-4">Enterprise</h4>
-                                <div class="pricing-price">
-                                    <sup>$</sup>
-                                    299
-                                    <span class="pricing-price-period">/ Monthly</span>
-                                </div>
-                            </div>
-                            <ul class="fa-ul pricing-list mt-4">
-                                <li>1 user</li>
-                                <li>Community support</li>
-                                <li>Style customizer</li>
-                                <li>Custom components</li>
-                                <li>Expanded utilities</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Third-party integration</li>
-                                <li class="text-decoration-line-through text-muted text-sm">Layout options</li>
-                            </ul>
-                            <div class="choose-plan mt-5 text-center">
-                                <a href="#" class="btn btn-primary">Choose Plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ======================= pricing end  ============================ -->
-
-    <!-- ======================= faq start  ============================ -->
-    <div class="faq-section pt-5 pb-5">
-        <div class="container">
-            <div class="section-header text-center pb-5">
-                <h3 class="title mb-4">Frequently Asked Questions</h3>
-                <h4 class="subheading">
-                    If you don't see an answer to your question, you can send us an email from our contact form.
-                </h4>
-            </div>
-            <div class="row align-items-center d-flex">
-                <div class="col-lg-5">
-                    <div class="faq-img text-center text-lg-start">
-                        <img src="assets/images/faq.png" width="350" class="img-fluid" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="faq-list">
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
-                                        How do I get my subscription receipt?
+                                <a href="/about">
+                                    <button
+                                        class=" border-y-4 border-x-0 border-[#EF89C1] border-solid text-[18px] font-Calibri tracking-[2.5px] uppercase px-[24.5px] py-[18.5px] relative overflow-hidden animatedButton ">
+                                        Find
+                                        out more
                                     </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                                            fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis
-                                            corrupti.
-                                        </p>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                        aria-controls="flush-collapseTwo">
-                                        Are there any discounts for people in need?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                                            fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis
-                                            corrupti.
-                                        </p>
-                                    </div>
-                                </div>
+                        </div>
+                    </section>
+                    <section
+                        class="w-full  bg-white text-black  py-[min(121px,16.8vw)] lg:py-44 flex flex-col  px-[min(14%,104px)] xl:px-0">
+                        <div class="flex flex-col mx-auto w-full max-w-[1480px]">
+                            <div class="w-full" style="opacity: 1; transform: none;">
+                                <h2
+                                    class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px] mb-28">
+                                    OUR CLIENTS</h2>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                        aria-controls="flush-collapseThree">
-                                        Do you offer a free trial edit?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                                            fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis
-                                            corrupti.
-                                        </p>
-                                    </div>
+                            <div class="w-full grid grid-cols-2 xl:grid-cols-3 gap-20  lg:gap-40 items-center">
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="Samsung Logo" loading="lazy"
+                                                                               width="500" height="120" decoding="async"
+                                                                               data-nimg="1"
+                                                                               src="assets/images/Samsung.cf06ee23.svg"
+                                                                               style="color: transparent;">
                                 </div>
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="Philip Morris International Logo"
+                                                                               loading="lazy" width="798" height="183"
+                                                                               decoding="async" data-nimg="1"
+                                                                               src="assets/images/philip-morris-international-dark.webp"
+                                                                               style="color: transparent;"></div>
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="Beiersdorf Logo" loading="lazy"
+                                                                               width="1200" height="196"
+                                                                               decoding="async" data-nimg="1"
+                                                                               src="assets/images/beiersdorf.webp"
+                                                                               style="color: transparent;"></div>
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="VR Therapies Logo" loading="lazy"
+                                                                               width="774" height="183" decoding="async"
+                                                                               data-nimg="1"
+                                                                               src="assets/images/VR-LOGO-HORIZONTAL-ALL BLACK.57a1bfd8.svg"
+                                                                               style="color: transparent;"></div>
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="Priority Pass Logo"
+                                                                               loading="lazy" width="296" height="127"
+                                                                               decoding="async" data-nimg="1"
+                                                                               src="assets/images/Priority_Pass_logo_small-black.webp"
+                                                                               style="color: transparent;"></div>
+                                <div class="w-full max-w-[296px] relative block justify-center"
+                                     style="opacity: 1; transform: none;"><img alt="Spond Logo" loading="lazy"
+                                                                               width="424" height="116" decoding="async"
+                                                                               data-nimg="1"
+                                                                               src="assets/images/spond-logo-white-out.webp"
+                                                                               style="color: transparent;"></div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
-                                        aria-controls="flush-collapseFour">
-                                        How do I reset my Account password?
+                        </div>
+                    </section>
+                    <section
+                        class="w-full  bg-black text-white  py-[min(121px,16.8vw)]  lg:py-44 flex flex-col  px-[min(14%,104px)] xl:px-0">
+                        <div class="flex flex-col mx-auto w-full max-w-[1480px]">
+                            <div class="w-1/3  mb-[min(78.5px,11vw)] lg:mb-20 header"
+                                 style="transform: translateY(20px) translateZ(0px);">
+                                <h2
+                                    class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px]">
+                                    CONTACT</h2>
+                            </div>
+                            <div class="w-full max-w-[1036px] flex flex-col lg:mx-auto lg:flex-row">
+                                <div
+                                    class=" flex flex-col gap-7 mb-[min(114px,15.8vw)] lg:mb-16 w-full xl:w-1/2 p-0 lg:pr-[20%] xl:pr-32"
+                                    style="transform: translateY(20px) translateZ(0px);">
+                                    <h2
+                                        class="font-Calibri font-light tracking-widest text-[min(48px,6.66vw)] xl:text-[48px] ">
+                                        LET’S CONNECT</h2>
+                                    <p
+                                        class=" text-[min(26px,3.61vw)] xl:text-[22px] mb-[min(114px,15.8vw)] lg:my-11">
+                                        Want to become part of our team? We’re always looking for people passionate
+                                        about what they do. We’d love to hear from you.</p><a
+                                    href="/contact">
+                                    <button
+                                        class=" border-y-4 border-x-0 border-[#EF89C1] border-solid text-[18px] font-Calibri tracking-[2.5px] uppercase px-[24.5px] py-[18.5px] relative overflow-hidden animatedButton ">
+                                        Get
+                                        in touch
                                     </button>
-                                </h2>
-                                <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                                            fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis
-                                            corrupti.
-                                        </p>
-                                    </div>
+                                </a>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
-                                        aria-controls="flush-collapseFive">
-                                        Do you offer a free trial edit?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseFive" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi
-                                            fugiat sed amet saepe officiis. Ratione excepturi eius perspiciatis
-                                            corrupti.
-                                        </p>
+                                <div
+                                    class="py-16 lg:py-0 border-t-2 border-l-0 lg:border-l-2 lg:border-t-0 pl-0 lg:pl-[20%] xl:pl-32 border-white border-solid flex flex-col gap-7 mb-[min(114px,15.8vw)] lg:mb-16 w-full xl:w-1/2"
+                                    style="transform: translateY(20px) translateZ(0px);">
+                                    <h2
+                                        class="font-Calibri font-light tracking-widest text-[min(48px,6.66vw)] xl:text-[48px] ">
+                                        ADDRESS</h2>
+                                    <div
+                                        class="flex flex-col  mb-[min(114px,15.8vw)] lg:my-11 text-[min(26px,3.61vw)] xl:text-[22px]">
+                                        <p>10 Queen Street Place,<br>London EC4R 1BE<br>United Kingdom</p>
                                     </div>
+                                    <a href="mailto:newbusiness@cheil.com">
+                                        <p class="text-[22px] underline">newbusiness@cheil.com</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+        <footer class="w-full bg-white flex flex-col">
+            <div class="w-full flex flex-col lg:flex-row-reverse p-0 justify-between mx-auto  relative"
+                 style="max-width:1920px">
+                <div class="max-w-full w-auto relative block lg:h-[232px]"
+                     style="aspect-ratio:318.84 / 141.71;transform:scale(1.003)"><img alt="Cheil Logo" loading="lazy"
+                                                                                      decoding="async" data-nimg="fill"
+                                                                                      style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                                                                      src="assets/images/logo-signature-cheil-02.svg">
+                </div>
+                <div
+                    class="w-full flex flex-col w-min-[30%] lg:w-1/3 pl-[min(5rem,3%)] lg:pl-20 py-11 lg:h-full justify-center items-center lg:items-start">
+                    <img alt="Cheil Worldwide Logo" loading="lazy" width="125" height="39" decoding="async"
+                         data-nimg="1" style="color:transparent"
+                         src="assets/images/Cheil_Worldwide_logo.ccf58f6e.svg">
+                    <div
+                        class="flex flex-col lg:flex-row gap-7 mt-6 mb-5 justify-center lg:justify-start text-center ">
+                        <a href="/about">
+                            <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">About Us</p>
+                        </a><a href="/work">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Work</p>
+                    </a><a href="/network">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Network</p>
+                    </a><a href="/shift">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">SHIFT</p>
+                    </a><a href="/contact">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Contact Us</p>
+                    </a></div>
+                    <p class="font-CheilRoman mt-4 text-sm">© <!-- -->2024<!-- --> Cheil UK<!-- --> <a
+                        href="/legal">Legal Stuff</a></p>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
-    <!-- ======================= faq end  ============================ -->
+</div>
+<script !src="">
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const Btn = document.getElementById('mobileBtn');
+        if (menu.style.left === '0px') {
+            menu.style.left = '100%';
+        } else {
+            menu.style.left = '0px'; // Show menu
+        }
+    }
 
-    <!-- ======================= hero start  ============================ -->
-    <div class="hero-section pt-8 pb-8">
-        <div class="container">
-            <div class="hero-content text-center">
-                <h4 class="mb-4">Ready to dive in? Create Your Card today.</h4>
-                <a href="#" class="btn btn-primary">Start Now</a>
-            </div>
-        </div>
-    </div>
-    <!-- ======================= hero end  ============================ -->
-
-    <!-- ======================= footer start  ============================ -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="d-sm-flex align-items-center justify-content-between text-center text-sm-start">
-                <div class="copyright mb-3 mb-sm-0">
-                    <p class="m-0">© 2024 Venmeo.de All rights reserved.</p>
-                </div>
-                <div class="">
-                    <div class="footer-link">
-                        <ul>
-                            <li class="me-3"><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-condition.html">Terms & Conditions</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ======================= footer end  ============================ -->
-
-    <!-- js -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+</script>
 </body>
 
 </html>

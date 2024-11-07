@@ -76,7 +76,7 @@
                         @csrf
                         <div class="signin_form p-3  p-md-5 bg-white">
                             <div class="mb-5 text-center">
-                                <a href="{{ route('home') }}">
+                                <a href="{{ route('frontend.home') }}">
                                     <img src="{{ getLogo($settings->site_logo) }}" width="150" alt="logo">
                                 </a>
                             </div>
@@ -118,10 +118,10 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary w-100">{{ __('Sign In') }}</button>
-                            <div class="text-center"> <a href="{{ route('home') }}" class="m-2 p-2" style="display: block">{{ __('messages.nav.home') }}</a></div>
+                            <div class="text-center"> <a href="{{ route('frontend.home') }}" class="m-2 p-2" style="display: block">{{ __('messages.nav.home') }}</a></div>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div>

@@ -57,7 +57,7 @@
                                                 <div class="col-lg-12">
                                                     <img src="{{($home->image ?? asset('assets/default.png'))}}" height="50px" />
                                                     <div class="mb-3">
-                                                        <label class="form-label">{{ __('messages.settings_home_content.banner_image') }} 
+                                                        <label class="form-label">{{ __('messages.settings_home_content.banner_image') }}
                                                             <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 450X450px)</strong></small>
                                                         </label>
                                                         <input type="file" class="form-control" name="image"
@@ -378,7 +378,7 @@
                                     </div>
                                 </div>
 
-                                
+
 
                                  {{-- FAQ --}}
                                  <div>
@@ -391,7 +391,7 @@
                                                 <div class="col-lg-12">
                                                     <img src="{{($home->faq_image ?? asset('assets/default.png'))}}" height="50px" />
                                                     <div class="mb-3">
-                                                        <label class="form-label">{{ __('messages.settings_home_content.faq_image') }} 
+                                                        <label class="form-label">{{ __('messages.settings_home_content.faq_image') }}
                                                             <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 450X450px)</strong></small>
                                                         </label>
                                                         <input type="file" class="form-control" name="faq_image"
@@ -462,8 +462,8 @@
                                                             value="{{$home->col21_gr ?? ''}}" placeholder="{{ __('messages.settings_home_content.section_heading_german') }}..." required>
                                                     </div>
                                                 </div>
-                                             
-                                              
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -516,7 +516,7 @@
         </div>
 
         <div class="col-8">
-            <iframe src="{{route('home')}}" width="100%" height="100%" style="border: none;"></iframe>
+            <iframe src="{{route('frontend.home')}}" width="100%" height="100%" style="border: none;"></iframe>
         </div>
     </div>
 </div>
