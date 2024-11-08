@@ -11,12 +11,39 @@
             </div>
         </div>
         <div class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]">
-            <NavItem label="About Us" routeName="frontend.about" />
-            <NavItem label="Work" routeName="frontend.work" />
-            <NavItem label="News & Views" routeName="frontend.blog" />
-            <NavItem label="Services" routeName="frontend.service" />
-            <NavItem label="SHIFT" routeName="frontend.shift" />
-            <NavItem label="Contact Us" routeName="frontend.contact" />
+            <div class="gap-[40px] hidden lg:flex">
+                <NavItem
+                    label="About Us"
+                    routeName="frontend.about"
+                    :active="route().current('frontend.about')"
+                />
+                <NavItem
+                    label="Work"
+                    routeName="frontend.work"
+                    :active="route().current('frontend.work') || route().current('frontend.work.detail')"
+                />
+                <NavItem
+                    label="News & Views"
+                    routeName="frontend.blog"
+                    :active="route().current('frontend.blog') || route().current('frontend.blog.detail')"
+                />
+                <NavItem
+                    label="Services"
+                    routeName="frontend.service"
+                    :active="route().current('frontend.service')"
+                />
+                <NavItem
+                    label="SHIFT"
+                    routeName="frontend.shift"
+                    :active="route().current('frontend.shift')"
+                />
+                <NavItem
+                    label="Contact Us"
+                    routeName="frontend.contact"
+                    :active="route().current('frontend.contact')"
+                />
+            </div>
+
         </div>
     </div>
 </template>

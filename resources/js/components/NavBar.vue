@@ -13,7 +13,7 @@
                     decoding="async"
                     class="max-h-[25.5px] lg:max-h-[40px]"
                     style="color:transparent"
-                    src="assets/images/Cheil_Worldwide_logo.ccf58f6e.svg"
+                    :src="asset('assets/images/Cheil_Worldwide_logo.ccf58f6e.svg')"
                 />
             </Link>
 
@@ -21,13 +21,38 @@
 
             <!-- Desktop Menu -->
             <div class="gap-[40px] hidden lg:flex">
-                <NavItem label="About Us" routeName="frontend.about" />
-                <NavItem label="Work" routeName="frontend.work" />
-                <NavItem label="News & Views" routeName="frontend.blog" />
-                <NavItem label="Services" routeName="frontend.service" />
-                <NavItem label="SHIFT" routeName="frontend.shift" />
-                <NavItem label="Contact Us" routeName="frontend.contact" />
+                <NavItem
+                    label="About Us"
+                    routeName="frontend.about"
+                    :active="route().current('frontend.about')"
+                />
+                <NavItem
+                    label="Work"
+                    routeName="frontend.work"
+                    :active="route().current('frontend.work') || route().current('frontend.work.detail')"
+                />
+                <NavItem
+                    label="News & Views"
+                    routeName="frontend.blog"
+                    :active="route().current('frontend.blog') || route().current('frontend.blog.detail')"
+                />
+                <NavItem
+                    label="Services"
+                    routeName="frontend.service"
+                    :active="route().current('frontend.service')"
+                />
+                <NavItem
+                    label="SHIFT"
+                    routeName="frontend.shift"
+                    :active="route().current('frontend.shift')"
+                />
+                <NavItem
+                    label="Contact Us"
+                    routeName="frontend.contact"
+                    :active="route().current('frontend.contact')"
+                />
             </div>
+
 
             <!-- Mobile Menu Toggle -->
             <div class="flex lg:hidden aspect-square w-10 z-40 cursor-pointer dex_btn" @click="toggleMobileMenu">
@@ -57,6 +82,15 @@ export default {
         toggleMobileMenu() {
             this.isMobileMenuOpen = !this.isMobileMenuOpen;
         },
+
+        asset(path) {
+            let url = import.meta.env.VITE_APP_URL;
+            if (!path) {
+                return `${url}/asset/images/default.png`;
+            }
+            return `${url}/${path}`;
+        },
     },
+
 };
 </script>

@@ -1,0 +1,247 @@
+<template>
+    <Layout>
+        <div
+            class="mx-auto w-full max-w-[1920px] bg-black flex flex-col justify-center overflow-hidden relative text-white">
+            <div
+                class="block absolute  w-[100vw] top-[-12vw] left-[50%] md:left-[50%] md:w-[864px] z-10 md:top-[-151px]">
+                <img
+                    :src="asset('assets/images/Slats.svg')" alt="Slats" class="w-full" data-nimg="1" decoding="async" height="371"
+                    loading="lazy"
+                    style="color: transparent;" width="864">
+            </div>
+            <div
+                class="max-w-[1680px] w-full flex flex-col justify-center items-center px-0 pt-[min(175px,24.3vw)] lg:py-[190px] lg:px-[5vw] mx-auto relative z-0">
+                <!--<video :src="asset('assets/images/coverVideoMO.mp4')" autoplay="" class="hidden lg:block absolute top-0 -z-10 w-full" loop=""
+                       playsinline=""></video>
+                <video :src="('assets/images/coverVideoMO.mp4')"
+                       autoplay="" class="block lg:hidden absolute top-0 -z-10 w-full rotate-180 left-0"
+                       loop="" playsinline=""></video>-->
+                <div
+                    class="w-full flex flex-col justify-center items-start mb-[55px] relative z-0 px-[min(88px,12vw)] lg:p-0">
+                    <div class="mb-[30px] ">
+                        <img alt="" class="max-h-[42px] max-w-[126px]">
+                    </div>
+                    <div
+                        class="uppercase text-[min(60px,8.3vw)] lg:text-[36px] font-bold text-left mx-0 mb-[0px] tracking-[6.3px]">
+                        <h1>Powering Pet Owners with Samsung Floorcare</h1>
+                    </div>
+                    <p class="font-Calibri font-light text-[min(24px,3.33vw)] lg:text-[18px] uppercase ">
+                        Experiential /
+                        Retail</p>
+                </div>
+                <div class="block lg:hidden w-full relative max-w-[720px] mx-auto">
+                    <video autoplay=""
+                           class="w-full aspect-w-16 aspect-h-9"
+                           loop="" playsinline=""
+                           poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
+                           src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                </div>
+                <div
+                    class="flex flex-col-reverse lg:flex-row w-full gap-[min(102px,8vw)] mb-[min(200px,30vw)] lg:mb-[251px]">
+                    <div
+                        class="grid grid-cols-5 lg:grid-cols-5 w-full lg:w-[970px] gap-[17px] max-w-[720px] lg:max-w-[970px] content-start mx-auto lg:mx-0  ">
+                        <div
+                            class="   col-span-5 lg:col-span-null row-span-1 hidden lg:block block relative w-full lg:h-[min(355px,21.1vw)] ">
+                            <video autoplay=""
+                                   class="w-full "
+                                   loop="" playsinline=""
+                                   poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
+                                   src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-full lg:w-[553px] px-[min(88px,12vw)] lg:p-0 mt-[min(200px,27.7vw)] lg:mt-0">
+                        <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                            The brief</h2>
+                        <div class="flex flex-col mb-[40px]">
+                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                <p>Samsung was
+                                    revolutionising in home technology. Built especially for pet owners, their
+                                    new Jet vacuum range
+                                    took the hassle out of cleaning up. Samsung needed to raise awareness and
+                                    create a buzz around
+                                    these new products amongst puppy parents.</p></div>
+                        </div>
+                        <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                            Results</h2>
+                        <div class="mb-[35px]">
+                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                500K+</h2>
+                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    500k+
+                                    impressions on socials</p>
+                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    Impressions on socials</p></div>
+                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                109%</h2>
+                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    109% over
+                                    delivery across all Time Out content</p>
+                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    Over
+                                    delivery across all Time Out content</p></div>
+                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                Sold Out</h2>
+                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    Sold out
+                                    event</p>
+                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                    event</p>
+                            </div>
+                        </div>
+                        <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                            The how</h2>
+                        <div class="flex flex-col mb-[40px]">
+                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                <p>To promote the
+                                    range, we transformed Samsung KX into a pet-pampering boutique, inviting pet
+                                    owners and their
+                                    pups along for a full grooming and pet-portrait session, followed by plenty
+                                    of dog-friendly
+                                    activations. To give a 360° experience and showcase the range, the brands’
+                                    products were
+                                    seamlessly integrated into each activity. </p></div>
+                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                <p>The sessions
+                                    created plenty of mess, which was quickly cleaned up by Jet vacuums -
+                                    proving the power of the
+                                    products. </p></div>
+                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                <p>To generate
+                                    buzz we partnered with the iconic Time Out, to create promotional articles
+                                    and host the sign-up
+                                    portal. To get everyone talking about the range, proud pet-parents were
+                                    encouraged to show off
+                                    their “paw-fect” portraits on social media using the hashtag, generating
+                                    tonnes of
+                                    user-generated content, which sent the event trending. </p></div>
+                        </div>
+                        <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                            HEAR IT FROM OUR CLIENT</h2>
+                        <p class="mb-[10px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] italic">
+                            "It was great to
+                            have partnered with Cheil UK to create this unique activation, interacting with a
+                            highly targeted
+                            audience to raise awareness of our new vacuum range".</p>
+                        <p class="mb-[40px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[1.8px] italic">—
+                            Marketing
+                            Director Digital Appliances, Samsung UK</p>
+                        <div class="hidden lg:block"></div>
+                    </div>
+                </div>
+                <div class="block lg:hidden"></div>
+                <div
+                    class="w-full justify-start flex flex-row text-[min(28px,3.88vw)] lg:text-[24px] font-Calibri lg:font-bold italic mb-[min(218px,30vw)] mt-[min(340px,47vw)] lg:mt-0 lg:mb-0 px-[min(20px,2vw)]">
+                    <a class="flex flex-row  items-end w-1/2 lg:w-1/3 justify-start"
+                       href="/work/samsung-baselworld">
+                        <div class="w-8 inline-block rotate-90">
+                            <div>
+                                <svg height="960"
+                                     preserveAspectRatio="xMidYMid meet"
+                                     style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
+                                     viewBox="0 0 960 960" width="960"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <clipPath id="__lottie_element_59">
+                                            <rect height="960" width="960" x="0" y="0"></rect>
+                                        </clipPath>
+                                    </defs>
+                                    <g clip-path="url(#__lottie_element_59)">
+                                        <g opacity="1"
+                                           style="display: block;"
+                                           transform="matrix(1.090000033378601,0,0,1.090000033378601,480,346.760009765625)">
+                                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                <path d=" M-180,12 C-180,12 12,204 12,204 C12,204 198,18 198,18"
+                                                      fill-opacity="0" stroke="rgb(255,255,255)"
+                                                      stroke-linecap="round" stroke-linejoin="round"
+                                                      stroke-opacity="1"
+                                                      stroke-width="80"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <p>Creating a moment in time at Baselworld</p></a>
+
+                    <Link class="hidden lg:block w-1/2 lg:w-1/3 justify-center text-center" :href="route('frontend.work')">
+                        <p>Back to Our Work</p>
+                    </Link>
+                    <a class="flex flex-row items-end justify-end w-1/2 lg:w-1/3"
+                       href="/work/nivea-a-message-for-all-men">
+                        <p>Helping Men Embrace their Sensitive Side</p>
+                        <div class="w-8 inline-block -rotate-90">
+                            <div>
+                                <svg height="960"
+                                     preserveAspectRatio="xMidYMid meet"
+                                     style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
+                                     viewBox="0 0 960 960" width="960"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <clipPath id="__lottie_element_54">
+                                            <rect height="960" width="960" x="0" y="0"></rect>
+                                        </clipPath>
+                                    </defs>
+                                    <g clip-path="url(#__lottie_element_54)">
+                                        <g opacity="1"
+                                           style="display: block;"
+                                           transform="matrix(1.090000033378601,0,0,1.090000033378601,480,346.760009765625)">
+                                            <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                <path d=" M-180,12 C-180,12 12,204 12,204 C12,204 198,18 198,18"
+                                                      fill-opacity="0" stroke="rgb(255,255,255)"
+                                                      stroke-linecap="round" stroke-linejoin="round"
+                                                      stroke-opacity="1"
+                                                      stroke-width="80"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </Layout>
+</template>
+
+<script>
+import {Inertia} from '@inertiajs/inertia';
+import Layout from "@/Layouts/Layout.vue";
+import { Link } from '@inertiajs/vue3';
+
+export default {
+    components: {Layout, Link},
+    props: {
+        work: Object,
+    },
+    setup(props) {
+        const goToPreviousPage = () => {
+            if (props.work.relatedWorks.prev_page_url) {
+                Inertia.get(props.work.relatedWorks.prev_page_url);
+            }
+        };
+
+        const goToNextPage = () => {
+            if (props.work.relatedWorks.next_page_url) {
+                Inertia.get(props.work.relatedWorks.next_page_url);
+            }
+        };
+
+        return {
+            goToPreviousPage,
+            goToNextPage,
+        };
+    },
+    data() {
+        return {}
+    },
+
+};
+</script>
+
+<style scoped>
+/* Add any custom styles to match the exact design */
+</style>

@@ -1,0 +1,101 @@
+<template>
+        <Link :href="route('frontend.work.detail', [slug])" class="group cursor-pointer relative block">
+            <!-- Background image with overlay effect -->
+            <div
+                class="w-full h-full flex flex-col justify-center items-center relative bg-cover bg-center bg-no-repeat"
+                :style="{ backgroundImage: `url(${image})` }"
+            >
+                <!-- Hover overlay with transition effect -->
+                <div
+                    :class="`w-full h-full absolute top-0 left-0 bg-${btnColor}-500 opacity-0 group-hover:opacity-90 transition-opacity duration-300 ease-in-out`"
+                ></div>
+
+                <!-- Card content on hover -->
+                <div
+                    class="relative z-10 px-[12%] py-[14%] text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                >
+                    <p class="uppercase text-[28px] tracking-[4.5px] font-light leading-[0.8em]">{{ company }}</p>
+                    <h2 class="text-[30px] font-bold">{{ title }}</h2>
+                    <p class="text-[18px] mb-[27px] mt-[13px]">{{ description }}</p>
+                    <button
+                        :class="`border-y-4 border-x-0 border-black text-[18px] font-bold tracking-[2.5px] uppercase px-[24.5px] animatedButton py-[8px] hover:text-${btnColor}-500`"
+                    >
+                        {{ btnText }}
+                    </button>
+                </div>
+            </div>
+        </Link>
+</template>
+
+<script>
+import {Link} from "@inertiajs/vue3";
+
+export default {
+    components: {Link},
+    props: {
+        slug: String,
+        title: String,
+        image: String,
+        company: String,
+        description: String,
+        btnColor: String,
+        btnText: String
+    },
+};
+</script>
+
+<style scoped>
+
+
+
+.animatedButton {
+    position: relative;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.animatedButton::before,
+.animatedButton::after {
+    content: '';
+    position: absolute;
+    width: 4px; /* Matches the border width */
+    height: 100%;
+    background-color: #000;
+    transition: transform 0.3s ease;
+}
+
+/* Left border animation */
+.animatedButton::before {
+    left: 0;
+    top: -100%;
+    transform-origin: top;
+    transform: translateY(0);
+}
+
+/* Right border animation */
+.animatedButton::after {
+    right: 0;
+    bottom: -100%;
+    transform-origin: bottom;
+    transform: translateY(0);
+}
+
+/* On hover, animate the borders into view */
+.animatedButton:hover::before {
+    transform: translateY(100%);
+}
+
+.animatedButton:hover::after {
+    transform: translateY(-100%);
+}
+
+/* Button background color on hover */
+.animatedButton:hover {
+    background-color: #000;
+}
+
+
+
+
+</style>

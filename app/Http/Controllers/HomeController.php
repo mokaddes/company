@@ -42,7 +42,23 @@ class HomeController extends Controller
     public function work()
     {
         // inertia view work
-        return inertia('Work');
+        return inertia('Work/Index');
+    }
+
+    public function workDetail($slug)
+    {
+        $work = [
+            'id' => 1,
+            'slug' => $slug,
+            'title' => 'Powering Pet Owners with Samsung Floorcare',
+            'category' => 'Experiential / Retail',
+            'video' => 'assets/images/coverVideoMO.mp4',
+            'image' => 'assets/images/coverMO.jpg',
+
+        ];
+        return inertia('Work/Details', [
+            'work' => $work
+        ]);
     }
 
     public function contact()
@@ -54,7 +70,13 @@ class HomeController extends Controller
     public function blog()
     {
         // inertia view blog
-        return inertia('Blog');
+        return inertia('Blog/Index');
+    }
+
+    public function blogDetail()
+    {
+        // inertia view blog detail
+        return inertia('Blog/Details');
     }
 
     public function service()

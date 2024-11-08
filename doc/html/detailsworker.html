@@ -1,0 +1,488 @@
+<html lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <title>Home | Cheil UK</title>
+
+    <style type="text/css">
+
+        @font-face {
+            font-family: "Roman";
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot");
+            src: url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.eot?#iefix") format("embedded-opentype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff") format("woff"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.woff2") format("woff2"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.ttf") format("truetype"),
+            url("assets/fonts/a490fb7e92e97be3204f53315f2f185e.svg#Roman") format("svg");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        .animatedButton {
+            position: relative;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .animatedButton::before,
+        .animatedButton::after {
+            content: '';
+            position: absolute;
+            width: 4px; /* Matches the border width */
+            height: 100%;
+            background-color: #EF89C1;
+            transition: transform 0.3s ease;
+        }
+
+        /* Left border animation */
+        .animatedButton::before {
+            left: 0;
+            top: -100%;
+            transform-origin: top;
+            transform: translateY(0);
+        }
+
+        /* Right border animation */
+        .animatedButton::after {
+            right: 0;
+            bottom: -100%;
+            transform-origin: bottom;
+            transform: translateY(0);
+        }
+
+        /* On hover, animate the borders into view */
+        .animatedButton:hover::before {
+            transform: translateY(100%);
+        }
+
+        .animatedButton:hover::after {
+            transform: translateY(-100%);
+        }
+
+        /* Button background color on hover */
+        .animatedButton:hover {
+            background-color: #ef89c199;
+        }
+
+        #mobileMenu {
+            transition: left .5s ease-in-out;
+        }
+
+    </style>
+
+    <script id="cookieBanner-139551920" data-cookieconsent="ignore" data-hs-ignore="true"
+            data-hsjs-env="prod" data-hsjs-hublet="eu1" data-hsjs-portal="139551920" data-loader="hs-scriptloader"
+            src="https://js-eu1.hs-banner.com/v2/139551920/banner.js" type="text/javascript"></script>
+    <script src="https://js-eu1.hscollectedforms.net/collectedforms.js" type="text/javascript"></script>
+    <script id="hs-analytics" src="https://js-eu1.hs-analytics.net/analytics/1730804400000/139551920.js"
+            type="text/javascript"></script>
+    <script id="hs-script-loader" async="" defer="" src="//js-eu1.hs-scripts.com/139551920.js"
+            type="text/javascript"></script>
+    <script src="https://secure.24-astute.com/js/796111.js" type="text/javascript"></script>
+    <noscript>
+        <img src="https://secure.24-astute.com/796111.png" style="display:none"/>
+    </noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div id="__next">
+    <div class="w-full flex flex-col h-full">
+        <nav class="w-full flex flex-col bg-white sticky top-0 z-30 drop-shadow-md">
+            <div class="hidden">
+                <div class="bg-blue text-blue">1</div>
+                <div class="bg-green text-green">1</div>
+                <div class="bg-pink text-pink">1</div>
+                <div class="bg-yellow text-yellow">1</div>
+                <div class="bg-orange text-orange">1</div>
+                <div class="row-span-1 row-span-2 row-span-3"></div>
+            </div>
+            <div
+                class="w-full flex flex-row justify-between px-[min(6.99vw,50px)] lg:pl-12 lg:pr-[140px] h-[75px] lg:h-[100px] items-center mx-auto"
+                style="max-width:1920px">
+                <a href="/index.html">
+                    <img alt="Cheil Worldwide Logo" class="max-h-[25.5px] lg:max-h-[40px]" data-nimg="1"
+                         decoding="async" height="39" loading="eager"
+                         src="assets/images/Cheil_Worldwide_logo.ccf58f6e.svg"
+                         style="color:transparent"
+                         width="125">
+                </a>
+                <div class="gap-[40px] hidden lg:flex">
+                    <a href="/about.html">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">About Us</p>
+                    </a>
+                    <a href="/work">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Work</p>
+                    </a>
+                    <a href="/blog">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">News &amp; Views
+                        </p>
+                    </a>
+                    <a href="/services">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Services</p>
+                    </a>
+                    <a href="/shift">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">SHIFT</p>
+                    </a>
+                    <a href="/contact">
+                        <p class="font-CheilRoman text-[22px] whitespace-nowrap  hover:nav-active">Contact Us</p>
+                    </a>
+                </div>
+                <div class="flex lg:hidden aspect-square w-10 z-40 cursor-pointer dex_btn">
+                    <div onclick="toggleMobileMenu()">
+                        <svg height="300"
+                             preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;" viewBox="0 0 300 300" width="300"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <clipPath id="__lottie_element_2">
+                                    <rect height="300" width="300" x="0" y="0"></rect>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_2)">
+                                <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,302)">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                              fill-opacity="1"></path>
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                              stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                              stroke-opacity="1" stroke-width="20"></path>
+                                    </g>
+                                </g>
+                                <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,235)">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                              fill-opacity="1"></path>
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                              stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                              stroke-opacity="1" stroke-width="20"></path>
+                                    </g>
+                                </g>
+                                <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,168)">
+                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                              fill-opacity="1"></path>
+                                        <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                              stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                              stroke-opacity="1" stroke-width="20"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div
+            id="mobileMenu"
+            class="flex flex-row lg:hidden fixed h-screen w-full top-0 bg-black text-white ease-in-out duration-200 z-50 mobile_menu"
+            style="left: 100%; transition-property: opacity, left; min-height: -webkit-fill-available;">
+            <div class="bg-white h-full w-[min(21.5%,155px)]">
+                <div class="h-[75px] justify-center flex">
+                    <div class="flex lg:hidden aspect-square w-10 mx-auto z-40 cursor-pointer">
+                        <div onclick="toggleMobileMenu()">
+                            <svg height="300"
+                                 preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;" viewBox="0 0 300 300" width="300"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <clipPath id="__lottie_element_13">
+                                        <rect height="300" width="300" x="0" y="0"></rect>
+                                    </clipPath>
+                                </defs>
+                                <g clip-path="url(#__lottie_element_13)">
+                                    <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,302)">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                                  fill-opacity="1"></path>
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                                  stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                                  stroke-opacity="1" stroke-width="20"></path>
+                                        </g>
+                                    </g>
+                                    <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,235)">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                                  fill-opacity="1"></path>
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                                  stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                                  stroke-opacity="1" stroke-width="20"></path>
+                                        </g>
+                                    </g>
+                                    <g opacity="1" style="display: block;" transform="matrix(1,0,0,1,146.5,168)">
+                                        <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill="rgb(255,255,255)"
+                                                  fill-opacity="1"></path>
+                                            <path d=" M-102,-85 C-102,-85 109,-85 109,-85" fill-opacity="0" stroke="rgb(0,0,0)"
+                                                  stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"
+                                                  stroke-opacity="1" stroke-width="20"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]"><a
+                href="/about"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">About Us</p></a><a
+                href="/work"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Work</p></a><a
+                href="/blog"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">News &amp; Views</p>
+            </a><a href="/services"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Services</p>
+            </a><a href="/shift"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">SHIFT</p></a><a
+                href="/contact"><p class="font-CheilRoman text-[min(6.25vw,45px)] whitespace-nowrap ">Contact Us</p></a>
+            </div>
+        </div>
+        <div class="w-full bg-black flex flex-col justify-center ">
+            <main class="w-full mx-auto">
+                <div class="mx-auto w-full max-w-[1920px] flex flex-col justify-center overflow-hidden relative text-white">
+                    <div
+                        class="block absolute  w-[100vw] top-[-12vw] left-[50%] md:left-[50%] md:w-[864px] z-10 md:top-[-150px]">
+                        <img
+                            alt="Slats" class="w-full" data-nimg="1" decoding="async" height="371" loading="lazy"
+                            src="/_next/static/media/Slats_03-np-01.3b8267b7.svg"
+                            style="color: transparent;" width="864"></div>
+                    <div
+                        class="max-w-[1680px] w-full flex flex-col justify-center items-center px-0 pt-[min(175px,24.3vw)] lg:py-[190px] lg:px-[5vw] mx-auto relative z-0">
+                        <video autoplay="" class="hidden lg:block absolute top-0 -z-10 w-full" loop="" playsinline=""
+                               src="/videos/gradient.webm"></video>
+                        <video autoplay=""
+                               class="block lg:hidden absolute top-0 -z-10 w-full rotate-180 left-0" loop=""
+                               playsinline="" src="/videos/case-study-gradient-top-mo.mp4"></video>
+                        <div
+                            class="w-full flex flex-col justify-center items-start mb-[55px] relative z-0 px-[min(88px,12vw)] lg:p-0">
+                            <div class="mb-[30px] "><img alt="" class="max-h-[42px] max-w-[126px]"></div>
+                            <div
+                                class="uppercase text-[min(60px,8.3vw)] lg:text-[36px] font-bold text-left mx-0 mb-[0px] tracking-[6.3px]">
+                                <h1>Powering Pet Owners with Samsung Floorcare</h1></div>
+                            <p class="font-Calibri font-light text-[min(24px,3.33vw)] lg:text-[18px] uppercase ">
+                                Experiential /
+                                Retail</p></div>
+                        <div class="block lg:hidden w-full relative max-w-[720px] mx-auto">
+                            <video autoplay=""
+                                   class="w-full aspect-w-16 aspect-h-9"
+                                   loop="" playsinline=""
+                                   poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
+                                   src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                        </div>
+                        <div
+                            class="flex flex-col-reverse lg:flex-row w-full gap-[min(102px,8vw)] mb-[min(200px,30vw)] lg:mb-[251px]">
+                            <div
+                                class="grid grid-cols-5 lg:grid-cols-5 w-full lg:w-[970px] gap-[17px] max-w-[720px] lg:max-w-[970px] content-start mx-auto lg:mx-0  ">
+                                <div class="   col-span-5 lg:col-span-null
+                  row-span-1
+                    hidden lg:block
+                   block relative w-full lg:h-[min(355px,21.1vw)] ">
+                                    <video autoplay=""
+                                           class="w-full "
+                                           loop="" playsinline=""
+                                           poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
+                                           src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col w-full lg:w-[553px] px-[min(88px,12vw)] lg:p-0 mt-[min(200px,27.7vw)] lg:mt-0">
+                                <h2
+                                    class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                                    The brief</h2>
+                                <div class="flex flex-col mb-[40px]">
+                                    <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                        <p>Samsung was
+                                            revolutionising in home technology. Built especially for pet owners, their
+                                            new Jet vacuum range
+                                            took the hassle out of cleaning up. Samsung needed to raise awareness and
+                                            create a buzz around
+                                            these new products amongst puppy parents.</p></div>
+                                </div>
+                                <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                                    Results</h2>
+                                <div class="mb-[35px]">
+                                    <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                        class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                        500K+</h2>
+                                        <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            500k+
+                                            impressions on socials</p>
+                                        <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            Impressions on socials</p></div>
+                                    <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                        class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                        109%</h2>
+                                        <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            109% over
+                                            delivery across all Time Out content</p>
+                                        <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            Over
+                                            delivery across all Time Out content</p></div>
+                                    <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
+                                        class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
+                                        Sold Out</h2>
+                                        <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            Sold out
+                                            event</p>
+                                        <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
+                                            event</p>
+                                    </div>
+                                </div>
+                                <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                                    The how</h2>
+                                <div class="flex flex-col mb-[40px]">
+                                    <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                        <p>To promote the
+                                            range, we transformed Samsung KX into a pet-pampering boutique, inviting pet
+                                            owners and their
+                                            pups along for a full grooming and pet-portrait session, followed by plenty
+                                            of dog-friendly
+                                            activations. To give a 360° experience and showcase the range, the brands’
+                                            products were
+                                            seamlessly integrated into each activity. </p></div>
+                                    <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                        <p>The sessions
+                                            created plenty of mess, which was quickly cleaned up by Jet vacuums -
+                                            proving the power of the
+                                            products. </p></div>
+                                    <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
+                                        <p>To generate
+                                            buzz we partnered with the iconic Time Out, to create promotional articles
+                                            and host the sign-up
+                                            portal. To get everyone talking about the range, proud pet-parents were
+                                            encouraged to show off
+                                            their “paw-fect” portraits on social media using the hashtag, generating
+                                            tonnes of
+                                            user-generated content, which sent the event trending. </p></div>
+                                </div>
+                                <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
+                                    HEAR IT FROM OUR CLIENT</h2>
+                                <p class="mb-[10px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] italic">
+                                    "It was great to
+                                    have partnered with Cheil UK to create this unique activation, interacting with a
+                                    highly targeted
+                                    audience to raise awareness of our new vacuum range".</p>
+                                <p class="mb-[40px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[1.8px] italic">—
+                                    Marketing
+                                    Director Digital Appliances, Samsung UK</p>
+                                <div class="hidden lg:block"></div>
+                            </div>
+                        </div>
+                        <div class="block lg:hidden"></div>
+                        <div
+                            class="w-full justify-start flex flex-row text-[min(28px,3.88vw)] lg:text-[24px] font-Calibri lg:font-bold italic mb-[min(218px,30vw)] mt-[min(340px,47vw)] lg:mt-0 lg:mb-0 px-[min(20px,2vw)]">
+                            <a class="flex flex-row  items-end w-1/2 lg:w-1/3 justify-start"
+                               href="/work/samsung-baselworld">
+                                <div class="w-8 inline-block rotate-90">
+                                    <div>
+                                        <svg height="960"
+                                             preserveAspectRatio="xMidYMid meet"
+                                             style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
+                                             viewBox="0 0 960 960" width="960"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <clipPath id="__lottie_element_59">
+                                                    <rect height="960" width="960" x="0" y="0"></rect>
+                                                </clipPath>
+                                            </defs>
+                                            <g clip-path="url(#__lottie_element_59)">
+                                                <g opacity="1"
+                                                   style="display: block;"
+                                                   transform="matrix(1.090000033378601,0,0,1.090000033378601,480,346.760009765625)">
+                                                    <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                        <path d=" M-180,12 C-180,12 12,204 12,204 C12,204 198,18 198,18"
+                                                              fill-opacity="0" stroke="rgb(255,255,255)"
+                                                              stroke-linecap="round" stroke-linejoin="round"
+                                                              stroke-opacity="1"
+                                                              stroke-width="80"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <p>Creating a moment in time at Baselworld</p></a><a
+                            class="hidden lg:block w-1/2 lg:w-1/3 justify-center text-center" href="/work"><p>Back to
+                            Our Work</p></a><a
+                            class="flex flex-row items-end justify-end w-1/2 lg:w-1/3"
+                            href="/work/nivea-a-message-for-all-men"><p>
+                            Helping Men Embrace their Sensitive Side</p>
+                            <div class="w-8 inline-block -rotate-90">
+                                <div>
+                                    <svg height="960"
+                                         preserveAspectRatio="xMidYMid meet"
+                                         style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
+                                         viewBox="0 0 960 960" width="960"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <clipPath id="__lottie_element_54">
+                                                <rect height="960" width="960" x="0" y="0"></rect>
+                                            </clipPath>
+                                        </defs>
+                                        <g clip-path="url(#__lottie_element_54)">
+                                            <g opacity="1"
+                                               style="display: block;"
+                                               transform="matrix(1.090000033378601,0,0,1.090000033378601,480,346.760009765625)">
+                                                <g opacity="1" transform="matrix(1,0,0,1,0,0)">
+                                                    <path d=" M-180,12 C-180,12 12,204 12,204 C12,204 198,18 198,18"
+                                                          fill-opacity="0" stroke="rgb(255,255,255)"
+                                                          stroke-linecap="round" stroke-linejoin="round"
+                                                          stroke-opacity="1"
+                                                          stroke-width="80"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="w-full bg-white flex flex-col">
+            <div class="w-full flex flex-col lg:flex-row-reverse p-0 justify-between mx-auto  relative"
+                 style="max-width:1920px">
+                <div class="max-w-full w-auto relative block lg:h-[232px]"
+                     style="aspect-ratio:318.84 / 141.71;transform:scale(1.003)"><img alt="Cheil Logo" data-nimg="fill"
+                                                                                      decoding="async" loading="lazy"
+                                                                                      src="assets/images/logo-signature-cheil-02.svg"
+                                                                                      style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+                </div>
+                <div
+                    class="w-full flex flex-col w-min-[30%] lg:w-1/3 pl-[min(5rem,3%)] lg:pl-20 py-11 lg:h-full justify-center items-center lg:items-start">
+                    <img alt="Cheil Worldwide Logo" data-nimg="1" decoding="async" height="39" loading="lazy"
+                         src="assets/images/Cheil_Worldwide_logo.ccf58f6e.svg" style="color:transparent"
+                         width="125">
+                    <div
+                        class="flex flex-col lg:flex-row gap-7 mt-6 mb-5 justify-center lg:justify-start text-center ">
+                        <a href="/about">
+                            <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">About Us</p>
+                        </a><a href="/work">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Work</p>
+                    </a><a href="/network">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Our Network</p>
+                    </a><a href="/shift">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">SHIFT</p>
+                    </a><a href="/contact">
+                        <p class="font-CheilRoman text-sm whitespace-nowrap text-gray-600">Contact Us</p>
+                    </a></div>
+                    <p class="font-CheilRoman mt-4 text-sm">© <!-- -->2024<!-- --> Cheil UK<!-- --> <a
+                        href="/legal">Legal Stuff</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script !src="">
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const Btn = document.getElementById('mobileBtn');
+        if (menu.style.left === '0px') {
+            menu.style.left = '100%';
+        } else {
+            menu.style.left = '0px'; // Show menu
+        }
+    }
+
+</script>
+</body>
+
+</html>

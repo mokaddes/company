@@ -21,6 +21,8 @@ import ContactSection from "@/Components/ContactSection.vue";
 export default {
     name: 'Home',
     components: {Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection},
+
+
 };
 </script>
 
