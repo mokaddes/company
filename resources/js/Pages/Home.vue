@@ -2,10 +2,10 @@
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
             <main class="w-full mx-auto">
-                <slider-section />
-                <about-us-section />
-                <clients-section />
-                <contact-section />
+                <SliderSection />
+                <AboutUsSection />
+                <ClientsSection />
+                <ContactSection />
             </main>
         </div>
     </Layout>
