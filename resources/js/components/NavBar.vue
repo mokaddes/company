@@ -11,9 +11,9 @@
                     width="125"
                     height="39"
                     decoding="async"
-                    class="max-h-[25.5px] lg:max-h-[40px]"
+                    class="h-auto"
                     style="color:transparent"
-                    :src="asset('assets/images/Cheil_Worldwide_logo.ccf58f6e.svg')"
+                    :src="logo"
                 />
             </Link>
 
@@ -78,18 +78,16 @@ export default {
             isMobileMenuOpen: false,
         };
     },
+    computed: {
+        logo() {
+            return this.$page.props.setting.logo;
+        },
+    },
     methods: {
         toggleMobileMenu() {
             this.isMobileMenuOpen = !this.isMobileMenuOpen;
         },
 
-        asset(path) {
-            let url = import.meta.env.VITE_APP_URL;
-            if (!path) {
-                return `${url}/asset/images/default.png`;
-            }
-            return `${url}/${path}`;
-        },
     },
 
 };

@@ -2,7 +2,8 @@
 export default {
     methods: {
         asset(path) {
-            let url = import.meta.env.VITE_APP_URL;
+            // window base path
+            const url = window.location.origin;
             if (!path) {
                 return `${url}/asset/images/default.png`;
             }

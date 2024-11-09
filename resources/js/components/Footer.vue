@@ -5,7 +5,7 @@
                 <img alt="Cheil Logo" loading="lazy" decoding="async" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" :src="asset('assets/images/logo-signature-cheil-02.svg')" />
             </div>
             <div class="w-full flex flex-col w-min-[30%] lg:w-1/3 pl-[min(5rem,3%)] lg:pl-20 py-11 lg:h-full justify-center items-center lg:items-start">
-                <img alt="Cheil Worldwide Logo" loading="lazy" width="125" height="39" decoding="async" style="color:transparent" :src="asset('assets/images/Cheil_Worldwide_logo.ccf58f6e.svg')" />
+                <img alt="Cheil Worldwide Logo" loading="lazy" width="225" height="39" decoding="async" style="color:transparent" :src="logo" />
                 <div class="flex flex-col lg:flex-row gap-7 mt-6 mb-5 justify-center lg:justify-start text-center">
                     <NavItem label="About Us" routeName="frontend.about" />
                     <NavItem label="Work" routeName="frontend.work" />
@@ -30,15 +30,11 @@ export default {
         NavItem,
     },
 
-    methods: {
-        asset(path) {
-            let url = import.meta.env.VITE_APP_URL;
-            if (!path) {
-                return `${url}/asset/images/default.png`;
-            }
-            return `${url}/${path}`;
+    computed: {
+        logo() {
+            return this.$page.props.setting.logo;
         },
-    },
+    }
 }
 </script>
 

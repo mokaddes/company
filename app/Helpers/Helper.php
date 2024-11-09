@@ -18,7 +18,10 @@ if (!function_exists('getSetting')) {
      */
     function getSetting():Setting
     {
-        return Setting::orderBy('id','DESC')->first();
+        $setting = Setting::orderBy('id','DESC')->first();
+        $setting->logo = getLogo($setting->site_logo);
+        $setting->favicon = getLogo($setting->favicon);
+        return $setting;
     }
 }
 
@@ -279,7 +282,7 @@ function checkPlanValidity(): bool
     if ($user->current_pan_valid_date > $now) {
         return true;
     }
-    
+
     return $validity;
 }
 
