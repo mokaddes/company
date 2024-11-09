@@ -14,7 +14,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">{{__('messages.common.dashboard')}}</a></li>
-                           
+
                         </ol>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-6">
-                    
+
                     <div class="small-box bg-info">
                     <div class="inner">
                     <h3>{{$data['cards']}}</h3>
@@ -37,9 +37,9 @@
                     <a href="{{route('admin.card.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-6">
-                    
+
                     <div class="small-box bg-success">
                     <div class="inner">
                     <h3>{{($data['plan'])}}</h3>
@@ -51,9 +51,9 @@
                     <a href="{{route('admin.plan.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-6">
-                    
+
                     <div class="small-box bg-warning">
                     <div class="inner">
                     <h3>{{$data['users']->count()}}</h3>
@@ -65,9 +65,9 @@
                     <a href="{{route('admin.customer.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-6">
-                    
+
                     <div class="small-box bg-danger">
                     <div class="inner">
                     <h3>{{ number_format($data['totalTransaction'], 2, ',', '') }} €</h3>
@@ -79,10 +79,10 @@
                     <a href="{{route('admin.transaction.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                     </div>
-                    
+
                     </div>
                     <div class="clearfix hidden-md-up"></div>
-                <div class="row">               
+                <div class="row">
 
                     <div class="col-12">
                         <div class="card">
@@ -105,7 +105,7 @@
                                             <th>{{__('messages.common.card_name')}}</th>
                                             <th>{{__('messages.common.user')}}</th>
                                             <th>{{__('messages.customer.contact_info')}}</th>
-                                     
+
                                             <th>{{__('messages.common.views')}}</th>
                                             <th>{{__('messages.common.date')}}</th>
                                             <th>{{__('messages.common.status')}}</th>
@@ -120,7 +120,7 @@
                                             <th>{{__('messages.common.card_name')}}</th>
                                             <th>{{__('messages.common.user')}}</th>
                                             <th>{{__('messages.customer.contact_info')}}</th>
-                                     
+
                                             <th>{{__('messages.common.views')}}</th>
                                             <th>{{__('messages.common.date')}}</th>
                                             <th>{{__('messages.common.status')}}</th>
@@ -138,9 +138,9 @@
                                                      class="rounded-pill" alt="">
                                             </td>
                                             <td>
-                                                <a href="{{route('card.preview',['card_url'=>$row->url_alias])}}" class="text-info" target="_blank">
+                                               {{-- <a href="{{route('card.preview',['card_url'=>$row->url_alias])}}" class="text-info" target="_blank">
                                                 {{$row?->first_name}} {{$row?->last_name}}
-                                                </a>
+                                                </a>--}}
                                             </td>
                                             <td><a href="{{route('admin.customer.view',['id'=>$row->user_id])}}">{{$row?->user?->name}}</a></td>
                                             <td>
@@ -155,7 +155,7 @@
                                                     </p>
                                                 @endif
                                             </td>
-                                           
+
                                             <td>{{$row->analytics_count ?? 0}}</td>
                                             <td>{{date('d-m-Y',strtotime($row?->updated_at))}}</td>
                                             <td>
@@ -172,7 +172,7 @@
                                                         {{__('messages.common.actions')}}
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a href="{{route('card.preview',['card_url'=>$row->url_alias])}}" target="_blank" class="dropdown-item">{{__('messages.common.preview')}}</a>
+{{--                                                        <a href="{{route('card.preview',['card_url'=>$row->url_alias])}}" target="_blank" class="dropdown-item">{{__('messages.common.preview')}}</a>--}}
                                                         <a href="{{route('admin.card.status',['id'=>$row->id])}}"
                                                            onclick="return confirm('Are you sure to change status?')"
                                                            class="dropdown-item">

@@ -25,7 +25,7 @@
         var languageName = $(this).data('prefix-value');
         $.ajax({
             type: 'POST',
-            url: "{{ route('change.language') }}",
+            url: "",
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },

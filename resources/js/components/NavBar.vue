@@ -41,11 +41,11 @@
                     routeName="frontend.service"
                     :active="route().current('frontend.service')"
                 />
-                <NavItem
+<!--                <NavItem
                     label="SHIFT"
                     routeName="frontend.shift"
                     :active="route().current('frontend.shift')"
-                />
+                />-->
                 <NavItem
                     label="Contact Us"
                     routeName="frontend.contact"

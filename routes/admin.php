@@ -47,7 +47,7 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
 
 //====================Admin Authentication=========================
 
-Route::middleware('setLanguage')->group(function () {
+
     Route::get('admin/login', [AdminLoginController::class, 'showLoginForm'])->name('login.admin');
     Route::post('admin/login', [AdminLoginController::class, 'login'])->name('admin.login');
     Route::get('admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
@@ -94,12 +94,9 @@ Route::middleware('setLanguage')->group(function () {
         //Custom Page
         Route::group(['prefix' => 'cpage', 'as' => 'cpage.'], function () {
             Route::get('/', [CustomPageController::class, 'index'])->name('index');
-            // Route::get('create', [CustomPageController::class, 'create'])->name('create');
-            // Route::post('store', [CustomPageController::class, 'store'])->name('store');
             Route::get('{id}/view', [CustomPageController::class, 'view'])->name('view');
             Route::get('{id}/edit', [CustomPageController::class, 'edit'])->name('edit');
             Route::post('{id}/update', [CustomPageController::class, 'update'])->name('update');
-            // Route::get('{id}/delete', [CustomPageController::class, 'getDelete'])->name('delete');
         });
 
 
@@ -114,24 +111,8 @@ Route::middleware('setLanguage')->group(function () {
             Route::get('{id}/delete', [FaqController::class, 'delete'])->name('delete');
         });
 
-        //Testimonial
-        Route::group(['prefix' => 'testimonial', 'as' => 'testimonial.'], function () {
-            Route::get('/', 'TestimonialController@index')->name('index');
-            Route::get('/create', 'TestimonialController@create')->name('create');
-            Route::post('/store', 'TestimonialController@store')->name('store');
-            Route::get('{id}/edit', 'TestimonialController@edit')->name('edit');
-            Route::post('{id}/update', 'TestimonialController@update')->name('update');
-            // Route::get('{id}/delete', 'TestimonialController@delete')->name('delete');
-            Route::get('{id}/delete', 'TestimonialController@delete')->name('delete');
-            Route::get('{id}/view', 'TestimonialController@view')->name('view');
-        });
 
-        // Account Setting
-        // Route::get('account', ['as'=>'account','uses'=>'AccountController@account']);
-        // Route::get('edit-account', ['as'=>'edit.account','uses'=>'AccountController@editAccount']);
-        // Route::post('update-account', ['as'=>'update.account','uses'=>'AccountController@updateAccount']);
-        // Route::get('change-password', ['as'=>'change.password','uses'=>'AccountController@changePassword']);
-        // Route::post('update-password', ['as'=>'update.password','uses'=>'AccountController@updatePassword']);
+
 
 
         // Setting
@@ -145,7 +126,7 @@ Route::middleware('setLanguage')->group(function () {
         Route::post('update-tex-setting', [AdminSettingsController::class, 'updateTaxSetting'])->name('update.tax.setting');
         Route::post('update-email-setting', [AdminSettingsController::class, 'updateEmailSetting'])->name('update.email.setting');
 
-   
+
 
         // Users
         Route::get('roles', [RolesController::class, 'index'])->name('roles.index');
@@ -164,38 +145,9 @@ Route::middleware('setLanguage')->group(function () {
         Route::get('/{id}/password-edit', [UserController::class, 'passwordEdit'])->name('user.password.edit');
         Route::post('/{id}/password-update', [UserController::class, 'passwordUpdate'])->name('user.password.update');
         Route::post('/{id}/update', [UserController::class, 'update'])->name('user.update');
-        // Route::get('/{id}/destroy', [UserController::class, 'destroy'])->name('user.destroy');
-
-        // Route::resource('roles', RolesController::class);
-        // Route::resource('permissions', PermissionsController::class);
-
-        Route::get('edit-user/{id}', [UserController::class, 'editUser'])->name('edit.user');
-        Route::post('update-user', [UserController::class, 'updateUser'])->name('update.user');
-        Route::get('view-user/{id}', [UserController::class, 'viewUser'])->name('view.user');
-        Route::get('change-user-plan/{id}', [UserController::class, 'ChangeUserPlan'])->name('change.user.plan');
-        Route::post('update-user-plan', [UserController::class, 'UpdateUserPlan'])->name('update.user.plan');
-        Route::get('update-status', [UserController::class, 'updateStatus'])->name('update.status');
-        Route::get('active-user/{id}', [UserController::class, 'activeStatus'])->name('update.active-user');
-        Route::get('delete-user', [UserController::class, 'deleteUser'])->name('delete.user');
-        Route::get('login-as/{id}', [UserController::class, 'authAs'])->name('login-as.user');
-        Route::get('user/trash-list', [UserController::class, 'getTrashList'])->name('user.trash-list');
 
 
-        // Customers
-        Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
-            Route::get('/', [CustomerController::class, 'index'])->name('index');
-            Route::get('create', [CustomerController::class, 'create'])->name('create');
-            Route::post('store', [CustomerController::class, 'store'])->name('store');
-            Route::get('{id}/edit', [CustomerController::class, 'edit'])->name('edit');
-            Route::post('{id}/update', [CustomerController::class, 'update'])->name('update');
-            Route::get('{id}/view', [CustomerController::class, 'view'])->name('view');
-            Route::get('{id}/plan', [CustomerController::class, 'getPlan'])->name('plan');
-            Route::get('{id}/delete', [CustomerController::class, 'delete'])->name('delete');
-            Route::post('update-password', [CustomerController::class, 'updatePassword'])->name('password.change');
-            Route::post('update-plan', [CustomerController::class, 'changePlan'])->name('plan.change');
-        });
 
- 
 
         // admin profile
         Route::get('profile', [DashboardController::class, 'adminProfile'])->name('profile');
@@ -309,4 +261,4 @@ Route::middleware('setLanguage')->group(function () {
             Route::get('{id}/invoic-download', [TransactionController::class, 'invoiceDownload'])->name('invoice');
         });
     });
-});
+

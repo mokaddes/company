@@ -15,13 +15,7 @@ class SetLanguage
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $localeLanguage = Session::get('languageName');
-
-        if (! isset($localeLanguage)) { 
-            App::setLocale(geDefaultLanguage()->iso_code);
-        } else {
-            App::setLocale($localeLanguage);
-        }
+        App::setLocale('en');
 
         return $next($request);
     }

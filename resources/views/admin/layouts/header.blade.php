@@ -19,32 +19,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        {{-- <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                <i class="fas fa-expand-arrows-alt"></i>
-            </a>
-        </li> --}}
-        @php
-            $lang_code = checkFrontLanguageSession() ?? geDefaultLanguage()->iso_code;
-        @endphp
 
-        <li class="nav-link">
-            <div class="dropdown">
-                <a class="dropdown-toggle px-0 text-light" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-expanded="false">
-                    <img class="flag" src="{{getIcon(getFlagByIsoCode($lang_code))}}" alt="{{ getLanguageByKey($lang_code) }}" style="height: 25px">
-                    {{ getLanguageByKey($lang_code) }}
-                </a>
-                <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuLink">
-                    @foreach (getAllLanguageWithFullData() as $key => $language)
-                    <li class="languageSelection m-2" data-prefix-value="{{ $language->iso_code }}">
-                        <img class="flag" src="{{ getIcon($language->flag) }}" alt="{{ $language->name }}" style="height: 25px">
-                        <span style="cursor: pointer;">{{ $language->name }}</span>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <span class="image">

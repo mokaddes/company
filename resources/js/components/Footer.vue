@@ -11,7 +11,7 @@
                     <NavItem label="Work" routeName="frontend.work" />
                     <NavItem label="News & Views" routeName="frontend.blog" />
                     <NavItem label="Services" routeName="frontend.service" />
-                    <NavItem label="SHIFT" routeName="frontend.shift" />
+<!--                    <NavItem label="SHIFT" routeName="frontend.shift" />-->
                     <NavItem label="Contact Us" routeName="frontend.contact" />
                 </div>
                 <p class="font-CheilRoman mt-4 text-sm">
