@@ -61,7 +61,7 @@
         </div>
 
         <!-- Mobile Menu Component -->
-        <MobileMenu @close="toggleMobileMenu" />
+        <MobileMenu v-if="isMobileMenuOpen" @close="toggleMobileMenu" />
     </nav>
 </template>
 
