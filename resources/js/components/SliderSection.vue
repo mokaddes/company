@@ -5,7 +5,7 @@
 
                 <!-- Mobile Video -->
                 <video
-                    src="assets/images/coverVideoV2.mp4"
+                    :src="asset('assets/images/coverVideoMO.mp4')"
                     class="block lg:hidden w-full h-full object-cover"
                     autoplay
                     loop
@@ -15,7 +15,7 @@
 
                 <!-- Desktop Video -->
                 <video
-                    src="assets/images/coverVideoMO.mp4"
+                    :src="asset('assets/images/coverVideoMO.mp4')"
                     class="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full lg:w-full object-cover"
                     autoplay
                     loop
@@ -32,8 +32,7 @@
                         height="410"
                         decoding="async"
                         style="color: transparent;"
-                        srcset="assets/images/Slats.png 1x, assets/images/Slats.png&w=1920&q=75 2x"
-                        src="assets/images/Slats.png&w=1920&q=75"
+                        :src="asset('assets/images/Slats.png')"
                     >
                 </div>
 
@@ -46,8 +45,7 @@
                         height="410"
                         decoding="async"
                         style="color: transparent;"
-                        srcset="assets/images/Slats.png 1x, assets/images/Slats.png&w=1920&q=75 2x"
-                        src="assets/images/Slats.png&w=1920&q=75"
+                        :src="asset('assets/images/Slats.png')"
                     >
                 </div>
             </div>
@@ -61,8 +59,7 @@
                     height="410"
                     decoding="async"
                     style="color: transparent;"
-                    srcset="assets/images/Slats.png 1x, assets/images/Slats.png&w=1920&q=75 2x"
-                    src="assets/images/Slats.png&w=1920&q=75"
+                    :src="asset('assets/images/Slats.png')"
                 >
             </div>
         </div>

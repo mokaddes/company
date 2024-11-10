@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="ml-[min(7vw,50px)] mt-[min(8.75vw,63px)] gap-[min(4.86vw,35px)] flex flex-col text-[#B3B3B3]">
-            <div class="gap-[40px] hidden lg:flex">
+            <div class="gap-[40px]  lg:flex">
                 <NavItem
                     label="About Us"
                     routeName="frontend.about"
