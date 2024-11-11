@@ -220,10 +220,10 @@ if (!function_exists('getLogo')) {
             if(file_exists($ppath)){
               return asset($path);
             } else {
-                return asset('assets/images/default-icon.png');
+                return asset('assets/default.png');
            }
         }else{
-            return asset('assets/images/default-icon.png');
+            return asset('assets/default.png');
         }
     }
 }

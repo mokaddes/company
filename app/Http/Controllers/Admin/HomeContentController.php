@@ -19,6 +19,7 @@ class HomeContentController extends Controller
 
     public function update(Request $request)
     {
+        dd($request->all());
 
         $this->validate($request, [
             'banner_heading_en'          => 'required|max:60',
@@ -107,16 +108,29 @@ class HomeContentController extends Controller
             $home->col21_gr = $request->testimonial_heading_gr;
 
             if ($request->image) {
-                $banner_image = $request->file('image');
-                $base_name = preg_replace('/\..+$/', '', $banner_image->getClientOriginalName());
-                $base_name = explode(' ', $base_name);
-                $base_name = implode('-', $base_name);
+                $banner_file = $request->file('image');
+                $base_name = preg_replace('/\..+$/', '', $banner_file->getClientOriginalName());
+                $base_name = implode('-', explode(' ', $base_name));
                 $base_name = Str::lower($base_name);
-                $image_name = $base_name . "-" . uniqid() . "." . $banner_image->getClientOriginalExtension();
+                $file_extension = $banner_file->getClientOriginalExtension();
+                $file_type = $banner_file->getMimeType();
+
+                // Check if the file is an image or a video
+                if (str_contains($file_type, 'image')) {
+                    $home->file_type = 'image';
+                } elseif (str_contains($file_type, 'video')) {
+                    $home->file_type = 'video';
+                }
+
+                // Generate a unique name for the file
+                $file_name = $base_name . "-" . uniqid() . "." . $file_extension;
                 $file_path = '/assets/uploads/banner';
-                $banner_image->move(public_path($file_path), $image_name);
-                $home->image = $file_path . '/' . $image_name;
+                $banner_file->move(public_path($file_path), $file_name);
+
+                // Save the path to the file in the database
+                $home->image = $file_path . '/' . $file_name;
             }
+
             if ($request->faq_image) {
                 $banner_image = $request->file('faq_image');
                 $base_name = preg_replace('/\..+$/', '', $banner_image->getClientOriginalName());

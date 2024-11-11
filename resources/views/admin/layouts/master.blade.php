@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{ getIcon($setting->favicon) }}" />
+    <link rel="icon" type="image/png" href="{{ $setting->favicon }}" />
     {{-- admin not allow for robots --}}
     <meta name="robots" content="noindex, nofollow">
 
@@ -44,7 +44,7 @@
             object-fit: contain;
         }
         .buttons-copy {
-            margin-left: 10px !important; 
+            margin-left: 10px !important;
         }
         .buttons-html5 {
             background: linear-gradient(105deg, #5de0e6, #306ab7) !important;
@@ -60,7 +60,7 @@
             border-radius: 4px !important;
         }
     </style>
-    
+
     @stack('style')
     <link href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -109,8 +109,8 @@
         // Initialize DataTable with language settings and additional configurations
         $(function () {
             $("#dataTables").DataTable({
-                "responsive": true, 
-                "lengthChange": true, 
+                "responsive": true,
+                "lengthChange": true,
                 "autoWidth": false,
                 "language": {
                     "info": dataTables_info,

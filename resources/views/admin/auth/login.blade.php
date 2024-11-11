@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $settings->site_name }}</title>
-    @include('frontend.layouts.style')
+    @include('admin.includes.style')
 </head>
 <style>
     .signin_form {
