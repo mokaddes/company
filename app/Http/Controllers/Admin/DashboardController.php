@@ -25,14 +25,6 @@ class DashboardController extends Controller
     {
         $data['title'] = __('messages.common.dashboard');
         $data['users'] = User::get();
-        $data['cards'] = Card::count();
-
-        $data['userCards'] = Card::with(['user' => function ($query) {
-            return $query->where('status', 1);
-        }])->withCount('analytics')->orderBy('id', 'desc')->take(20)->get();
-
-        $data['plan'] = Plan::count();
-        $data['totalTransaction'] = Transaction::where('status', 1)->sum('amount');
         return view('admin.dashboard',compact('data'));
     }
 

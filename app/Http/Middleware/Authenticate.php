@@ -22,9 +22,9 @@ class Authenticate extends Middleware
             return route('admin.login');
         }
 
-        if (!$request->expectsJson()) {
-            return route('login');
-        }
+        return route('login');
+
+
 
     }
 }

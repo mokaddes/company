@@ -5,7 +5,7 @@
 
                 <!-- Mobile Video -->
                 <video
-                    :src="asset('assets/images/coverVideoMO.mp4')"
+                    :src="banner_video"
                     class="block lg:hidden w-full h-full object-cover"
                     autoplay
                     loop
@@ -15,7 +15,7 @@
 
                 <!-- Desktop Video -->
                 <video
-                    :src="asset('assets/images/coverVideoMO.mp4')"
+                    :src="banner_video"
                     class="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full lg:w-full object-cover"
                     autoplay
                     loop
@@ -68,6 +68,12 @@
 
 <script>
 export default {
+    props: {
+        banner_video: {
+            type: String,
+            required: true,
+        },
+    },
     name: "SliderSection",
 };
 </script>

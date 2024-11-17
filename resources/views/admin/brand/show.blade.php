@@ -62,7 +62,7 @@
                                 class="fas fa-arrow-left"></i>&nbsp; {{ __('back') }}</a>
                     </div>
                     <div class="card-body table-responsive p-0">
-                        <x-backend.ad-manage :ads="$ads" />
+
                     </div>
                 </div>
             </div>

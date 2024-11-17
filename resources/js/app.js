@@ -1,5 +1,14 @@
 import './bootstrap';
 import '../css/app.css';
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
+toastr.options = {
+    closeButton: true,
+    progressBar: true,
+    positionClass: "toast-top-right",
+    timeOut: "3000",
+};
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -7,6 +16,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import globalMethods from './globalMethods';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

@@ -38,7 +38,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/work', [HomeController::class, 'work'])->name('frontend.work');
 Route::get('/work/{slug}', [HomeController::class, 'workDetail'])->name('frontend.work.detail');
 Route::get('/contact', [HomeController::class, 'contact'])->name('frontend.contact');
-Route::post('/contact', [HomeController::class, 'contactSubmit'])->name('frontend.contact.submit');
+Route::post('/contact/submit', [HomeController::class, 'contactSubmit'])->name('frontend.contact.submit');
 Route::get('/blog', [HomeController::class, 'blog'])->name('frontend.blog');
 Route::get('/blog/{slug}', [HomeController::class, 'blogDetail'])->name('frontend.blog.detail');
 Route::get('/service', [HomeController::class, 'service'])->name('frontend.service');

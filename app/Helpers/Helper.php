@@ -159,10 +159,10 @@ if (!function_exists('getPhoto')) {
             if(file_exists($ppath)){
               return asset($path);
             } else {
-                return asset('assets/img/card/personal.png');
+                return asset('assets/default.png');
            }
         }else{
-            return asset('assets/img/card/personal.png');
+            return asset('assets/default.png');
         }
     }
 }
@@ -478,6 +478,32 @@ function uploadImage(?object $file, string $path, int $width, int $height): stri
     $blank_img->insert($updated_img, 'center');
     $blank_img->save(public_path('/uploads/' . $path . '/') . $fileName);
     return "uploads/$path/" . $fileName;
+}
+
+function uploadGeneralFile($banner_file, $home, string $file_path, $old = null): array
+{
+    if (!empty($old) && file_exists(public_path($old))) {
+        unlink(public_path($old));
+    }
+    $base_name = preg_replace('/\..+$/', '', $banner_file->getClientOriginalName());
+    $base_name = implode('-', explode(' ', $base_name));
+    $base_name = Str::lower($base_name);
+    $file_extension = $banner_file->getClientOriginalExtension();
+    $file_type = $banner_file->getMimeType();
+
+    if (str_contains($file_type, 'image')) {
+        $file_type = 'image';
+    } elseif (str_contains($file_type, 'video')) {
+        $file_type = 'video';
+    }else{
+        $file_type = 'file';
+    }
+
+    // Generate a unique name for the file
+    $file_name = $base_name . "-" . uniqid() . "." . $file_extension;
+
+    $banner_file->move(public_path($file_path), $file_name);
+    return array('type' => $file_type, 'path' => "$file_path/$file_name");
 }
 
 if (!function_exists('checkCustomPage')) {

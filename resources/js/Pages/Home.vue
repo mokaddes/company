@@ -1,11 +1,14 @@
 <template>
+    <Head>
+        <title>Home</title>
+    </Head>
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
             <main class="w-full mx-auto">
-                <SliderSection />
-                <AboutUsSection />
-                <ClientsSection />
-                <ContactSection />
+                <SliderSection v-if="content.banner_section === 1" :banner_video="content.banner_video" />
+                <AboutUsSection v-if="content.about_section === 1" :content="content" />
+                <ClientsSection v-if="content.client_section === 1" :client_title="content.client_title" :clients="clients" />
+                <ContactSection v-if="content.contact_section === 1" :content="content"/>
             </main>
         </div>
     </Layout>
@@ -17,10 +20,12 @@ import SliderSection from "@/Components/SliderSection.vue";
 import AboutUsSection from "@/Components/AboutUsSection.vue";
 import ClientsSection from "@/Components/ClientsSection.vue";
 import ContactSection from "@/Components/ContactSection.vue";
+import { Head } from '@inertiajs/vue3';
 
 export default {
+    props: ["content", "clients"],
     name: 'Home',
-    components: {Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection},
+    components: {Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection, Head},
 
 
 };

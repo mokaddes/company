@@ -127,7 +127,7 @@
         </div>
     </div>
     <!-- js file -->
-    @include('frontend.layouts.script')
+    @include('admin.includes.script')
 </body>
 
 </html>

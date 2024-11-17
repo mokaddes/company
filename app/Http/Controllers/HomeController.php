@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendContact;
+use App\Models\ClientImage;
 use App\Models\Faq;
 use App\Models\User;
 use App\Models\Card;
@@ -30,7 +31,17 @@ class HomeController extends Controller
     public function index()
     {
         // inertia view welcome
-        return inertia('Home');
+        $content = HomeContent::first();
+        $content->banner_video = asset($content->image);
+        $content->footer_image = asset($content->footer_image);
+        $clients = ClientImage::get()->map(function ($client) {
+            $client->image = asset($client->image);
+            return $client;
+        });
+        return inertia('Home',[
+            'content' => $content,
+            'clients' => $clients
+        ]);
     }
 
     public function about()
@@ -65,6 +76,32 @@ class HomeController extends Controller
     {
         // inertia view contact
         return inertia('Contact');
+    }
+
+    public function contactSubmit(Request $request)
+    {
+        // validate request
+        $request->validate([
+            'firstName' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+
+        // store contact
+        $contact = new Contact();
+        $contact->first_name = $request->firstName;
+        $contact->last_name = $request->lastName;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->message = $request->message;
+        $contact->save();
+
+        // send email
+//        Mail::to(Setting::first()->email)->send(new SendContact($contact));
+
+        // redirect back
+        Toastr::success('Message sent successfully');
+        return response()->json(['success' => true]);
     }
 
     public function blog()

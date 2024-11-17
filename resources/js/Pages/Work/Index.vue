@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>Work</title>
+    </Head>
     <Layout>
         <div class="mx-auto w-full max-w-[1920px]  bg-black flex flex-col justify-center overflow-hidden relative">
         <!-- Slats Background Image for Large Screens -->
@@ -61,11 +64,13 @@
 <script>
 import WorkCard from '@/components/WorkCard.vue';
 import Layout from "@/Layouts/Layout.vue";
+import { Head } from '@inertiajs/vue3';
 
 export default {
     components: {
         Layout,
         WorkCard,
+        Head
     },
 };
 </script>

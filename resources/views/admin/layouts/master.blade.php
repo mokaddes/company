@@ -162,18 +162,21 @@
 
     {{-- delete sweetalert2 --}}
     <script>
-        $(document).on("click", "#deleteData", function(e) {
+        $(document).on("click", "#deleteData, .deleteData", function(e) {
             e.preventDefault();
-            var link = $(this).attr("href");
+            let link = $(this).attr("href");
+            let title = $(this).data("title") ?? 'Are you want to delete?';
+            let text = $(this).data("text") ?? 'Once Delete, This will be Permanently Delete!';
+            let confirmText = $(this).data("confirm-text") ?? 'Yes, Delete it!';
             Swal.fire({
-                title: "{{__('messages.common.want_to_delete')}}",
-                text: "{{__('messages.common.permanently_delete')}}",
+                title: title,
+                text: text,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#8bc34a',
                 cancelButtonColor: '#d33',
-                cancelButtonText: "{{__('messages.common.cancel')}}",
-                confirmButtonText: "{{__('messages.common.yes_delete')}}",
+                cancelButtonText: "Cancel",
+                confirmButtonText: confirmText,
             }).then((willDelete) => {
                 if (willDelete.isConfirmed) {
                     window.location.href = link;

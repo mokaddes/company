@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Franchises Available Now'),
+    'name' => env('APP_NAME', 'Proxima Digital'),
 
     /*
     |--------------------------------------------------------------------------

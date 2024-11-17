@@ -15,7 +15,7 @@
                     <NavItem label="Contact Us" routeName="frontend.contact" />
                 </div>
                 <p class="font-CheilRoman mt-4 text-sm">
-                    © 2024 Cheil UK <inertia-link :href="route('frontend.about')">Legal Stuff</inertia-link>
+                    © {{ currentYear }} {{ copyright_text }}
                 </p>
             </div>
         </div>
@@ -34,7 +34,13 @@ export default {
         logo() {
             return this.$page.props.setting.logo;
         },
-    }
+    },
+    data() {
+        return {
+            currentYear: new Date().getFullYear(),
+            copyright_text: this.$page.props.setting.copyright_text,
+        };
+    },
 }
 </script>
 

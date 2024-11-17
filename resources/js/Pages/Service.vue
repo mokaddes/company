@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>Service</title>
+    </Head>
     <Layout>
         <div class="w-full relative flex flex-col justify-center">
             <section
@@ -102,9 +105,10 @@
 <script>
 import Layout from "@/Layouts/Layout.vue";
 import ServiceIconBox from "@/components/ServiceIconBox.vue";
+import { Head } from '@inertiajs/vue3';
 
 export default {
     name: 'Service',
-    components: {ServiceIconBox, Layout},
+    components: {ServiceIconBox, Layout, Head},
 };
 </script>

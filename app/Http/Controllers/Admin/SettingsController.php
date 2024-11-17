@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use DateTimeZone;
-use App\Mail\TestMail;
-use App\Models\Setting;
-use App\Models\Currency;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Validator;
 
 class SettingsController extends Controller
 {
@@ -34,44 +28,10 @@ class SettingsController extends Controller
     // Setting
     public function general()
     {
-        $data['title']  = 'Settings';
-        $timezonelist   = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
-        $currencies     = Currency::get();
-        $settings       = Setting::first();
-        $config         = DB::table('config')->get();
+        $data['title'] = 'Settings';
+        $data['settings'] = Setting::first();
 
-        $email_configuration = [
-            'driver'        => env('MAIL_MAILER', 'smtp'),
-            'host'          => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port'          => env('MAIL_PORT', 587),
-            'username'      => env('MAIL_USERNAME'),
-            'password'      => env('MAIL_PASSWORD'),
-            'encryption'    => env('MAIL_ENCRYPTION', 'tls'),
-            'address'       => env('MAIL_FROM_ADDRESS'),
-            'name'          => env('MAIL_FROM_NAME', $settings->site_name),
-        ];
-
-        $google_configuration = [
-            'GOOGLE_ENABLE'         => env('GOOGLE_ENABLE', ''),
-            'GOOGLE_CLIENT_ID'      => env('GOOGLE_CLIENT_ID', ''),
-            'GOOGLE_CLIENT_SECRET'  => env('GOOGLE_CLIENT_SECRET', ''),
-            'GOOGLE_REDIRECT'       => env('GOOGLE_REDIRECT', '')
-        ];
-
-
-
-        $recaptcha_configuration = [
-            'RECAPTCHA_ENABLE'      => env('RECAPTCHA_ENABLE', ''),
-            'RECAPTCHA_SITE_KEY'    => env('RECAPTCHA_SITE_KEY', ''),
-            'RECAPTCHA_SECRET_KEY'  => env('RECAPTCHA_SECRET_KEY', '')
-        ];
-
-        $settings['email_configuration']        = $email_configuration;
-        $settings['google_configuration']       = $google_configuration;
-        $settings['recaptcha_configuration']    = $recaptcha_configuration;
-
-
-        return view('admin.settings', compact('data', 'settings', 'timezonelist', 'currencies', 'config'));
+        return view('admin.settings', $data);
     }
 
     // Update Setting
@@ -81,252 +41,117 @@ class SettingsController extends Controller
 
         DB::beginTransaction();
         try {
-            $setting                    = Setting::find(1);
-            $setting->google_key        = $request->google_key;
+            $setting = Setting::find(1);
+            $setting->google_key = $request->google_key;
             $setting->google_analytics_id = $request->google_analytics_id;
-            $setting->site_name         = $request->site_name;
-            $setting->email             = $request->email;
-            $setting->support_email     = $request->support_email;
-            $setting->phone_no          = $request->phone_no;
+            $setting->site_name = $request->site_name;
             $setting->seo_meta_description = $request->seo_meta_desc;
-            $setting->seo_keywords      = $request->meta_keywords;
+            $setting->seo_keywords = $request->meta_keywords;
             $setting->tawk_chat_bot_key = $request->tawk_chat_bot_key;
-            $setting->application_type  = $request->application_type;
-            $setting->facebook_client_id  = $request->facebook_client_id;
-            $setting->facebook_client_secret  = $request->facebook_client_secret;
-            $setting->google_client_id  = $request->google_client_id;
-            $setting->google_client_secret  = $request->google_client_secret;
-            // $setting->facebook_callback_url  = URL::to('/').'/auth/facebook/callback';
-            // $setting->google_callback_url  = URL::to('/').'/auth/google/callback';
-            $setting->name              = trim($request->mail_sender, " ");
-            $setting->address           = trim($request->mail_address, " ");
+            $setting->app_mode = $request->app_mode;
+            $setting->copyright_text = $request->copyright_text;
 
-            if ($request->mail_driver) {
-                $setting->driver            = trim($request->mail_driver, " ");
+            $setting->email = $request->email;
+            $setting->support_email = $request->email;
+            $setting->phone_no = $request->phone_no;
+            $setting->office_address = $request->office_address;
+            $setting->address = $request->office_address;
+            $setting->contact_title = $request->contact_title;
+            $setting->contact_subtitle = $request->contact_subtitle;
+            $setting->contact_form_title = $request->contact_form_title;
+
+            $favicon = $request->file('favicon');
+            if (!empty($favicon)) {
+                $uploadImage = uploadGeneralFile($favicon, $setting, 'favicon', $setting->favicon);
+                $setting->favicon = $uploadImage['path'] ?? '';
             }
-            if ($request->mail_host) {
-                $setting->host              = trim($request->mail_host, " ");
+            $site_logo = $request->file('site_logo');
+            if (!empty($site_logo)) {
+                $uploadImage = uploadGeneralFile($site_logo, $setting, 'site_logo', $setting->site_logo);
+                $setting->site_logo = $uploadImage['path'] ?? '';
             }
-            if ($request->mail_port) {
-                $setting->port              = trim($request->mail_port, " ");
-            }
-            if ($request->mail_encryption) {
-                $setting->encryption        = trim($request->mail_encryption, " ");
-            }
-            if ($request->mail_username) {
-                $setting->username          = trim($request->mail_username, " ");
-            }
-            if ($request->mail_password) {
-                $setting->password          = trim($request->mail_password, " ");
+            $seo_image = $request->file('seo_image');
+            if (!empty($seo_image)) {
+                $uploadImage = uploadGeneralFile($seo_image, $setting, 'seo_image', $setting->seo_image);
+                $setting->seo_image = $uploadImage['path'] ?? '';
             }
 
-            $setting->status            = 1;
-            $setting->app_mode          = $request->app_mode;
-            $setting->facebook_url      = $request->facebook_url;
-            $setting->youtube_url       = $request->youtube_url;
-            $setting->twitter_url       = $request->twitter_url;
-            $setting->linkedin_url      = $request->linkedin_url;
-            $setting->telegram_url      = $request->telegram_url;
-            $setting->whatsapp_number   = $request->whatsapp_number;
-            $setting->ios_app_url       = $request->ios_app_url;
-            $setting->android_app_url   = $request->android_app_url;
-            $setting->email             = $request->email;
-            $setting->phone_no          = $request->phone_no;
-            $setting->office_address    = $request->office_address;
-            $setting->map_link          = $request->map_link;
-            $setting->instagram_url     = $request->instagram_url;
-            $setting->invoice_footer    = $request->invoice_footer;
-            $setting->invoice_footer_de = $request->invoice_footer_de;
-            $setting->tax               = $request->tax;
-            // $setting->pinterest_url     = $request->pinterest_url;
-            // $setting->main_motto        = $request->main_motto;
-            if ($request->favicon) {
-                $favicon = $request->file('favicon');
-                // dd($favicon);
-                $base_name = preg_replace('/\..+$/', '', $favicon->getClientOriginalName());
-                $base_name = explode(' ', $base_name);
-                $base_name = implode('-', $base_name);
-                $base_name = Str::lower($base_name);
-                $image_name = $base_name . "-" . uniqid() . "." . $favicon->getClientOriginalExtension();
-                $file_path = '/assets/uploads/icon';
-                $favicon->move(public_path($file_path), $image_name);
-                $setting->favicon = $file_path . '/' . $image_name;
-                // $favi_icon = '/assets/uploads/icon/' . 'IMG-' . time() . '.' . $request->favi_icon->extension();
-                // $request->favi_icon->move(public_path('assets/uploads/icon'), $favi_icon);
-                // $setting->favicon    = $favi_icon;
+            $footer_image = $request->file('footer_image');
+            if (!empty($footer_image)) {
+                $uploadImage = uploadGeneralFile($footer_image, $setting, 'footer_image', $setting->footer_image);
+                $setting->footer_image = $uploadImage['path'] ?? '';
             }
-            if ($request->site_logo) {
-                $site_logo = $request->file('site_logo');
-                $base_name = preg_replace('/\..+$/', '', $site_logo->getClientOriginalName());
-                $base_name = explode(' ', $base_name);
-                $base_name = implode('-', $base_name);
-                $base_name = Str::lower($base_name);
-                $image_name = $base_name . "-" . uniqid() . "." . $site_logo->getClientOriginalExtension();
-                $file_path = '/assets/uploads/logo';
-                $site_logo->move(public_path($file_path), $image_name);
-                $setting->site_logo = $file_path . '/' . $image_name;
 
-                // $site_logo = '/assets/uploads/logo/' . 'IMG-' . time() . '.' . $request->site_logo->extension();
-                // $request->site_logo->move(public_path('assets/uploads/logo'), $site_logo);
-                // $setting->site_logo    = $site_logo;
+            $contact_image = $request->file('contact_image');
+            if (!empty($contact_image)) {
+                $uploadImage = uploadGeneralFile($contact_image, $setting, 'contact_image', $setting->contact_image);
+                $setting->contact_image = $uploadImage['path'] ?? '';
             }
-            if ($request->seo_image) {
-                $seo_image = $request->file('seo_image');
-                $base_name = preg_replace('/\..+$/', '', $seo_image->getClientOriginalName());
-                $base_name = explode(' ', $base_name);
-                $base_name = implode('-', $base_name);
-                $base_name = Str::lower($base_name);
-                $image_name = $base_name . "-" . uniqid() . "." . $seo_image->getClientOriginalExtension();
-                $file_path = '/assets/uploads/logo';
-                $seo_image->move(public_path($file_path), $image_name);
-                $setting->seo_image = $file_path . '/' . $image_name;
 
-                // $seo_image = '/assets/uploads/logo/' . 'IMG-' . time() . '.' . $request->seo_image->extension();
-                // $request->seo_image->move(public_path('assets/uploads/logo'), $seo_image);
-                // $setting->seo_image    = $seo_image;
-            }
-            // if ($request->admin_logo) {
-            //     $admin_logo = $request->file('admin_logo');
-            //     $base_name = preg_replace('/\..+$/', '', $admin_logo->getClientOriginalName());
-            //     $base_name = explode(' ', $base_name);
-            //     $base_name = implode('-', $base_name);
-            //     $base_name = Str::lower($base_name);
-            //     $image_name = $base_name . "-" . uniqid() . "." . $admin_logo->getClientOriginalExtension();
-            //     $file_path = '/assets/uploads/logo';
-            //     $admin_logo->move(public_path($file_path), $image_name);
-            //     $setting->admin_logo = $file_path . '/' . $image_name;
-
-                // $site_logo = '/assets/uploads/logo/' . 'IMG-' . time() . '.' . $request->site_logo->extension();
-                // $request->site_logo->move(public_path('assets/uploads/logo'), $site_logo);
-                // $setting->site_logo    = $site_logo;
-            // }
             $setting->update();
 
-            $double_site_name = str_replace('"', '', trim($request->site_name, '"'));
-            $space_name = str_replace("'", '', trim($double_site_name, "'"));
-            $site_name = str_replace(" ", '', trim($space_name, " "));
 
-            // dd($request->share_content);
-            if ($site_name) {
-            DB::table('config')->where('config_key', 'site_name')->update([
-                'config_value' => $site_name
-            ]);
-            }
-            if ($request->timezone) {
-            DB::table('config')->where('config_key', 'timezone')->update([
-                'config_value' => $request->timezone,
-            ]);
-            }
-            if ($request->currency) {
-            DB::table('config')->where('config_key', 'currency')->update([
-                'config_value' => $request->currency,
-            ]);
-            }
-            if ($request->paypal_mode) {
-            DB::table('config')->where('config_key', 'paypal_mode')->update([
-                'config_value' => $request->paypal_mode,
-            ]);
-            }
-            if ($request->paypal_client_key) {
-            DB::table('config')->where('config_key', 'paypal_client_id')->update([
-                'config_value' => $request->paypal_client_key,
-            ]);
-            }
-            if ($request->paypal_secret) {
-            DB::table('config')->where('config_key', 'paypal_secret')->update([
-                'config_value' => $request->paypal_secret,
-            ]);
-            }
-            if ($request->stripe_publishable_key) {
-            DB::table('config')->where('config_key', 'stripe_publishable_key')->update([
-                'config_value' => $request->stripe_publishable_key,
-            ]);
-            }
-            if ($request->stripe_secret) {
-            DB::table('config')->where('config_key', 'stripe_secret')->update([
-                'config_value' => $request->stripe_secret,
-            ]);
-            }
+            $app_name = str_replace('"', '', $request->site_name);
+            $app_name = str_replace(' ', '', $app_name);
 
-            // DB::table('config')->where('config_key', 'share_content')->update([
-            //     'config_value' => $request->share_content,
-            // ]);
-
-            // if($request->primary_image){
-            //     $primary_image = '/uploads/assets/elements/' . 'IMG-' . time() . '.' . $request->primary_image->extension();
-            //     $request->primary_image->move(public_path('/uploads/assets/elements'), $primary_image);
-            //     DB::table('config')->where('config_key', 'primary_image')->update([
-            //         'config_value' => $primary_image,
-            //     ]);
-            // }
-            // if($request->secondary_image){
-            //     $secondary_image = '/uploads/assets/' . 'IMG-' . time() . '.' . $request->secondary_image->extension();
-            //     $request->secondary_image->move(public_path('/uploads/assets/elements'), $secondary_image);
-            //     DB::table('config')->where('config_key', 'secondary_image')->update([
-            //         'config_value' => $secondary_image,
-            //     ]);
-            // }
-            // DB::table('config')->where('config_key', 'razorpay_key')->update([
-            //     'config_value' => $request->razorpay_client_key,
-            // ]);
-            // DB::table('config')->where('config_key', 'razorpay_secret')->update([
-            //     'config_value' => $request->razorpay_secret,
-            // ]);
-            // DB::table('config')->where('config_key', 'term')->update([
-            //     'config_value' => $request->term,
-            // ]);
-            // DB::table('config')->where('config_key', 'app_theme')->update([
-            //     'config_value' => $request->app_theme,
-            // ]);
-            // DB::table('config')->where('config_key', 'bank_transfer')->update([
-            //     'config_value' => $request->bank_transfer,
-            // ]);
-            // $app_name                = str_replace('"', '', $request->app_name);
-            // $app_name                = str_replace(' ', '', $app_name);
-            // $mailer                  = str_replace(" ", '', trim($request->mail_driver, " "));
-            // $host                    = str_replace(" ", '', trim($request->mail_host, " "));
-            // $port                    = str_replace(" ", '', trim($request->mail_port, " "));
-            // $username                = str_replace(" ", '', trim($request->mail_username, " "));
-            // $password                = str_replace(" ", '', trim($request->mail_password, " "));
-            // $encryption              = str_replace(" ", '', trim($request->mail_encryption, " "));
-            // $from_address            = str_replace(" ", '', trim($request->mail_address, " "));
-            // $from_name               = str_replace(" ", '', trim('"' . $request->mail_sender . '"', " "));
-            // $image_limit             = str_replace('"', '', $request->image_limit);
-            // $recaptcha_enable        = str_replace('"', '', $request->recaptcha_enable);
-            // $recaptcha_site_key      = str_replace('"', '', $request->recaptcha_site_key);
-            // $recaptcha_secret_key    = str_replace('"', '', $request->recaptcha_secret_key);
-            // $this->changeEnv([
-            //     'APP_NAME'               => '"'.$app_name.'"',
-            //     'TIMEZONE'               => $request->timezone,
-            //     'APP_TYPE'               => $request->app_type,
-            //     'COOKIE_CONSENT_ENABLED' => $request->cookie,
-            //     'MAIL_MAILER'            => $mailer,
-            //     'MAIL_HOST'              => $host,
-            //     'MAIL_PORT'              => $port,
-            //     'MAIL_USERNAME'          => $username,
-            //     'MAIL_PASSWORD'          => $password,
-            //     'MAIL_ENCRYPTION'        => $encryption,
-            //     'MAIL_FROM_ADDRESS'      => $from_address,
-            //     'MAIL_FROM_NAME'         => $from_name,
-            //     'GOOGLE_ENABLE'          => $request->google_auth_enable,
-            //     'GOOGLE_CLIENT_ID'       => $request->google_client_id,
-            //     'GOOGLE_CLIENT_SECRET'   => $request->google_client_secret,
-            //     'GOOGLE_REDIRECT'        => $request->google_redirect,
-            //     'SIZE_LIMIT'             => 1024,
-            //     'RECAPTCHA_ENABLE'       => $recaptcha_enable,
-            //     'RECAPTCHA_SITE_KEY'     => $recaptcha_site_key,
-            //     'RECAPTCHA_SECRET_KEY'   => $recaptcha_secret_key
-            // ]);
+            $app_mode = $request->app_mode == 'live' ? 'production' : 'local';
+            $this->changeEnv([
+                'APP_NAME' => '"' . $app_name . '"',
+                'APP_ENV' => $app_mode,
+            ]);
 
         } catch (\Exception $e) {
-            dd($e->getMessage());
             DB::rollback();
-            return redirect()->back()->with('error', __('messages.toastr.settings_update_error'));
+            dd($e);
+            Toastr::error('Setting update failed', 'Failed', ["positionClass" => "toast-top-right"]);
         }
 
         DB::commit();
-        Toastr::success(__('messages.toastr.settings_update_success'), 'Success', ["positionClass" => "toast-top-right"]);
+        Toastr::success('Setting updated successfully', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->back();
+    }
+
+    protected function changeEnv($data = array())
+    {
+        if (count($data) > 0) {
+
+            // Read .env-file
+            $env = file_get_contents(base_path() . '/.env');
+
+            // Split string on every " " and write into array
+            $env = preg_split('/\s+/', $env);
+
+            // Loop through given data
+            foreach ((array)$data as $key => $value) {
+
+                // Loop through .env-data
+                foreach ($env as $env_key => $env_value) {
+
+                    // Turn the value into an array and stop after the first split
+                    // So it's not possible to split e.g. the App-Key by accident
+                    $entry = explode("=", $env_value, 2);
+
+                    // Check, if new key fits the actual .env-key
+                    if ($entry[0] == $key) {
+                        // If yes, overwrite it with the new one
+                        $env[$env_key] = $key . "=" . $value;
+                    } else {
+                        // If not, keep the old one
+                        $env[$env_key] = $env_value;
+                    }
+                }
+            }
+
+            // Turn the array back to an String
+            $env = implode("\n", $env);
+
+            // And overwrite the .env with the new data
+            file_put_contents(base_path() . '/.env', $env);
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function taxSetting()
@@ -454,7 +279,6 @@ class SettingsController extends Controller
         }
 
 
-
         if ($request->hasFile('banner_photo')) {
             // __delete old image
             $old_data = DB::table('pages')->where('page_name', $id)->where('section_title', 'banner_photo')->first();
@@ -467,7 +291,7 @@ class SettingsController extends Controller
 
             // __add new image
             $banner_photo = $request->file('banner_photo');
-            $name  = time() . '.' . $banner_photo->getClientOriginalExtension();
+            $name = time() . '.' . $banner_photo->getClientOriginalExtension();
             Image::make($banner_photo)->save('assets/uploads/banner/' . $name);
             $banner_photo_path = 'assets/uploads/banner/' . $name;
             DB::table('pages')->where('page_name', $id)->where('section_title', 'banner_photo')->update(['section_content' => $banner_photo_path]);
@@ -475,7 +299,7 @@ class SettingsController extends Controller
 
         if ($request->hasFile('banner_video')) {
             $rules = [
-                'banner_video'          => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
+                'banner_video' => 'mimes:mpeg,ogg,mp4,webm,3gp,mov,flv,avi,wmv,ts|max:100040|required'
             ];
             $validator = Validator($request->all(), $rules);
 
@@ -502,7 +326,6 @@ class SettingsController extends Controller
         }
 
 
-
         if ($request->hasFile('what_photo')) {
             // __delete old image
             $old_data = DB::table('pages')->where('page_name', $id)->where('section_title', 'what_photo')->first();
@@ -515,7 +338,7 @@ class SettingsController extends Controller
 
             // __add new image
             $what_photo = $request->file('what_photo');
-            $name  = time() . '.' . $what_photo->getClientOriginalExtension();
+            $name = time() . '.' . $what_photo->getClientOriginalExtension();
             Image::make($what_photo)->save('assets/uploads/banner/' . $name);
 
             $what_photo_path = 'assets/uploads/banner/' . $name;
@@ -535,7 +358,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_1 = $request->file('feature_card_icon_1');
-            $name  = time() . '.' . $feature_card_icon_1->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_1->getClientOriginalExtension();
             Image::make($feature_card_icon_1)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_1_path = 'assets/uploads/banner/' . $name;
@@ -554,7 +377,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_2 = $request->file('feature_card_icon_2');
-            $name  = time() . '.' . $feature_card_icon_2->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_2->getClientOriginalExtension();
             Image::make($feature_card_icon_2)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_2_path = 'assets/uploads/banner/' . $name;
@@ -572,7 +395,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_3 = $request->file('feature_card_icon_3');
-            $name  = time() . '.' . $feature_card_icon_3->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_3->getClientOriginalExtension();
             Image::make($feature_card_icon_3)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_3_path = 'assets/uploads/banner/' . $name;
@@ -591,7 +414,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_4 = $request->file('feature_card_icon_4');
-            $name  = time() . '.' . $feature_card_icon_4->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_4->getClientOriginalExtension();
             Image::make($feature_card_icon_4)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_4_path = 'assets/uploads/banner/' . $name;
@@ -609,7 +432,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_5 = $request->file('feature_card_icon_5');
-            $name  = time() . '.' . $feature_card_icon_5->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_5->getClientOriginalExtension();
             Image::make($feature_card_icon_5)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_5_path = 'assets/uploads/banner/' . $name;
@@ -627,7 +450,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_6 = $request->file('feature_card_icon_6');
-            $name  = time() . '.' . $feature_card_icon_6->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_6->getClientOriginalExtension();
             Image::make($feature_card_icon_6)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_6_path = 'assets/uploads/banner/' . $name;
@@ -645,7 +468,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_7 = $request->file('feature_card_icon_7');
-            $name  = time() . '.' . $feature_card_icon_7->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_7->getClientOriginalExtension();
             Image::make($feature_card_icon_7)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_7_path = 'assets/uploads/banner/' . $name;
@@ -669,7 +492,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card_icon_8 = $request->file('feature_card_icon_8');
-            $name  = time() . '.' . $feature_card_icon_8->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card_icon_8->getClientOriginalExtension();
             Image::make($feature_card_icon_8)->save('assets/uploads/banner/' . $name);
 
             $feature_card_icon_8_path = 'assets/uploads/banner/' . $name;
@@ -687,7 +510,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card9_photo = $request->file('feature_card9_photo');
-            $name  = time() . '.' . $feature_card9_photo->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card9_photo->getClientOriginalExtension();
             Image::make($feature_card9_photo)->save('assets/uploads/banner/' . $name);
 
             $feature_card9_photo_path = 'assets/uploads/banner/' . $name;
@@ -706,7 +529,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card10_photo = $request->file('feature_card10_photo');
-            $name  = time() . '.' . $feature_card10_photo->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card10_photo->getClientOriginalExtension();
             Image::make($feature_card10_photo)->save('assets/uploads/banner/' . $name);
 
             $feature_card10_photo_path = 'assets/uploads/img/' . $name;
@@ -724,7 +547,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card11_photo = $request->file('feature_card11_photo');
-            $name  = time() . '.' . $feature_card11_photo->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card11_photo->getClientOriginalExtension();
             Image::make($feature_card11_photo)->save('assets/uploads/banner/' . $name);
 
             $feature_card11_photo_path = 'assets/uploads/banner/' . $name;
@@ -743,7 +566,7 @@ class SettingsController extends Controller
 
             // __add new image
             $feature_card12_photo = $request->file('feature_card12_photo');
-            $name  = time() . '.' . $feature_card12_photo->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card12_photo->getClientOriginalExtension();
             Image::make($feature_card12_photo)->save('assets/uploads/banner/' . $name);
 
             $feature_card12_photo_path = 'assets/uploads/banner/' . $name;
@@ -765,7 +588,7 @@ class SettingsController extends Controller
             }
             // __add new image
             $feature_card13_photo = $request->file('feature_card13_photo');
-            $name  = time() . '.' . $feature_card13_photo->getClientOriginalExtension();
+            $name = time() . '.' . $feature_card13_photo->getClientOriginalExtension();
             Image::make($feature_card13_photo)->save('assets/uploads/banner/' . $name);
 
             $feature_card13_photo_path = 'assets/uploads/banner/' . $name;
@@ -1050,49 +873,6 @@ class SettingsController extends Controller
 
             Toastr::success(trans('Test mail send successfully.'), 'Success', ["positionClass" => "toast-top-right"]);
             return redirect()->back();
-        }
-    }
-
-    protected function changeEnv($data = array())
-    {
-        if (count($data) > 0) {
-
-            // Read .env-file
-            $env = file_get_contents(base_path() . '/.env');
-
-            // Split string on every " " and write into array
-            $env = preg_split('/\s+/', $env);
-
-            // Loop through given data
-            foreach ((array) $data as $key => $value) {
-
-                // Loop through .env-data
-                foreach ($env as $env_key => $env_value) {
-
-                    // Turn the value into an array and stop after the first split
-                    // So it's not possible to split e.g. the App-Key by accident
-                    $entry = explode("=", $env_value, 2);
-
-                    // Check, if new key fits the actual .env-key
-                    if ($entry[0] == $key) {
-                        // If yes, overwrite it with the new one
-                        $env[$env_key] = $key . "=" . $value;
-                    } else {
-                        // If not, keep the old one
-                        $env[$env_key] = $env_value;
-                    }
-                }
-            }
-
-            // Turn the array back to an String
-            $env = implode("\n", $env);
-
-            // And overwrite the .env with the new data
-            file_put_contents(base_path() . '/.env', $env);
-
-            return true;
-        } else {
-            return false;
         }
     }
 

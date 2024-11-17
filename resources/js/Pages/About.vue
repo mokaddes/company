@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>About Us</title>
+    </Head>
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
         <main class="w-full mx-auto">
@@ -36,10 +39,11 @@ import AboutBannerSection from "@/components/AboutBannerSection.vue";
 import AboutTeamSection from "@/components/AboutTeamSection.vue";
 import AboutConnectSection from "@/components/AboutConnectSection.vue";
 import AboutMobileImage from "@/components/AboutMobileImage.vue";
+import { Head } from '@inertiajs/vue3';
 
 
 export default {
-    components: {AboutMobileImage, Layout, AboutBannerSection, AboutTeamSection, AboutConnectSection},
+    components: {AboutMobileImage, Layout, AboutBannerSection, AboutTeamSection, AboutConnectSection, Head},
     data() {
         return {
             teamImages: [
