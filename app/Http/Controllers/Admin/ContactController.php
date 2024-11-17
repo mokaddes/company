@@ -34,6 +34,7 @@ class ContactController extends Controller
         $data['title']  = __('messages.common.contact');
         $data['rows']   =  Contact::orderBy('id', 'desc')->get()->map(function ($row) {
             $row->name = $row->first_name . ' ' . $row->last_name;
+            return $row;
         });
         return view('admin.contact.index',compact('data'));
    }
