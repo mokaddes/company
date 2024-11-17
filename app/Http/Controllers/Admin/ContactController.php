@@ -32,7 +32,9 @@ class ContactController extends Controller
        }
 
         $data['title']  = __('messages.common.contact');
-        $data['rows']   =  Contact::orderBy('id', 'desc')->get();
+        $data['rows']   =  Contact::orderBy('id', 'desc')->get()->map(function ($row) {
+            $row->name = $row->first_name . ' ' . $row->last_name;
+        });
         return view('admin.contact.index',compact('data'));
    }
 
@@ -44,6 +46,7 @@ class ContactController extends Controller
        }
 
        $data['row']= Contact::find($id);
+       $data['row']->name = $data['row']->first_name . ' ' . $data['row']->last_name;
        $html = view('admin.contact.view', compact('data'))->render();
        return response()->json($html);
    }
