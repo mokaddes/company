@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <title>News</title>
+        <title>News & Views</title>
     </Head>
     <Layout>
         <div class="mx-auto w-full max-w-[1920px] flex flex-col justify-center overflow-hidden bg-black relative">
