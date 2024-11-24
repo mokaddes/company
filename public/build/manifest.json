@@ -3,12 +3,12 @@
     "file": "assets/BlogItem-DV4sqQ2Z.css",
     "src": "_BlogItem-!~{00d}~.js"
   },
-  "_BlogItem-CHL0xchT.js": {
-    "file": "assets/BlogItem-CHL0xchT.js",
+  "_BlogItem-BXEmRtwK.js": {
+    "file": "assets/BlogItem-BXEmRtwK.js",
     "name": "BlogItem",
     "imports": [
       "resources/js/app.js",
-      "_Layout-CmTibJjg.js"
+      "_Layout-BGEk3xuw.js"
     ],
     "css": [
       "assets/BlogItem-DV4sqQ2Z.css"
@@ -18,8 +18,8 @@
     "file": "assets/Layout-B7BQcdrG.css",
     "src": "_Layout-!~{00c}~.js"
   },
-  "_Layout-CmTibJjg.js": {
-    "file": "assets/Layout-CmTibJjg.js",
+  "_Layout-BGEk3xuw.js": {
+    "file": "assets/Layout-BGEk3xuw.js",
     "name": "Layout",
     "imports": [
       "resources/js/app.js"
@@ -29,12 +29,12 @@
     ]
   },
   "resources/js/Pages/About.vue": {
-    "file": "assets/About-YK1URoU6.js",
+    "file": "assets/About-D2reSZHk.js",
     "name": "About",
     "src": "resources/js/Pages/About.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js"
     ],
     "css": [
@@ -42,34 +42,34 @@
     ]
   },
   "resources/js/Pages/Blog/Details.vue": {
-    "file": "assets/Details-DvgycXs4.js",
+    "file": "assets/Details-B3nY3_W8.js",
     "name": "Details",
     "src": "resources/js/Pages/Blog/Details.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js",
-      "_BlogItem-CHL0xchT.js"
+      "_BlogItem-BXEmRtwK.js"
     ]
   },
   "resources/js/Pages/Blog/Index.vue": {
-    "file": "assets/Index-BbdhfvqU.js",
+    "file": "assets/Index-Bspp3F-W.js",
     "name": "Index",
     "src": "resources/js/Pages/Blog/Index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
-      "_BlogItem-CHL0xchT.js",
+      "_Layout-BGEk3xuw.js",
+      "_BlogItem-BXEmRtwK.js",
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Contact.vue": {
-    "file": "assets/Contact-Be7SDwv1.js",
+    "file": "assets/Contact-BXdScwnj.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js"
     ],
     "css": [
@@ -77,12 +77,12 @@
     ]
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home-C2XBz3uP.js",
+    "file": "assets/Home-C_EDL26q.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js"
     ],
     "css": [
@@ -90,12 +90,12 @@
     ]
   },
   "resources/js/Pages/Service.vue": {
-    "file": "assets/Service-DF12gR2t.js",
+    "file": "assets/Service-ExRcCw4E.js",
     "name": "Service",
     "src": "resources/js/Pages/Service.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js"
     ],
     "css": [
@@ -103,43 +103,43 @@
     ]
   },
   "resources/js/Pages/Shift.vue": {
-    "file": "assets/Shift-BZlSy3Dm.js",
+    "file": "assets/Shift-aHOeXuGj.js",
     "name": "Shift",
     "src": "resources/js/Pages/Shift.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_Layout-CmTibJjg.js",
+      "_Layout-BGEk3xuw.js",
       "resources/js/app.js"
     ]
   },
   "resources/js/Pages/Work/Details.vue": {
-    "file": "assets/Details-DoaWIzR4.js",
+    "file": "assets/Details-B5p_BGQh.js",
     "name": "Details",
     "src": "resources/js/Pages/Work/Details.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_Layout-CmTibJjg.js"
+      "_Layout-BGEk3xuw.js"
     ],
     "css": [
       "assets/Details-tn0RQdqM.css"
     ]
   },
   "resources/js/Pages/Work/Index.vue": {
-    "file": "assets/Index-DSCDtqrz.js",
+    "file": "assets/Index-NEWI6TD3.js",
     "name": "Index",
     "src": "resources/js/Pages/Work/Index.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_Layout-CmTibJjg.js"
+      "_Layout-BGEk3xuw.js"
     ],
     "css": [
       "assets/Index-cnoNsjmL.css"
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Jmg5imo-.js",
+    "file": "assets/app-D8cjOdlQ.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,

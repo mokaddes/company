@@ -19,7 +19,7 @@
 
         <!-- SVG Image -->
         <div class="max-w-[644px]  lg:max-w-[943px] block absolute w-[100%] lg:w-[min(943px,49vw)] right-[-35%] top-[0%] lg:left-[5%] lg:top-[35%]">
-            <img :alt="imageAlt" class="w-full" :src="imageSrc" />
+            <img :alt="imageAlt" class="w-full" :src="asset(imageSrc)" />
         </div>
 
         <!-- Description Section -->
