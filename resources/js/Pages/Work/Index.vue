@@ -30,7 +30,7 @@
                     image="https://images.prismic.io/cheil-uk/6511948afbd9a45bcec80385_fbrsdhrh.jpg"
                     company="Samsung"
                     description="Want to deliver a world-class conference that inspires audiences?"
-                    btnColor="blue"
+                    btnColor="#1d9b78c9"
                     btnText="Want to deliver a world class conference that inspires audiences?"
                 />
 
@@ -41,7 +41,7 @@
                     image="https://images.prismic.io/cheil-uk/7f871bc8-ae61-4d17-9d19-1b2287de3ef5_Jet+Pet+Standing+Dog2.jpg"
                     company="Samsung"
                     description="Want to send your product viral?"
-                    btnColor="pink"
+                    btnColor="#c50dd1"
                     btnText="See how"
                 />
 
@@ -52,7 +52,7 @@
                     image="https://images.prismic.io/cheil-uk/12f7eab8-f4d2-4ef5-bb80-40f1ac6c4be9_maxresdefault.jpg"
                     company="NIVEA"
                     description="Looking to create a campaign that makes a difference?"
-                    btnColor="red"
+                    btnColor="#1fb871"
                     btnText="See how"
                 />
             </div>

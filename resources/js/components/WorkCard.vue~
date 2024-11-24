@@ -19,10 +19,8 @@
                     <p class="uppercase text-[28px] tracking-[4.5px] font-light leading-[0.8em]">{{ company }}</p>
                     <h2 class="text-[30px] font-bold">{{ title }}</h2>
                     <p class="text-[18px] mb-[27px] mt-[13px]">{{ description }}</p>
-                    <button class="border-y-4 border-x-0 border-black text-[18px] font-bold tracking-[2.5px] uppercase px-[24.5px] animatedButton py-[8px]"
-                            :style="{ color: isHovered ? btnColor : 'initial' }"
-                            @mouseenter="isHovered = true"
-                            @mouseleave="isHovered = false"
+                    <button
+                        :class="`border-y-4 border-x-0 border-black text-[18px] font-bold tracking-[2.5px] uppercase px-[24.5px] animatedButton py-[8px] hover:text-${btnColor}-500`"
                     >
                         {{ btnText }}
                     </button>
@@ -44,12 +42,6 @@ export default {
         description: String,
         btnColor: String,
         btnText: String
-    },
-
-    data() {
-        return {
-            isHovered: false,
-        };
     },
 };
 </script>

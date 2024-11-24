@@ -154,9 +154,7 @@
                                         </div>
 
 
-
-
-                                        {{-- General Settings --}}
+                                        {{-- Contact Settings --}}
                                         <div class="col-12">
                                             <div class="card">
                                                 <div class="card-header">
@@ -243,6 +241,52 @@
 
                                                                 @error('office_address')<span
                                                                         class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Service Settings --}}
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Service Settings</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 imgDiv">
+                                                            <img src="{{ getPhoto($settings->service_image) }}"
+                                                                 height="50px" />
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Service Image
+                                                                    <br><small class="text-info fw-bold"><strong>(Recommended Size 728x680px)</strong></small>
+                                                                </label>
+                                                                <input type="file" class="form-control" name="service_image"
+                                                                       placeholder="Contact Image"
+                                                                       accept=".png,.jpg,.jpeg,.gif,.svg" />
+                                                            </div>
+                                                        </div>
+
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Service Title</label>
+                                                                <input type="text" name="service_title" class="form-control"
+                                                                    value="{{ old('service_title', $settings->service_title) }}">
+                                                                @error('service_title')
+                                                                    <span class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Service Description</label>
+                                                                <textarea class="form-control" name="service_description" rows="3" placeholder="Service Description"
+                                                                    style="height: 120px !important;" >{{ $settings->service_description }}</textarea>
+                                                                @error('service_description')
+                                                                    <span class="help-block text-danger">{{ $message }}</span>
                                                                 @enderror
                                                             </div>
                                                         </div>

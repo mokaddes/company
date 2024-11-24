@@ -2,10 +2,10 @@
 
 
 @section('settings_menu', 'menu-open')
-@section('home', 'active')
+@section('about', 'active')
 
 @section('title')
-    {{ $data['title'] ?? '' }}
+    {{ $title ?? '' }}
 @endsection
 
 @push('style')
@@ -109,7 +109,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">{{ $data['title'] ?? 'Page Header' }}</h1>
+                        <h1 class="m-0">{{ $title ?? 'Page Header' }}</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -138,7 +138,7 @@
                                 </div>
                             @endif
                             <div class="col-lg-12">
-                                <form action="{{route('admin.settings.homeContent.update')}}" method="post"
+                                <form action="{{route('admin.settings.about.content.update')}}" method="post"
                                       enctype="multipart/form-data" id="settingUpdate">
                                     @csrf
                                     {{-- Banner Section --}}
@@ -148,69 +148,111 @@
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <h3 class="card-title">Banner Section</h3>
                                                 <!-- Toggle Switch -->
-                                                <input type="checkbox" class="toggle_switch" name="banner" {{ $home->banner_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
+                                                <input type="checkbox" class="toggle_switch" name="banner" {{ $about->banner_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
                                             </div>
                                         </div>
-                                        <div class="card-body" style="display: {{ $home->banner_section == 1 ? '' : 'none' }}">
+                                        <div class="card-body" style="display: {{ $about->banner_section == 1 ? '' : 'none' }}">
                                             <div class="row">
+
                                                 <div class="col-lg-12">
-                                                    <video width="50%" height="100" controls>
-                                                        <source
-                                                            src="{{ asset($home->image ?? 'assets/default.png')}}"
-                                                            type="video/mp4">
-                                                        Your browser does not support the video tag.
-                                                    </video>
                                                     <div class="mb-3">
-                                                        <label class="form-label">Banner Video</label>
+                                                        <label
+                                                            class="form-label required">Title</label>
+                                                        <input type="text" class="form-control" name="title"
+                                                               value="{{$about->title ?? ''}}"
+                                                               placeholder="Enter title..." >
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    @if($about->file_type == 'video')
+                                                        <video width="50%" height="100" controls>
+                                                            <source
+                                                                src="{{ asset($about->image ?? 'assets/default.png')}}"
+                                                                type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    @else
+                                                        <img src="{{ getPhoto($about->image) }}" width="50px"
+                                                             class="img-fluid" alt="Banner Image">
+                                                    @endif
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Banner Image</label>
                                                         <input type="file" class="form-control" name="image"
                                                                placeholder="{{ __('Banner image') }}..."
-                                                               accept="video/*"/>
+                                                               accept="image/*"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- About Section --}}
+                                    {{-- Mission Section --}}
                                     <div class="card">
                                         <div class="card-header">
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h3 class="card-title">Welcome Section</h3>
+                                                <h3 class="card-title">Mission Section</h3>
                                                 <!-- Toggle Switch -->
-                                                <input type="checkbox" class="toggle_switch" name="about" {{ $home->about_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
+                                                <input type="checkbox" class="toggle_switch" name="mission_section" {{ $about?->mission_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
                                             </div>
                                         </div>
-                                        <div class="card-body" style="display: {{ $home->about_section == 1 ? '' : 'none' }}">
+                                        <div class="card-body" style="display: {{ $about->mission_section == 1 ? '' : 'none' }}">
                                             <div>
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label
-                                                            class="form-label required">Welcome Title</label>
-                                                        <input type="text" class="form-control" name="about_title"
-                                                               value="{{$home->about_title ?? ''}}"
-                                                               placeholder="Enter welcome title..." required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="mb-3">
-                                                        <label
-                                                            class="form-label required">Welcome button text</label>
-                                                        <input type="text" class="form-control"
-                                                               name="about_btn_text"
-                                                               value="{{$home->about_btn_text ?? ''}}"
-                                                               placeholder="Welcome button text" required>
+                                                            class="form-label required">Mission Title</label>
+                                                        <input type="text" class="form-control" name="mission_title"
+                                                               value="{{$about->mission_title ?? ''}}"
+                                                               placeholder="Enter mission title..." >
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12">
                                                     <div class="mb-3">
                                                         <label
-                                                            class="form-label required">Welcome Description</label>
+                                                            class="form-label required">Mission Description</label>
                                                         <textarea class="form-control "
-                                                                  name="about_description" rows="3"
-                                                                  placeholder="Enter welcome description"
+                                                                  name="mission_description" rows="3"
+                                                                  placeholder="Enter mission description"
                                                                   style="height: 100px !important;"
-                                                                  required>{{$home->about_description ?? ''}}</textarea>
+                                                                  >{{$about->mission_description ?? ''}}</textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- Vision Section --}}
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h3 class="card-title">Vision Section</h3>
+                                                <!-- Toggle Switch -->
+                                                <input type="checkbox" class="toggle_switch" name="vision_section" {{ $about?->vision_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
+                                            </div>
+                                        </div>
+                                        <div class="card-body" style="display: {{ $about->vision_section == 1 ? '' : 'none' }}">
+                                            <div>
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label
+                                                            class="form-label required">Vision Title</label>
+                                                        <input type="text" class="form-control" name="vision_title"
+                                                               value="{{ $about->vision_title ?? ''}}"
+                                                               placeholder="Enter vision title..." >
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="mb-3">
+                                                        <label
+                                                            class="form-label required">Vision Description</label>
+                                                        <textarea class="form-control "
+                                                                  name="vision_description" rows="3"
+                                                                  placeholder="Enter vision description"
+                                                                  style="height: 100px !important;"
+                                                                  >{{$about->vision_description ?? ''}}</textarea>
                                                     </div>
                                                 </div>
 
@@ -222,30 +264,30 @@
                                         <div class="card-header">
 
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <h3 class="card-title required">Client Section</h3>
+                                                <h3 class="card-title required">Team Section</h3>
                                                 <!-- Toggle Switch -->
-                                                <input type="checkbox" name="client" class="toggle_switch" {{ $home->client_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
+                                                <input type="checkbox" name="team_section" class="toggle_switch" {{ $about?->team_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
                                             </div>
                                         </div>
-                                        <div class="card-body" style="display: {{ $home->client_section == 1 ? '' : 'none' }} ">
+                                        <div class="card-body" style="display: {{ $about->team_section == 1 ? '' : 'none' }} ">
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <label
-                                                        class="form-label required">Client Title</label>
-                                                    <input type="text" class="form-control" name="client_title"
-                                                           value="{{$home->client_title ?? ''}}"
-                                                           placeholder="Enter client title..." required>
+                                                        class="form-label required">Team Title</label>
+                                                    <input type="text" class="form-control" name="team_title"
+                                                           value="{{$about->team_title ?? ''}}"
+                                                           placeholder="Enter team title..." >
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
-                                                    <label class="form-label required">Client Images</label>
+                                                    <label class="form-label required">Team Images</label>
                                                     <div class="previous-image mb-4 d-flex flex-wrap">
-                                                        @foreach($client_images as $client_image)
+                                                        @foreach($team_images as $team_image)
                                                             <div class="uploaded-image-wrapper">
-                                                                <img src="{{ asset($client_image->image) }}"
+                                                                <img src="{{ asset($team_image->image) }}"
                                                                      alt="Uploaded Image">
-                                                                <a href="{{ route('admin.settings.pageImage.delete', $client_image->id) }}"
+                                                                <a href="{{ route('admin.settings.pageImage.delete', $team_image->id) }}"
                                                                    class="delete-button deleteData text-center">
                                                                     <i class="fa fa-trash"></i>
                                                                 </a>
@@ -263,7 +305,7 @@
                                                         </div>
 
                                                         <!-- Hidden file input for image upload -->
-                                                        <input type="file" id="fileInput" name="client_images[]"
+                                                        <input type="file" id="fileInput" name="team_images[]"
                                                                style="display: none;" accept="image/*"
                                                                onchange="handleFileUpload(event, 'uploadedImagesContainer')"
                                                                multiple/>
@@ -272,101 +314,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- Contact Section --}}
-                                    <div class="card">
-                                        <div class="card-header">
-
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h3 class="card-title">Contact Section</h3>
-                                                <!-- Toggle Switch -->
-                                                <input type="checkbox" name="contact" class="toggle_switch" {{ $home->contact_section == 1 ? 'checked' : '' }}  value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
-                                            </div>
-                                        </div>
-                                        <div class="card-body" style="display: {{ $home->contact_section == 1 ? '' : 'none' }}">
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Contact Title</label>
-                                                    <input type="text" class="form-control" name="contact_title"
-                                                           value="{{$home->contact_title ?? ''}}"
-                                                           placeholder="Enter contact title..." required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Contact SubTitle</label>
-                                                    <input type="text" class="form-control" name="contact_subtitle"
-                                                           value="{{$home->contact_subtitle ?? ''}}"
-                                                           placeholder="Enter contact subtitle..." required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Contact Details</label>
-                                                    <input type="text" class="form-control" name="contact_description"
-                                                           value="{{$home->contact_description ?? ''}}"
-                                                           placeholder="Enter contact details..." required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Contact Button Text</label>
-                                                    <input type="text" class="form-control" name="contact_btn_text"
-                                                           value="{{$home->contact_btn_text ?? ''}}"
-                                                           placeholder="Enter button text..." required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Contact Address Title</label>
-                                                    <input type="text" class="form-control" name="contact_address_title"
-                                                           value="{{$home->contact_address_title ?? ''}}"
-                                                           placeholder="Enter button text..." required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- footer Section --}}
-                                    {{--<div class="card">
-                                        <div class="card-header">
-                                            <h3 class="card-title required">Footer Section</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Footer Text</label>
-                                                    <input type="text" class="form-control" name="footer_title"
-                                                           value="{{$home->footer_text ?? ''}}"
-                                                           placeholder="Enter footer text..." required>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label class="form-label required">Footer Image</label>
-                                                    <div class="image-upload-container">
-                                                        <div class="uploaded-images" id="footerImagesContainer">
-                                                            @if(file_exists($home->footer_image))
-                                                                <div class="uploaded-image-wrapper">
-                                                                    <img src="{{ asset($home->footer_image) }}"
-                                                                         alt="Footer Image">
-                                                                </div>
-                                                            @endif
-                                                        </div>
-                                                        <div class="upload-box"
-                                                             onclick="triggerFileInput('footerInput')">
-                                                            <span>+</span>
-                                                            <p>Upload</p>
-                                                        </div>
-
-                                                        <!-- Hidden file input for image upload -->
-                                                        <input type="file" id="footerInput" name="footer_image"
-                                                               style="display: none;" accept="image/*"
-                                                               onchange="handleFileUpload(event, 'footerImagesContainer')"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>--}}
-
                                     <div class="card p-3">
                                         <div class="row">
                                             <div class="col-md-12 text-center">
@@ -383,7 +330,7 @@
             </div>
 
             <div class="col-8">
-                <iframe src="{{route('frontend.home')}}" width="100%" height="100%" style="border: none;"></iframe>
+                <iframe src="{{route('frontend.about')}}" width="100%" height="100%" style="border: none;"></iframe>
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Admin\WorkController;
 use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
@@ -60,8 +61,11 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
 
             Route::get('home-content', [HomeContentController::class, 'index'])->name('home.content');
             Route::post('home-content/update', [HomeContentController::class, 'update'])->name('homeContent.update');
-            Route::get('client-image/{id}/delete', [HomeContentController::class, 'deleteClientImage'])->name('clientImage.delete');
+            Route::get('about-content', [HomeContentController::class, 'about'])->name('about.content');
+            Route::post('about-content/update', [HomeContentController::class, 'aboutUpdate'])->name('about.content.update');
+            Route::get('client-image/{id}/delete', [HomeContentController::class, 'deleteClientImage'])->name('pageImage.delete');
         });
+
 
 
 
@@ -105,7 +109,7 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
         Route::get('roles/{id}/show', [RolesController::class, 'show'])->name('roles.show');
         Route::get('roles/{id}/edit', [RolesController::class, 'edit'])->name('roles.edit');
         Route::post('roles/{id}/update', [RolesController::class, 'update'])->name('roles.update');
-        // Route::delete('roles/{id}/destroy', [RolesController::class, 'destroy'])->name('roles.destroy');
+         Route::delete('roles/{id}/destroy', [RolesController::class, 'destroy'])->name('roles.delete');
 
 
         Route::get('admins', [UserController::class, 'index'])->name('user.index');
@@ -146,14 +150,20 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
             Route::get('{id}/view', [BlogPostController::class, 'view'])->name('view');
             Route::get('{id}/delete', [BlogPostController::class, 'delete'])->name('delete');
         });
+        //Work
+        Route::group(['prefix' => 'work', 'as' => 'work.'], function () {
+            Route::get('/', [WorkController::class, 'index'])->name('index');
+            Route::get('create', [WorkController::class, 'create'])->name('create');
+            Route::post('store', [WorkController::class, 'store'])->name('store');
+            Route::get('{id}/edit', [WorkController::class, 'edit'])->name('edit');
+            Route::post('{id}/update', [WorkController::class, 'update'])->name('update');
+            Route::get('{id}/view', [WorkController::class, 'view'])->name('view');
+            Route::get('{id}/delete', [WorkController::class, 'delete'])->name('delete');
+        });
 
         //Contact
         Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
             Route::get('/', [ContactController::class, 'index'])->name('index');
-            // Route::get('create', [ContactController::class, 'create'])->name('create');
-            // Route::post('store', [ContactController::class, 'store'])->name('store');
-            // Route::get('{id}/edit', [ContactController::class, 'edit'])->name('edit');
-            // Route::post('{id}/update', [ContactController::class, 'update'])->name('update');
             Route::get('{id}/view', [ContactController::class, 'view'])->name('view');
             Route::get('{id}/delete', [ContactController::class, 'delete'])->name('delete');
         });
@@ -161,12 +171,9 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
         //Seo
         Route::group(['prefix' => 'seo', 'as' => 'seo.'], function () {
             Route::get('/', [SeoController::class, 'index'])->name('index');
-            // Route::get('create', [SeoController::class, 'create'])->name('create');
-            // Route::post('store', [SeoController::class, 'store'])->name('store');
             Route::get('{id}/edit', [SeoController::class, 'edit'])->name('edit');
             Route::post('{id}/update', [SeoController::class, 'update'])->name('update');
             Route::get('{id}/view', [SeoController::class, 'view'])->name('view');
-            // Route::get('{id}/delete', [SeoController::class, 'delete'])->name('delete');
         });
 
     });

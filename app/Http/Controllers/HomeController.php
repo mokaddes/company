@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendContact;
-use App\Models\ClientImage;
+use App\Models\AboutServiceContent;
+use App\Models\PageImage;
 use App\Models\Faq;
 use App\Models\User;
 use App\Models\Card;
@@ -34,7 +35,7 @@ class HomeController extends Controller
         $content = HomeContent::first();
         $content->banner_video = asset($content->image);
         $content->footer_image = asset($content->footer_image);
-        $clients = ClientImage::get()->map(function ($client) {
+        $clients = PageImage::where('type', 'client')->get()->map(function ($client) {
             $client->image = asset($client->image);
             return $client;
         });
@@ -46,8 +47,16 @@ class HomeController extends Controller
 
     public function about()
     {
-        // inertia view about
-        return inertia('About');
+        $about = AboutServiceContent::where('page_type', 'about')->first();
+        $about->image = asset($about->image);
+        $teams = PageImage::where('type', 'team')->get()->map(function ($team) {
+            $team->image = asset($team->image);
+            return $team;
+        });
+        return inertia('About',[
+            'about' => $about,
+            'teams' => $teams
+        ]);
     }
 
     public function work()

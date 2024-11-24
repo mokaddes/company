@@ -7,27 +7,19 @@
         <main class="w-full mx-auto">
             <!-- Video Section -->
             <AboutBannerSection
-                videoSrc="assets/images/coverVideoV2.mp4"
-                title="ABOUT US"
-                imageSrc="assets/images/slats.png"
-                imageAlt="Slats"
-                :description="[
-                    'We are a team of creative thinkers and problem solvers dedicated to expanding the limits of what is possible by helping brands achieve their goals.',
-                    'We utilize our experience working with major global brands to fuel creative innovation that delivers real results.',
-                ]"
+                :bannerSrc="bannerSrc"
+                :bannerTitle="bannerTitle"
+                :missionTitle="missionTitle"
+                :missionDescription="missionDescription"
+                :visionTitle="visionTitle"
+                :visionDescription="visionDescription"
             />
             <!-- Team Gallery Section -->
             <AboutTeamSection
-                title="MEET THE"
-                subtitle="TEAM"
+                :title="about.team_title"
                 :teamImages="teamImages"
             />
-            <AboutMobileImage src="assets/images/about_us_image_03.webp"></AboutMobileImage>
 
-            <!-- About Connect Section -->
-            <AboutConnectSection
-                logoSrc="assets/images/ConnecPlus.svg"
-            />
         </main>
     </div>
     </Layout>
@@ -44,22 +36,27 @@ import { Head } from '@inertiajs/vue3';
 
 export default {
     components: {AboutMobileImage, Layout, AboutBannerSection, AboutTeamSection, AboutConnectSection, Head},
+
+    props: {
+        about: {
+            type: Object,
+            required: true,
+        },
+        teams: {
+            type: Object,
+            required: true,
+        }
+
+    },
     data() {
         return {
-            teamImages: [
-                {
-                    src: "assets/images/about_us_image_01.webp",
-                    alt: "Team Image 1",
-                },
-                {
-                    src: "assets/images/about_us_image_03.webp",
-                    alt: "Team Image 3",
-                },
-                {
-                    src: "assets/images/about_us_image_04.webp",
-                    alt: "Team Image 4",
-                },
-            ],
+            teamImages: this.teams,
+            bannerSrc: this.about.image,
+            bannerTitle: this.about.title,
+            missionTitle: this.about.mission_title,
+            missionDescription: this.about.mission_description,
+            visionTitle: this.about.vision_title,
+            visionDescription: this.about.vision_description,
         };
     },
 };

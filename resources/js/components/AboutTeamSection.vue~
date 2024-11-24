@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full bg-white text-black pt-[min(141px,19.58vw)] pb-[min(256px,35.5vw)] lg:py-44 flex flex-col px-0">
+    <section class="w-full bg-blue text-white pt-[min(141px,19.58vw)] pb-[min(256px,35.5vw)] lg:py-44 flex flex-col px-0">
         <div class="flex flex-col mx-auto w-full" style="max-width:1920px">
             <div class="w-full max-w-[1480px] mx-auto px-[min(14%,104px)] xl:px-0">
                 <h2 class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px] mb-[min(66px,9.16vw)] lg:mb-28">

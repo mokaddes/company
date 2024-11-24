@@ -1,5 +1,5 @@
 <template>
-    <section class="relative bg-white w-full max-w-[1920px] text-white flex flex-col mx-auto overflow-hidden min-h-screen">
+    <section class="relative bg-transparent w-full max-w-[1920px] text-white flex flex-col mx-auto overflow-hidden min-h-screen">
         <!-- Background Image -->
         <div
             class="absolute w-full h-full bg-cover bg-center"

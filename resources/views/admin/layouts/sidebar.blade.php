@@ -179,12 +179,15 @@
                                     </a>
                                 </li>
                             @endif
-                            {{-- <li class="nav-item">
-                                <a href="{{ route('admin.settings.language') }}" class="nav-link @yield('language')">
-                                    <i class="fas fa-globe nav-icon"></i>
-                                    <p>Language</p>
-                                </a>
-                            </li> --}}
+                            @if (Auth::user()->can('admin.settings.home.content'))
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.settings.about.content') }}" class="nav-link @yield('about')"
+                                       title="Home page content">
+                                        <i class="fa fa-circle"></i>
+                                        <p>About Content</p>
+                                    </a>
+                                </li>
+                            @endif
                             @if (Auth::user()->can('admin.settings.Smtp.mail'))
                                 <li class="nav-item">
                                     <a href="{{ route('admin.settings.Smtp.mail') }}" class="nav-link @yield('smtp')"
@@ -194,20 +197,6 @@
                                     </a>
                                 </li>
                             @endif
-                            {{-- <li class="nav-item">
-                                <a href="{{ route('admin.settings.Currency.index') }}" class="nav-link @yield('currency')">
-                                    <i class="fas fa-dollar-sign nav-icon"></i>
-                                    <p>Currency</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.settings.MobileApp.index') }}"
-                                    class="nav-link @yield('mobile_app')">
-                                    <i class="fas fa-mobile nav-icon"></i>
-                                    <p>Mobile App Config</p>
-                                </a>
-                            </li> --}}
-
                         </ul>
                     </li>
                 @endif

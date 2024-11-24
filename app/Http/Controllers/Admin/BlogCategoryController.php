@@ -39,7 +39,7 @@ class BlogCategoryController extends Controller
     public function store(Request $request)
     {
 
-        if (is_null($this->user) || !$this->user->can('admin.blog-category.store')) {
+        if (is_null($this->user) || !$this->user->can('admin.blog-category.create')) {
             abort(403, 'Sorry !! You are Unauthorized.');
         }
 
@@ -83,7 +83,7 @@ class BlogCategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        if (is_null($this->user) || !$this->user->can('admin.blog-category.update')) {
+        if (is_null($this->user) || !$this->user->can('admin.blog-category.edit')) {
             abort(403, 'Sorry !! You are Unauthorized.');
         }
 

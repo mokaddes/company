@@ -71,7 +71,7 @@
 
                                                     </td>
                                                     <td>
-                                                        @if (Auth::user()->can('admin.blog-category.update'))
+                                                        @if (Auth::user()->can('admin.blog-category.edit'))
                                                             <a href="javascript:void(0)"
                                                                 class="btn btn-secondary edit btn-xs"
                                                                 data-id="{{ $row->id }}">Edit</a>

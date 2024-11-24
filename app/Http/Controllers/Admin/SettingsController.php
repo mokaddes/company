@@ -59,34 +59,43 @@ class SettingsController extends Controller
             $setting->contact_title = $request->contact_title;
             $setting->contact_subtitle = $request->contact_subtitle;
             $setting->contact_form_title = $request->contact_form_title;
+            $setting->service_title = $request->service_title;
+            $setting->service_description = $request->service_description;
 
             $favicon = $request->file('favicon');
             if (!empty($favicon)) {
-                $uploadImage = uploadGeneralFile($favicon, $setting, 'favicon', $setting->favicon);
+                $uploadImage = uploadGeneralFile($favicon, 'favicon', $setting->favicon);
                 $setting->favicon = $uploadImage['path'] ?? '';
             }
             $site_logo = $request->file('site_logo');
             if (!empty($site_logo)) {
-                $uploadImage = uploadGeneralFile($site_logo, $setting, 'site_logo', $setting->site_logo);
+                $uploadImage = uploadGeneralFile($site_logo, 'site_logo', $setting->site_logo);
                 $setting->site_logo = $uploadImage['path'] ?? '';
             }
             $seo_image = $request->file('seo_image');
             if (!empty($seo_image)) {
-                $uploadImage = uploadGeneralFile($seo_image, $setting, 'seo_image', $setting->seo_image);
+                $uploadImage = uploadGeneralFile($seo_image, 'seo_image', $setting->seo_image);
                 $setting->seo_image = $uploadImage['path'] ?? '';
             }
 
             $footer_image = $request->file('footer_image');
             if (!empty($footer_image)) {
-                $uploadImage = uploadGeneralFile($footer_image, $setting, 'footer_image', $setting->footer_image);
+                $uploadImage = uploadGeneralFile($footer_image, 'footer_image', $setting->footer_image);
                 $setting->footer_image = $uploadImage['path'] ?? '';
             }
 
             $contact_image = $request->file('contact_image');
             if (!empty($contact_image)) {
-                $uploadImage = uploadGeneralFile($contact_image, $setting, 'contact_image', $setting->contact_image);
+                $uploadImage = uploadGeneralFile($contact_image, 'contact_image', $setting->contact_image);
                 $setting->contact_image = $uploadImage['path'] ?? '';
             }
+
+            $service_image = $request->file('service_image');
+            if (!empty($service_image)) {
+                $uploadImage = uploadGeneralFile($service_image, 'service_image', $setting->service_image);
+                $setting->service_image = $uploadImage['path'] ?? '';
+            }
+
 
             $setting->update();
 
@@ -102,7 +111,6 @@ class SettingsController extends Controller
 
         } catch (\Exception $e) {
             DB::rollback();
-            dd($e);
             Toastr::error('Setting update failed', 'Failed', ["positionClass" => "toast-top-right"]);
         }
 

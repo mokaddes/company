@@ -71,7 +71,7 @@ class BlogPostController extends Controller
 
         ]);
         try {
-
+            
             $blog_post              = new Blog();
             $blog_post->user_id     = Auth::id();
             $blog_post->title       = $request->title;

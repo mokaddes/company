@@ -480,11 +480,13 @@ function uploadImage(?object $file, string $path, int $width, int $height): stri
     return "uploads/$path/" . $fileName;
 }
 
-function uploadGeneralFile($banner_file, $home, string $file_path, $old = null): array
+function uploadGeneralFile($banner_file, string $file_path, $old = null): array
 {
     if (!empty($old) && file_exists(public_path($old))) {
         unlink(public_path($old));
     }
+
+    $file_path = "uploads/$file_path";
     $base_name = preg_replace('/\..+$/', '', $banner_file->getClientOriginalName());
     $base_name = implode('-', explode(' ', $base_name));
     $base_name = Str::lower($base_name);
