@@ -68,7 +68,7 @@ export default {
         imageSrc: {
             type: String,
             required: true,
-            default: 'assets/images/slats.png',
+            default: 'assets/images/Slats.png',
         },
         imageAlt: {
             type: String,
