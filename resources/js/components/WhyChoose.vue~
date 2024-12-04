@@ -1,0 +1,33 @@
+<template>
+    <section class="bg-[#c9c9c9] py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">
+                Why Choose <span class="text-blue">Proxima Digital?</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center" v-for="whyChoose in whyUses" :key="whyChoose.id">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-500 rounded-full mx-auto mb-4">
+                       <img :src="asset(whyChoose.icon)" alt="Icon" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ whyChoose.title }}</h3>
+                    <p class="text-gray-600">
+                        {{ whyChoose.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+export default {
+    name: "WhyChoose",
+    props: {
+        whyUses: {
+            type: Object,
+            required: true
+        }
+    }
+};
+</script>

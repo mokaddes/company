@@ -169,10 +169,20 @@
                                                     </div>
                                                 </div>
                                                 <!-- client name -->
-                                                <div class="col-md-12">
+                                                <div class="col-md-6">
                                                     <div class="form-group mb-4">
                                                         <label for="client_name" class="form-label">Client Name</label>
                                                         <input type="text" name="client_name" id="client_name" value="{{ old('client_name') }}" class="form-control" placeholder="Enter client name" >
+                                                    </div>
+                                                </div>
+                                                <!-- status, published unpublished -->
+                                                <div class="col-lg-6">
+                                                    <div class="form-group mb-4">
+                                                        <label for="status" class="form-label">Status</label>
+                                                        <select name="status" id="status" class="form-control">
+                                                            <option value="1">Published</option>
+                                                            <option value="0">Unpublished</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,7 +202,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group mb-4">
-                                                        <label for="meta_title" class="form-lable">Meta Title
+                                                        <label for="meta_title" class="form-label">Meta Title
                                                             <span class="ml-2 text-info">( Recommend length, around 60 characters )</span>
                                                         </label>
                                                         <input type="text" name="meta_title" id="meta_title" value="{{ old('meta_title') }}" placeholder="Meta Title"
@@ -201,14 +211,14 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group mb-4">
-                                                        <label for="meta_keywords" class="form-lable">Meta Keywords</label>
+                                                        <label for="meta_keywords" class="form-label">Meta Keywords</label>
                                                         <input type="text" name="meta_keywords" id="meta_keywords" value="{{ old('meta_keywords') }}" placeholder="Meta Keywords"
                                                                class="form-control" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group mb-4">
-                                                        <label for="meta_description" class="form-lable">Meta Description
+                                                        <label for="meta_description" class="form-label">Meta Description
                                                             <span class="ml-2 text-info">( Recommend length, around 160 characters )</span>
                                                         </label>
                                                         <textarea name="meta_description" cols="30" rows="5" id="meta_description"

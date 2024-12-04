@@ -6,6 +6,7 @@ use App\Mail\SendContact;
 use App\Models\AboutServiceContent;
 use App\Models\PageImage;
 use App\Models\Faq;
+use App\Models\Service;
 use App\Models\User;
 use App\Models\Card;
 use App\Models\Contact;
@@ -17,6 +18,8 @@ use App\Models\Seo;
 use App\Models\Setting;
 use App\Models\SocialIcon;
 use App\Models\Testimonial;
+use App\Models\WhyUse;
+use App\Models\Work;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\RedirectResponse;
@@ -39,9 +42,13 @@ class HomeController extends Controller
             $client->image = asset($client->image);
             return $client;
         });
+        $services = Service::orderBy('order_number')->where('status', 1)->get();
+        $activeService = Service::orderBy('order_number')->where('status', 1)->first();
         return inertia('Home',[
             'content' => $content,
-            'clients' => $clients
+            'clients' => $clients,
+            'services' => $services,
+            'activeService' => $activeService
         ]);
     }
 
@@ -62,20 +69,14 @@ class HomeController extends Controller
     public function work()
     {
         // inertia view work
-        return inertia('Work/Index');
+        $data['works'] = Work::where('status', 1)->latest()->get();
+        $data['seoData'] = Seo::where('page_slug', 'work')->first();
+        return inertia('Work/Index', $data);
     }
 
     public function workDetail($slug)
     {
-        $work = [
-            'id' => 1,
-            'slug' => $slug,
-            'title' => 'Powering Pet Owners with Samsung Floorcare',
-            'category' => 'Experiential / Retail',
-            'video' => 'assets/images/coverVideoMO.mp4',
-            'image' => 'assets/images/coverMO.jpg',
-
-        ];
+        $work = Work::where('slug', $slug)->firstOrFail();
         return inertia('Work/Details', [
             'work' => $work
         ]);
@@ -128,7 +129,14 @@ class HomeController extends Controller
     public function service()
     {
         // inertia view service
-        return inertia('Service');
+        $services = Service::orderBy('order_number')->where('status', 1)->get();
+        $activeServices = Service::orderBy('order_number')->where('status', 1)->first();
+        $why_uses = WhyUse::orderBy('order_number')->where('status', 1)->get();
+        return inertia('Service',[
+            'services' => $services,
+            'activeService' => $activeServices,
+            'whyUses' => $why_uses,
+        ]);
     }
 
     public function shift()

@@ -80,8 +80,11 @@ class BlogPostController extends Controller
             $blog_post->status      = $request->status;
             $blog_post->tags        = json_encode($request->tags, true);
             $blog_post->details     = $request->details;
+            $blog_post->meta_title  = $request->meta_title;
+            $blog_post->meta_description  = $request->meta_description;
+            $blog_post->meta_keywords  = $request->meta_keywords;
             if ($request->hasFile('image')) {
-                $blog_post->image = uploadImage($request->image, 'blog', 600, 400);
+                $blog_post->image = uploadGeneralFile($request->image, 'blog');
             }
             $blog_post->save();
         } catch (\Exception $e) {
@@ -135,9 +138,12 @@ class BlogPostController extends Controller
             $blog_post->status = $request->status;
             $blog_post->tags = json_encode($request->tags, true);
             $blog_post->details = $request->details;
+            $blog_post->meta_title  = $request->meta_title;
+            $blog_post->meta_description  = $request->meta_description;
+            $blog_post->meta_keywords  = $request->meta_keywords;
 
             if ($request->hasFile('image')) {
-                $blog_post->image = uploadImage($request->image, 'blog', 600, 450);
+                $blog_post->image = uploadGeneralFile($request->image, 'blog', $blog_post->image);
             }
             $blog_post->save();
         } catch (\Exception $e) {
@@ -175,8 +181,8 @@ class BlogPostController extends Controller
         DB::beginTransaction();
         try {
             $blog_post = Blog::find($id);
-            if (File::exists('assets/images/blog/' . $blog_post->image)) {
-                File::delete('assets/images/blog/' . $blog_post->image);
+            if (File::exists($blog_post->image)) {
+                File::delete($blog_post->image);
             }
             $blog_post->delete();
         } catch (\Exception $e) {

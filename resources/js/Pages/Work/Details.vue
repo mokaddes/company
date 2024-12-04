@@ -23,30 +23,21 @@
                     </div>
                     <div
                         class="uppercase text-[min(60px,8.3vw)] lg:text-[36px] font-bold text-left mx-0 mb-[0px] tracking-[6.3px]">
-                        <h1>Powering Pet Owners with Samsung Floorcare</h1>
+                        <h1>{{ work.title }}</h1>
                     </div>
                     <p class="font-Calibri font-light text-[min(24px,3.33vw)] lg:text-[18px] uppercase ">
-                        Experiential /
-                        Retail</p>
+                        {{ work.category }}</p>
                 </div>
                 <div class="block lg:hidden w-full relative max-w-[720px] mx-auto">
-                    <video autoplay=""
-                           class="w-full aspect-w-16 aspect-h-9"
-                           loop="" playsinline=""
-                           poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
-                           src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                    <img :src="asset(work.image)" alt="{{ work.title }}" class="w-full h-full">
                 </div>
                 <div
                     class="flex flex-col-reverse lg:flex-row w-full gap-[min(102px,8vw)] mb-[min(200px,30vw)] lg:mb-[251px]">
                     <div
                         class="grid grid-cols-5 lg:grid-cols-5 w-full lg:w-[970px] gap-[17px] max-w-[720px] lg:max-w-[970px] content-start mx-auto lg:mx-0  ">
                         <div
-                            class="   col-span-5 lg:col-span-null row-span-1 hidden lg:block block relative w-full lg:h-[min(355px,21.1vw)] ">
-                            <video autoplay=""
-                                   class="w-full "
-                                   loop="" playsinline=""
-                                   poster="https://images.prismic.io/cheil-uk/59f3a46b-0d61-4c12-8d61-1ad7d3587244_1670322075798hhreatdeh.jfif?auto=compress,format"
-                                   src="https://cheil-uk.cdn.prismic.io/cheil-uk/3a13e63d-6ed5-465f-a12a-4053b287de19_Cheil+Jet+Pet+event+sizzle+reel+final+cut+-+Dec+22+%281%29.mp4"></video>
+                            class="col-span-5 lg:col-span-null row-span-1 hidden lg:block block relative w-full lg:h-[min(355px,21.1vw)] ">
+                            <img :src="asset(work.image)" alt="{{ work.title }}" class="w-full h-full">
                         </div>
                     </div>
                     <div
@@ -55,80 +46,24 @@
                             The brief</h2>
                         <div class="flex flex-col mb-[40px]">
                             <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
-                                <p>Samsung was
-                                    revolutionising in home technology. Built especially for pet owners, their
-                                    new Jet vacuum range
-                                    took the hassle out of cleaning up. Samsung needed to raise awareness and
-                                    create a buzz around
-                                    these new products amongst puppy parents.</p></div>
+                                <p>{{ work.brief }}</p></div>
                         </div>
                         <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
                             Results</h2>
                         <div class="mb-[35px]">
-                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
-                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
-                                500K+</h2>
-                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    500k+
-                                    impressions on socials</p>
-                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    Impressions on socials</p></div>
-                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
-                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
-                                109%</h2>
-                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    109% over
-                                    delivery across all Time Out content</p>
-                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    Over
-                                    delivery across all Time Out content</p></div>
-                            <div class="flex flex-col mb-[min(50px,6.6vw)] lg:mb-3 "><h2
-                                class="block lg:hidden font-Calibri  text-[min(72px,10vw)] lg:text-[24px] font-bold tracking-[3.4px] leading-[0.8em]">
-                                Sold Out</h2>
-                                <p class="hidden lg:block text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    Sold out
-                                    event</p>
-                                <p class="block lg:hidden text-[min(28px,3.88vw)] lg:text-[18px] tracking-[0.54px]  ">
-                                    event</p>
-                            </div>
+                            {{ work.result }}
                         </div>
                         <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
                             The how</h2>
                         <div class="flex flex-col mb-[40px]">
-                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
-                                <p>To promote the
-                                    range, we transformed Samsung KX into a pet-pampering boutique, inviting pet
-                                    owners and their
-                                    pups along for a full grooming and pet-portrait session, followed by plenty
-                                    of dog-friendly
-                                    activations. To give a 360° experience and showcase the range, the brands’
-                                    products were
-                                    seamlessly integrated into each activity. </p></div>
-                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
-                                <p>The sessions
-                                    created plenty of mess, which was quickly cleaned up by Jet vacuums -
-                                    proving the power of the
-                                    products. </p></div>
-                            <div class="text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] mb-[15px] ">
-                                <p>To generate
-                                    buzz we partnered with the iconic Time Out, to create promotional articles
-                                    and host the sign-up
-                                    portal. To get everyone talking about the range, proud pet-parents were
-                                    encouraged to show off
-                                    their “paw-fect” portraits on social media using the hashtag, generating
-                                    tonnes of
-                                    user-generated content, which sent the event trending. </p></div>
+                            {{ work.procedures }}
                         </div>
                         <h2 class="font-Calibri font-light text-[min(40px,5.5vw)] lg:text-[24px] uppercase tracking-[3.4px] mb-[20px]">
                             HEAR IT FROM OUR CLIENT</h2>
                         <p class="mb-[10px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[0.54px] italic">
-                            "It was great to
-                            have partnered with Cheil UK to create this unique activation, interacting with a
-                            highly targeted
-                            audience to raise awareness of our new vacuum range".</p>
+                            "{{ work.client_quote }}".</p>
                         <p class="mb-[40px] text-[min(34px,4.722vw)] lg:text-[18px] tracking-[1.8px] italic">—
-                            Marketing
-                            Director Digital Appliances, Samsung UK</p>
+                            <span class="font-bold">{{ work.client_name }}</span></p>
                         <div class="hidden lg:block"></div>
                     </div>
                 </div>

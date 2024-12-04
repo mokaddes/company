@@ -61,14 +61,14 @@
                                     </div>
                                     @if(!empty($data['seo']->image))
                                     <div class="form-group row">
-                                        <img width="15%" class="px-1" src="{{ asset($data['seo']->image) }}" alt="image">
+                                        <img width="15%" class="px-1" src="{{ getPhoto($data['seo']->image) }}" alt="image">
                                     </div>
                                     @endif
                                     <div class="form-group row">
                                         <label for="" class="form-label">{{__('messages.seo.meta_image')}}
                                             <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 1200X630px)</strong></small>
                                         </label>
-                                        <input type="file" data-default-file="{{ asset($data['seo']->image) }}"
+                                        <input type="file" data-default-file="{{ getPhoto($data['seo']->image) }}"
                                             class="form-control dropify" name="image" id="image">
                                     </div>
                                     <div class="row">

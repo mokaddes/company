@@ -1,6 +1,6 @@
 <template>
-    <section class="w-full bg-black text-white pb-[min(184px,25.5vw)] lg:pb-52 flex flex-col">
-        <div class="flex flex-col lg:flex-row mx-auto w-full px-[min(14%,104px)] xl:px-0" style="max-width: 1480px;">
+    <section class="w-full bg-black text-white pb-[min(184px,25.5vw)] lg:pb-12 flex flex-col">
+        <div class="flex flex-col lg:flex-row mx-auto w-full px-[min(14%,104px)] lg:px-[min(4%,104px)] " style="max-width: 1480px;">
             <div class="w-full lg:w-[45%]">
                 <h2 class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] lg:text-[58px] mb-10">
                     {{ content.about_title.toUpperCase() }}

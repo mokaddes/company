@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\WhyUseController;
 use App\Http\Controllers\Admin\WorkController;
 use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
@@ -150,6 +152,16 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
             Route::get('{id}/view', [BlogPostController::class, 'view'])->name('view');
             Route::get('{id}/delete', [BlogPostController::class, 'delete'])->name('delete');
         });
+        //Service
+        Route::group(['prefix' => 'service', 'as' => 'service.'], function () {
+            Route::get('/', [ServiceController::class, 'index'])->name('index');
+            Route::get('create', [ServiceController::class, 'create'])->name('create');
+            Route::post('store', [ServiceController::class, 'store'])->name('store');
+            Route::get('{id}/edit', [ServiceController::class, 'edit'])->name('edit');
+            Route::post('{id}/update', [ServiceController::class, 'update'])->name('update');
+            Route::get('{id}/view', [ServiceController::class, 'view'])->name('view');
+            Route::get('{id}/delete', [ServiceController::class, 'delete'])->name('delete');
+        });
         //Work
         Route::group(['prefix' => 'work', 'as' => 'work.'], function () {
             Route::get('/', [WorkController::class, 'index'])->name('index');
@@ -159,6 +171,16 @@ use App\Http\Controllers\Admin\SettingsController as AdminSettingsController;
             Route::post('{id}/update', [WorkController::class, 'update'])->name('update');
             Route::get('{id}/view', [WorkController::class, 'view'])->name('view');
             Route::get('{id}/delete', [WorkController::class, 'delete'])->name('delete');
+        });
+        //Why Use
+        Route::group(['prefix' => 'why-use', 'as' => 'why-use.'], function () {
+            Route::get('/', [WhyUseController::class, 'index'])->name('index');
+            Route::get('create', [WhyUseController::class, 'create'])->name('create');
+            Route::post('store', [WhyUseController::class, 'store'])->name('store');
+            Route::get('{id}/edit', [WhyUseController::class, 'edit'])->name('edit');
+            Route::post('{id}/update', [WhyUseController::class, 'update'])->name('update');
+            Route::get('{id}/view', [WhyUseController::class, 'view'])->name('view');
+            Route::get('{id}/delete', [WhyUseController::class, 'delete'])->name('delete');
         });
 
         //Contact

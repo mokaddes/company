@@ -38,7 +38,7 @@
                                     <div class="float-right">
 
                                         <a href="{{ route('admin.testimonial.index') }}"  class="btn btn-primary btn-gradient btn-sm">{{__('messages.common.back')}}</a>
-                                      
+
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="image" class="form-lable">{{__('messages.common.image')}}
+                                            <label for="image" class="form-label">{{__('messages.common.image')}}
                                                 <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 150x150px)</strong></small>
                                             </label>
                                             <input type="file" name="image" id="image" class="form-control" >
@@ -58,14 +58,14 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="name" class="form-lable">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
+                                            <label for="name" class="form-label">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
                                             <input type="text" name="name" id="name" placeholder="{{__('messages.customer.enter_user_name')}}" class="form-control"
                                                 required value="{{ old('name') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="designation" class="form-lable">{{__('messages.common.designation')}}<span class="text-danger">*</span></label>
+                                            <label for="designation" class="form-label">{{__('messages.common.designation')}}<span class="text-danger">*</span></label>
                                             <input type="text" name="designation" id="designation" placeholder="{{__('messages.common.designation')}}" class="form-control"
                                                 required value="{{ old('designation') }}">
                                         </div>
@@ -89,14 +89,14 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="details" class="form-lable">{{__('messages.common.message')}}</label>
+                                            <label for="details" class="form-label">{{__('messages.common.message')}}</label>
                                             <textarea name="details" id="details" class="form-control" placeholder="{{__('messages.common.message')}}"
                                                  cols="30" rows="10"> {{ old('details') }} </textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="details_de" class="form-lable">{{__('messages.common.message')}}(ger)</label>
+                                            <label for="details_de" class="form-label">{{__('messages.common.message')}}(ger)</label>
                                             <textarea name="details_de" id="details_de" class="form-control" placeholder="{{__('messages.common.message')}}"
                                                  cols="30" rows="10"> {{ old('details_de') }} </textarea>
                                         </div>

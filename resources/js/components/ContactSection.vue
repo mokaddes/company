@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full bg-black text-white py-[min(121px,16.8vw)] lg:py-44 flex flex-col px-[min(14%,104px)] xl:px-0">
+    <section class="w-full bg-black text-white py-[min(121px,16.8vw)] lg:py-14 flex flex-col  px-[min(14%,104px)] lg:px-[min(4%,104px)]">
         <div class="flex flex-col mx-auto w-full max-w-[1480px]">
             <h2 class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px] mb-28">{{ content.contact_title.toUpperCase() }}</h2>
             <div class="w-full max-w-[1036px] flex flex-col lg:mx-auto lg:flex-row">

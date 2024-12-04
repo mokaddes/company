@@ -73,21 +73,21 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label for="title" class="form-lable">Page Name</label>
+                                                <label for="title" class="form-label">Page Name</label>
                                                 <input type="text" name="title" id="title" placeholder="Page Name"
                                                     class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label for="slug" class="form-lable">Page Slug</label>
+                                                <label for="slug" class="form-label">Page Slug</label>
                                                 <input type="text" name="slug" id="slug" readonly
                                                     placeholder="Page Slug" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Published Status</label>
+                                                <label for="status" class="form-label">Published Status</label>
                                                 <select name="status" id="status" class="form-control">
                                                     <option value="1">Published</option>
                                                     <option value="0">Unpublished</option>
@@ -96,14 +96,14 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Description</label>
+                                                <label for="status" class="form-label">Description</label>
                                                 <textarea name="body" cols="30" rows="5" class="form-control summernote"></textarea>
                                             </div>
                                         </div>
                                         <div class="hr-text col-lg-12">Meta Information</div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="meta_title" class="form-lable">Meta Title 
+                                                <label for="meta_title" class="form-label">Meta Title
                                                     <span class="ml-2 text-info">( Recommend length, around 60 characters )</span>
                                                 </label>
                                                 <input type="text" name="meta_title" id="meta_title" placeholder="Meta Title"
@@ -112,17 +112,17 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="meta_keywords" class="form-lable">Meta Keywords</label>
+                                                <label for="meta_keywords" class="form-label">Meta Keywords</label>
                                                 <input type="text" name="meta_keywords" id="meta_keywords" placeholder="Meta Keywords"
                                                     class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="meta_description" class="form-lable">Meta Description 
+                                                <label for="meta_description" class="form-label">Meta Description
                                                     <span class="ml-2 text-info">( Recommend length, around 160 characters )</span>
                                                 </label>
-                                                <textarea name="meta_description" cols="30" rows="5" id="meta_description" 
+                                                <textarea name="meta_description" cols="30" rows="5" id="meta_description"
                                                     class="form-control" placeholder="Meta Description"></textarea>
                                             </div>
                                         </div>

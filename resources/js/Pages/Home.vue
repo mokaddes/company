@@ -4,9 +4,17 @@
     </Head>
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
-            <main class="w-full mx-auto">
-                <SliderSection v-if="content.banner_section === 1" :banner_video="content.banner_video" />
+            <main class="w-full mx-auto ">
+                <SliderSection v-if="content.banner_section === 1" :banner_image="content.banner_video" />
                 <AboutUsSection v-if="content.about_section === 1" :content="content" />
+                <section class="w-full relative bg-black text-white lg:pt-[10px] pb-20 md:pb-22 flex flex-col z-[0]" v-if="content.service_section === 1">
+                    <div class="flex flex-col mx-auto w-full  px-[min(14%,104px)] lg:px-[min(4%,104px)] mt-10" >
+                        <h2 class="font-Calibri font-bold tracking-widest text-center text-[min(32px,7.2vw)] xl:text-[40px] mb-10 ">{{ content.service_title.toUpperCase() }}</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 gap-y-14 items-start justify-center">
+                            <ServiceIconBox :services="services" :activeService="activeService" />
+                        </div>
+                    </div>
+                </section>
                 <ClientsSection v-if="content.client_section === 1" :client_title="content.client_title" :clients="clients" />
                 <ContactSection v-if="content.contact_section === 1" :content="content"/>
             </main>
@@ -21,11 +29,12 @@ import AboutUsSection from "@/Components/AboutUsSection.vue";
 import ClientsSection from "@/Components/ClientsSection.vue";
 import ContactSection from "@/Components/ContactSection.vue";
 import { Head } from '@inertiajs/vue3';
+import ServiceIconBox from "@/components/ServiceIconBox.vue";
 
 export default {
-    props: ["content", "clients"],
+    props: ["content", "clients", "services", "activeService"],
     name: 'Home',
-    components: {Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection, Head},
+    components: {ServiceIconBox, Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection, Head},
 
 
 };

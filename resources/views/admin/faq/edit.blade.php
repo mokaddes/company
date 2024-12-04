@@ -78,7 +78,7 @@
                                             {{-- <div class="hr-text col-lg-12">Information in English</div> --}}
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="title" class="form-lable">{{__('messages.common.question')}} (English)</label>
+                                                    <label for="title" class="form-label">{{__('messages.common.question')}} (English)</label>
                                                     <input type="text" name="title" id="title"
                                                         value="{{ $row->title }}" class="form-control">
                                                 </div>
@@ -86,7 +86,7 @@
 
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="title_de" class="form-lable">{{__('messages.common.question')}} (German)</label>
+                                                    <label for="title_de" class="form-label">{{__('messages.common.question')}} (German)</label>
                                                     <input type="text" name="title_de" id="title_de"
                                                         value="{{ $row->title_de }}" class="form-control">
                                                 </div>
@@ -94,7 +94,7 @@
 
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="summernote" class="form-lable">{{__('messages.common.answer')}} (English)</label>
+                                                    <label for="summernote" class="form-label">{{__('messages.common.answer')}} (English)</label>
                                                     <textarea name="body" class="form-control" style="height: 150px !important;">{{ $row->body }}</textarea>
                                                 </div>
                                             </div>
@@ -102,13 +102,13 @@
 
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="summernote" class="form-lable">{{__('messages.common.answer')}} (German)</label>
+                                                    <label for="summernote" class="form-label">{{__('messages.common.answer')}} (German)</label>
                                                     <textarea name="body_de" class="form-control" style="height: 150px !important;">{{ $row->body_de }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="is_active" class="form-lable">{{__('messages.common.status')}}</label>
+                                                    <label for="is_active" class="form-label">{{__('messages.common.status')}}</label>
                                                     <select name="is_active" id="is_active" class="form-control">
                                                         <option value="1">Active</option>
                                                         <option value="0" {{ $row->is_active == 0 ? 'selected' : '' }}>
@@ -118,7 +118,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="order_id" class="form-lable">{{__('messages.plan.order_number')}}</label>
+                                                    <label for="order_id" class="form-label">{{__('messages.plan.order_number')}}</label>
                                                     <input type="text" name="order_id" id="order_id"
                                                         value="{{ $row->order_id }}" class="form-control">
                                                 </div>

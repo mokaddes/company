@@ -36,6 +36,7 @@ class HomeContentController extends Controller
             'contact_description' => 'required_if:contact,1',
             'contact_btn_text' => 'required_if:contact,1',
             'contact_address_title' => 'required_if:contact,1',
+            'service_title' => 'required_if:service,1',
         ],[
             'about_title.required_if' => 'The about title field is required.',
             'about_btn_text.required_if' => 'The about button text field is required.',
@@ -46,6 +47,7 @@ class HomeContentController extends Controller
             'contact_description.required_if' => 'The contact description field is required.',
             'contact_btn_text.required_if' => 'The contact button text field is required.',
             'contact_address_title.required_if' => 'The contact address title field is required.',
+            'service_title.required_if' => 'The service title field is required.',
         ]);
 
 
@@ -67,6 +69,8 @@ class HomeContentController extends Controller
             $home->contact_description  = $request->contact_description;
             $home->contact_btn_text     = $request->contact_btn_text;
             $home->contact_address_title = $request->contact_address_title;
+            $home->service_section      = $request->service ? 1 : 0;
+            $home->service_title        = $request->service_title;
 //            $home->footer_text = $request->footer_title;
 
             $banner_file = $request->file('image');

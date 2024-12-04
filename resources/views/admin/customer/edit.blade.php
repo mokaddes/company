@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="image" class="form-lable">{{__('messages.customer.user_image')}}
+                                            <label for="image" class="form-label">{{__('messages.customer.user_image')}}
                                                 <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 150x150px)</strong></small>
                                             </label>
                                             <input type="file" name="image" id="image" class="form-control" >
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="name" class="form-lable">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
+                                            <label for="name" class="form-label">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
                                             <input type="text" name="name" value="{{ $user->name }}" id="name" placeholder="{{__('messages.customer.enter_user_name')}}"
                                             class="form-control" required>
                                         </div>
@@ -84,7 +84,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="email" class="form-lable">{{__('messages.customer.user_mail')}}<span class="text-danger">*</span></label>
+                                            <label for="email" class="form-label">{{__('messages.customer.user_mail')}}<span class="text-danger">*</span></label>
                                             <input type="email" name="email" value="{{ $user->email }}"  id="email" placeholder="{{__('messages.customer.enter_email_address')}}"
                                             class="form-control" required>
                                         </div>
@@ -92,7 +92,7 @@
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="phone" class="form-lable">{{__('messages.customer.user_phone')}}<span class="text-danger">*</span></label>
+                                            <label for="phone" class="form-label">{{__('messages.customer.user_phone')}}<span class="text-danger">*</span></label>
                                             <input type="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                                 name="phone" id="phone" value="{{ $user->phone }}"  placeholder="{{__('messages.customer.enter_phone_number')}}"
                                                 class="form-control" required>
@@ -100,7 +100,7 @@
                                     </div>
                                      <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label for="status" class="form-lable">{{__('messages.customer.published_status')}}<span class="text-danger">*</span></label>
+                                            <label for="status" class="form-label">{{__('messages.customer.published_status')}}<span class="text-danger">*</span></label>
                                             <select name="status" id="status" class="form-control" required>
                                                 <option value="1" {{ $user->status == 1? "selected" : "" }}>{{__('messages.customer.published')}}</option>
                                                 <option value="0" {{ $user->status == 0? "selected" : "" }}>{{__('messages.customer.unpublished')}}</option>
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="address" class="form-lable">{{__('messages.customer.user_address')}}</label>
+                                            <label for="address" class="form-label">{{__('messages.customer.user_address')}}</label>
                                             <textarea name="address" value="" id="address" placeholder="{{__('messages.customer.user_address')}}"
                                             class="form-control"> {{ $user->address }}</textarea>
                                         </div>
@@ -120,7 +120,7 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="password" class="form-lable">User Password (If you want to change password)</label>
+                                            <label for="password" class="form-label">User Password (If you want to change password)</label>
                                             <input type="password" name="password"  id="password" class="form-control">
                                         </div>
                                     </div>

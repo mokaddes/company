@@ -48,7 +48,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="image" class="form-lable">Featured Image
+                                                <label for="image" class="form-label">Featured Image
                                                     <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 150x150px)</strong></small>
                                                 </label>
                                                 <input type="file" name="image" id="image" class="form-control" required>
@@ -56,21 +56,21 @@
                                         </div>
                                         <div class="col-lg-6 mt-0 mt-lg-3">
                                             <div class="form-group">
-                                                <label for="title" class="form-lable">Post Title</label>
+                                                <label for="title" class="form-label">Post Title</label>
                                                 <input type="text" name="title" id="title" value="{{ old('title') }}" class="form-control" placeholder="Enter your post title"
                                                     required>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="title" class="form-lable">Tags</label>
+                                                <label for="title" class="form-label">Tags</label>
                                                 <input type="text" name="tags[]" id="tags"
                                                     class="form-control tags" data-role="tagsinput" required="required" placeholder="Tags">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="category" class="form-lable">Category</label>
+                                                <label for="category" class="form-label">Category</label>
                                                 <select name="category_id" id="category_id" class="form-control" required="required">
                                                     <option value="" class="d-none">-- Select Category --</option>
                                                     @foreach ($data['bog_category'] as $category)
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Published Status</label>
+                                                <label for="status" class="form-label">Published Status</label>
                                                 <select name="status" id="status" class="form-control">
                                                     <option value="1">Published</option>
                                                     <option value="0">Unpublished</option>
@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Description</label>
+                                                <label for="status" class="form-label">Description</label>
                                                 <textarea name="details" id="summernote" class="summernote" cols="30" rows="5" class="form-control">{{ old('description') }}</textarea>
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="meta_title" class="form-lable">Meta Title
+                                                            <label for="meta_title" class="form-label">Meta Title
                                                                 <span class="ml-2 text-info">( Recommend length, around 60 characters )</span>
                                                             </label>
                                                             <input type="text" name="meta_title" id="meta_title" value="{{ old('meta_title') }}" placeholder="Meta Title"
@@ -118,14 +118,14 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="meta_keywords" class="form-lable">Meta Keywords</label>
+                                                            <label for="meta_keywords" class="form-label">Meta Keywords</label>
                                                             <input type="text" name="meta_keywords" id="meta_keywords" value="{{ old('meta_keywords') }}" placeholder="Meta Keywords"
                                                                    class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group mb-4">
-                                                            <label for="meta_description" class="form-lable">Meta Description
+                                                            <label for="meta_description" class="form-label">Meta Description
                                                                 <span class="ml-2 text-info">( Recommend length, around 160 characters )</span>
                                                             </label>
                                                             <textarea name="meta_description" cols="30" rows="5" id="meta_description"

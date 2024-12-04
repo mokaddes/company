@@ -49,7 +49,31 @@
                     </ul>
                 </li>
 
+                @if (Auth::user()->can('admin.work.index'))
+                    <li class="nav-item">
+                        <a href="{{ route('admin.work.index') }}" class="nav-link  @yield('work')" title="">
+                            <i class="nav-icon fa fa-hands-helping"></i>
+                            <p>Work</p>
+                        </a>
+                    </li>
+                @endif
 
+                @if (Auth::user()->can('admin.service.index'))
+                    <li class="nav-item">
+                        <a href="{{ route('admin.service.index') }}" class="nav-link  @yield('service')" title="">
+                            <i class="nav-icon fa fa-gears"></i>
+                            <p>Service</p>
+                        </a>
+                    </li>
+                @endif
+                @if (Auth::user()->can('admin.why-use.index'))
+                    <li class="nav-item">
+                        <a href="{{ route('admin.why-use.index') }}" class="nav-link  @yield('why-use')" title="">
+                            <i class="nav-icon fa fa-sync-alt"></i>
+                            <p>Why Use</p>
+                        </a>
+                    </li>
+                @endif
                 @if (Auth::user()->can('admin.contact.index'))
                     <li class="nav-item">
                         <a href="{{ route('admin.contact.index') }}" class="nav-link  @yield('contact')" title="">
@@ -58,7 +82,6 @@
                         </a>
                     </li>
                 @endif
-
 
                 @if (Auth::user()->can('admin.cpage.index'))
                     <li class="nav-item">

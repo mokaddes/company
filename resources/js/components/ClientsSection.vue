@@ -1,7 +1,7 @@
 <template>
-    <section class="w-full bg-white text-black py-[min(121px,16.8vw)] lg:py-44 flex flex-col px-[min(14%,104px)] xl:px-0">
+    <section class="w-full bg-white text-black py-[min(121px,16.8vw)] lg:py-44 flex flex-col  px-[min(14%,104px)] lg:px-[min(4%,104px)]">
         <div class="flex flex-col mx-auto w-full max-w-[1480px]">
-            <h2 class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px] mb-28">OUR CLIENTS</h2>
+            <h2 class="font-Calibri font-bold tracking-widest text-[min(52px,7.2vw)] xl:text-[58px] mb-28">{{ client_title.toUpperCase() }}</h2>
             <div class="w-full grid grid-cols-2 xl:grid-cols-3 gap-20 lg:gap-40 items-center">
                 <div v-for="client in clients" :key="client.id" class="w-full max-w-[296px] relative block justify-center">
                     <img :alt="'Logo '+client.id " :src="client.image" class="block" />

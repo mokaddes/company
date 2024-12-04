@@ -43,7 +43,7 @@
                                     @csrf
                                     <div class="mb-3">
                                         <div class="form-group">
-                                            <label for="image" class="form-lable">{{__('messages.crud.user_image')}} 
+                                            <label for="image" class="form-label">{{__('messages.crud.user_image')}}
                                                 <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 150x150px)</strong></small>
                                             </label>
                                             <input type="file" name="image" id="image" class="form-control" >

@@ -154,17 +154,12 @@
                                         <div class="card-body" style="display: {{ $home->banner_section == 1 ? '' : 'none' }}">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <video width="50%" height="100" controls>
-                                                        <source
-                                                            src="{{ asset($home->image ?? 'assets/default.png')}}"
-                                                            type="video/mp4">
-                                                        Your browser does not support the video tag.
-                                                    </video>
+                                                    <img src="{{ getPhoto($home->image)  }}" width="50px">
                                                     <div class="mb-3">
-                                                        <label class="form-label">Banner Video</label>
+                                                        <label class="form-label">Banner Image</label>
                                                         <input type="file" class="form-control" name="image"
                                                                placeholder="{{ __('Banner image') }}..."
-                                                               accept="video/*"/>
+                                                               accept="image/*"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,6 +209,28 @@
                                                     </div>
                                                 </div>
 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- service section --}}
+                                    <div class="card">
+                                        <div class="card-header">
+
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h3 class="card-title required">Service Section</h3>
+                                                <!-- Toggle Switch -->
+                                                <input type="checkbox" name="service" class="toggle_switch" {{ $home->service_section == 1 ? 'checked' : '' }} value="1" data-toggle="toggle" data-on="Show" data-off="Hide">
+                                            </div>
+                                        </div>
+                                        <div class="card-body" style="display: {{ $home->service_section == 1 ? '' : 'none' }} ">
+                                            <div class="col-lg-12">
+                                                <div class="mb-3">
+                                                    <label
+                                                        class="form-label required">Service Title</label>
+                                                    <input type="text" class="form-control" name="service_title"
+                                                           value="{{$home->service_title ?? ''}}"
+                                                           placeholder="Enter service title..." required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

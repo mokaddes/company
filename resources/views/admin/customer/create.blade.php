@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="image" class="form-lable">{{__('messages.customer.user_image')}}
+                                            <label for="image" class="form-label">{{__('messages.customer.user_image')}}
                                                 <br><small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}} 150x150px)</strong></small>
                                             </label>
                                             <input type="file" name="image" id="image" class="form-control" >
@@ -58,7 +58,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="name" class="form-lable">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
+                                            <label for="name" class="form-label">{{__('messages.customer.user_name')}}<span class="text-danger">*</span></label>
                                             <input type="text" name="name" id="name" placeholder="{{__('messages.customer.enter_user_name')}}" class="form-control"
                                                 required value="{{ old('name') }}">
                                         </div>
@@ -66,14 +66,14 @@
 
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="email" class="form-lable">{{__('messages.customer.user_email')}}<span class="text-danger">*</span></label>
+                                            <label for="email" class="form-label">{{__('messages.customer.user_email')}}<span class="text-danger">*</span></label>
                                             <input type="email" name="email" id="email" placeholder="{{__('messages.customer.enter_email_address')}}" class="form-control"
                                                 required value="{{ old('email') }}">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="password" class="form-lable">{{__('messages.customer.user_password')}}<span class="text-danger">*</span></label>
+                                            <label for="password" class="form-label">{{__('messages.customer.user_password')}}<span class="text-danger">*</span></label>
                                             <div class="input-group input-group-flat">
                                                 <input type="password" name="password" id="password" placeholder="{{__('messages.customer.enter_password')}}" class="form-control" required>
                                                 <span class="input-group-text">
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="phone" class="form-lable">{{__('messages.customer.user_phone')}}<span class="text-danger">*</span></label>
+                                            <label for="phone" class="form-label">{{__('messages.customer.user_phone')}}<span class="text-danger">*</span></label>
                                             <input type="tel" name="phone" id="phone" value="{{ old('phone') }}" class="form-control" required
                                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                                                 placeholder="{{__('messages.customer.enter_phone_number')}}">
@@ -96,7 +96,7 @@
                                     </div>
                                      <div class="col-lg-4">
                                         <div class="form-group">
-                                            <label for="status" class="form-lable">{{__('messages.customer.published_status')}}<span class="text-danger">*</span></label>
+                                            <label for="status" class="form-label">{{__('messages.customer.published_status')}}<span class="text-danger">*</span></label>
                                             <select name="status" id="status" class="form-control">
                                                 <option value="1" {{ old('status') == "1" ? 'selected' : '' }}>{{__('messages.customer.published')}}</option>
                                                 <option value="0" {{ old('address') == "0" ? 'selected' : '' }}>{{__('messages.customer.unpublished')}}</option>
@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="address" class="form-lable">{{__('messages.customer.user_address')}}</label>
+                                            <label for="address" class="form-label">{{__('messages.customer.user_address')}}</label>
                                             <textarea name="address" id="address" class="form-control" placeholder="{{__('messages.customer.user_address')}}"
                                                  cols="30" rows="10"> {{ old('address') }} </textarea>
                                         </div>

@@ -67,7 +67,7 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="image" class="form-lable">Featured Image [<a class="text-bold" href="{{ getPhoto($row->image) }}" target="_blank">Previous Image</a>]<br>
+                                                <label for="image" class="form-label">Featured Image [<a class="text-bold" href="{{ getPhoto($row->image) }}" target="_blank">Previous Image</a>]<br>
                                                     <small class="text-info fw-bold"><strong>({{__('messages.settings_home_content.recommended_size')}}
                                                             600x450px)</strong></small>
                                                 </label>
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="col-lg-6 mt-0 mt-lg-3">
                                             <div class="form-group">
-                                                <label for="title" class="form-lable">Post Title</label>
+                                                <label for="title" class="form-label">Post Title</label>
                                                 <input type="text" name="title" id="title"
                                                        value="{{ $row->title }}"
                                                        class="form-control">
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="title" class="form-lable">Tags</label>
+                                                <label for="title" class="form-label">Tags</label>
                                                 <input type="text" name="tags[]" id="tags" value="
                                                 @foreach(json_decode($row->tags,true) as $key => $value)
                                                     {{ $value }}
@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="category" class="form-lable">Category</label>
+                                                <label for="category" class="form-label">Category</label>
                                                 <select name="category_id" id="category_id" class="form-control"
                                                         required>
                                                     <option value="" class="d-none">-- Select Category --</option>
@@ -107,7 +107,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Published Status</label>
+                                                <label for="status" class="form-label">Published Status</label>
                                                 <select name="status" id="status" class="form-control">
                                                     <option value="1" {{ $row->status == 1? "selected" : "" }}>
                                                         Published
@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="status" class="form-lable">Description</label>
+                                                <label for="status" class="form-label">Description</label>
                                                 <textarea name="details" id="summernote" class="summernote" cols="30"
                                                           rows="5"
                                                           class="form-control">{{ $row->details }}</textarea>
@@ -140,7 +140,7 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-4">
-                                                                <label for="meta_title" class="form-lable">Meta Title
+                                                                <label for="meta_title" class="form-label">Meta Title
                                                                     <span class="ml-2 text-info">( Recommend length, around 60 characters )</span>
                                                                 </label>
                                                                 <input type="text" name="meta_title" id="meta_title" value="{{ old('meta_title', $row->meta_title) }}" placeholder="Meta Title"
@@ -149,14 +149,14 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-4">
-                                                                <label for="meta_keywords" class="form-lable">Meta Keywords</label>
+                                                                <label for="meta_keywords" class="form-label">Meta Keywords</label>
                                                                 <input type="text" name="meta_keywords" id="meta_keywords" value="{{ old('meta_keywords', $row->meta_keywords) }}" placeholder="Meta Keywords"
                                                                        class="form-control" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="form-group mb-4">
-                                                                <label for="meta_description" class="form-lable">Meta Description
+                                                                <label for="meta_description" class="form-label">Meta Description
                                                                     <span class="ml-2 text-info">( Recommend length, around 160 characters )</span>
                                                                 </label>
                                                                 <textarea name="meta_description" cols="30" rows="5" id="meta_description"

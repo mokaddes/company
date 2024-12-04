@@ -1,19 +1,19 @@
 @extends('admin.layouts.master')
 @section('work', 'active')
 
-@section('title') {{ $data['title'] ?? '' }} @endsection
+@section('title') {{ $title ?? '' }} @endsection
 @section('content')
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0"> {{ $data['title'] ?? '' }}</h1>
+                        <h1 class="m-0"> {{ $title ?? '' }}</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active"> {{ $data['title'] ?? '' }}</li>
+                            <li class="breadcrumb-item active"> {{ $title ?? '' }}</li>
                         </ol>
                     </div>
                 </div>
@@ -28,12 +28,12 @@
                             <div class="card-header">
                                 <div class="row align-items-center">
                                     <div class="col-6">
-                                        <h3 class="card-title">Manage {{ $data['title'] ?? '' }} </h3>
+                                        <h3 class="card-title">Manage {{ $title ?? '' }} </h3>
                                     </div>
                                     <div class="col-6">
                                         <div class="float-right">
-                                            @if (Auth::user()->can('admin.blog-post.index'))
-                                                <a href="{{ route('admin.blog-post.create') }}" class="btn btn-primary btn-sm">Add
+                                            @if (Auth::user()->can('admin.work.index'))
+                                                <a href="{{ route('admin.work.create') }}" class="btn btn-primary btn-sm">Add
                                                     New</a>
                                             @endif
                                         </div>
@@ -46,51 +46,41 @@
                                     <thead>
                                         <tr>
                                             <th width="5%">SL</th>
-                                            <th width="10%">Featured Image</th>
-                                            <th width="25%">Post Title</th>
+                                            <th width="10%">Thumbnail Image</th>
+                                            <th width="25%">List Title</th>
                                             <th width="15%">Category</th>
-                                            <th width="10%">Date</th>
+                                            <th width="10%">Brand</th>
                                             <th width="10%">Published Status</th>
                                             <th width="15%">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if (isset($data['rows']) && count($data['rows']) > 0)
-                                            @foreach ($data['rows'] as $key => $row)
-                                                <tr>
-                                                    <td>{{ $key + 1 }}</td>
-                                                    <td><img src="{{ getPhoto($row->image) }}"
-                                                            width="80" height="80" alt="fdsfds"></td>
-                                                    <td>{{ $row->title }}</td>
-                                                    <td>{{ $row->category->name }}</td>
-                                                    <td>{{ date('d M Y', strtotime($row->created_at)) }}</td>
-                                                    <td>
-                                                        @if ($row->status == 1)
-                                                            <span class="badge badge-success">Published</span>
-                                                        @else
-                                                            <span class="badge badge-danger">Unpublished</span>
-                                                        @endif
-
-                                                    </td>
-                                                    <td>
-                                                        @if (Auth::user()->can('admin.blog-post.index'))
-                                                            <a href="{{ route('admin.blog-post.view', $row->id) }}"
-                                                                class="btn btn-xs btn-primary">View</a>
-                                                        @endif
-
-                                                        @if (Auth::user()->can('admin.blog-post.index'))
-                                                            <a href="{{ route('admin.blog-post.edit', $row->id) }}"
-                                                                class="btn btn-xs btn-secondary">Edit</a>
-                                                        @endif
-
-                                                        @if (Auth::user()->can('admin.blog-post.index'))
-                                                            <a href="{{ route('admin.blog-post.delete', $row->id) }}"
-                                                                id="deleteData" class="btn btn-xs btn-danger">Delete</a>
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        @endif
+                                        @foreach ($works as $key => $work)
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>
+                                                    <img class="img-fluid" src="{{ getPhoto($work->thumbnail) }}" alt="Thumbnail Image" width="50px">
+                                                </td>
+                                                <td>{{ $work->title }}</td>
+                                                <td>{{ $work->category }}</td>
+                                                <td>{{ $work->brand }}</td>
+                                                <td>
+                                                    @if ($work->status == 1)
+                                                        <span class="badge badge-success">Active</span>
+                                                    @else
+                                                        <span class="badge badge-danger">Inactive</span>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if (Auth::user()->can('admin.work.edit'))
+                                                        <a href="{{ route('admin.work.edit', $work->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                                    @endif
+                                                    @if (Auth::user()->can('admin.work.delete'))
+                                                        <a href="{{ route('admin.work.delete', $work->id) }}" id="deleteData" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

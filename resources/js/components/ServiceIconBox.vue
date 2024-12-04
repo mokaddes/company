@@ -6,7 +6,7 @@
              @mouseleave="resetContent">
             <!-- Icon Image -->
             <div class="h-3/5 w-3/5 p-4 absolute top-3">
-                <img :src="`/assets/images/${item.icon}`" :alt="item.name"
+                <img :src="asset(item.icon)" :alt="item.name"
                      class="p-3" decoding="async" loading="lazy"
                      style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
             </div>
@@ -46,23 +46,24 @@
 <script>
 export default {
     name: 'ServiceIconBox',
+
+    props: {
+        services:{
+            type: Object,
+            required: true
+        },
+        activeService: {
+            type: Object,
+            required: true
+        }
+    },
     data() {
         return {
-            activeHeader: "Our Expertise",
-            activeSubheader: "We develop, optimise and localise global brands",
-            activeDescription: "We are experts at customising, engineering, testing and publishing content for local market BAU activity and campaigns...",
-            borderColor: '#19becc',
-            items: [
-                { name: 'Strategy', color: '#1E90FF', header: 'Our Strategy', subheader: 'Strategy Subheader', description: 'Strategy Description', icon: 'strategy.svg' },
-                { name: 'Connected Commerce', color: '#32CD32', header: 'Connected Commerce', subheader: 'Commerce Subheader', description: 'Commerce Description', icon: 'connected.svg' },
-                { name: 'Experiential', color: '#FFA500', header: 'Experiential Marketing', subheader: 'Experiential Subheader', description: 'Experiential Description', icon: 'experiential.svg' },
-                { name: 'Retail', color: '#FF4500', header: 'Retail Solutions', subheader: 'Retail Subheader', description: 'Retail Description', icon: 'retail.svg' },
-                { name: 'Customer Experience', color: '#FF1493', header: 'Customer Experience', subheader: 'Experience Subheader', description: 'Experience Description', icon: 'production.svg' },
-                { name: 'Media', color: '#1E90FF', header: 'Media Services', subheader: 'Media Subheader', description: 'Media Description', icon: 'media.svg' },
-                { name: 'Data', color: '#32CD32', header: 'Data Analytics', subheader: 'Data Subheader', description: 'Data Description', icon: 'data.svg' },
-                { name: 'Creative', color: '#FFA500', header: 'Creative Design', subheader: 'Creative Subheader', description: 'Creative Description', icon: 'creative.svg' },
-                { name: 'Global Web Operations', color: '#FF4500', header: 'Web Operations', subheader: 'Operations Subheader', description: 'Operations Description', icon: 'ops.svg' }
-            ]
+            activeHeader: this.activeService.header,
+            activeSubheader: this.activeService.subheader,
+            activeDescription: this.activeService.description,
+            borderColor: this.activeService.color,
+            items: this.services
         };
     },
     methods: {
@@ -73,12 +74,14 @@ export default {
             this.borderColor = item.color;
         },
         resetContent() {
-            this.activeHeader = "Our Expertise";
-            this.activeSubheader = "We develop, optimise and localise global brands";
-            this.activeDescription = "We are experts at customising, engineering, testing and publishing content for local market BAU activity and campaigns...";
-            this.borderColor = '#19becc';
+            this.activeHeader = this.activeService.header;
+            this.activeSubheader = this.activeService.subheader;
+            this.activeDescription = this.activeService.description;
+            this.borderColor = this.activeService.color;
         }
-    }
+    },
+
+
 
 };
 </script>
