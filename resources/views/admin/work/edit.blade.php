@@ -191,6 +191,12 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group mb-4">
+                                                        <label for="order_number" class="form-label">Order Number</label>
+                                                        <input type="text" name="order_number" id="order_number" value="{{ old('order_number', $work->order_number) }}" class="form-control" placeholder="Enter order number" >
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </div>

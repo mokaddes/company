@@ -83,7 +83,7 @@
                     </li>
                 @endif
 
-                @if (Auth::user()->can('admin.cpage.index'))
+                {{--@if (Auth::user()->can('admin.cpage.index'))
                     <li class="nav-item">
                         <a href="{{ route('admin.cpage.index') }}" class="nav-link  @yield('cpage')" title="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -99,7 +99,7 @@
                             <p>{{__('messages.common.custom_page')}}</p>
                         </a>
                     </li>
-                @endif
+                @endif--}}
 
                 @if (Auth::user()->can('admin.seo.index'))
                     <li class="nav-item">

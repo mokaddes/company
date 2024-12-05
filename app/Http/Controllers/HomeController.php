@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\SendContact;
 use App\Models\AboutServiceContent;
+use App\Models\Blog;
 use App\Models\PageImage;
 use App\Models\Faq;
 use App\Models\Service;
@@ -77,10 +78,27 @@ class HomeController extends Controller
     public function workDetail($slug)
     {
         $work = Work::where('slug', $slug)->firstOrFail();
+
+        // Fetch the previous work item based on order_number
+        $prev = Work::where('order_number', '<=', $work->order_number)
+            ->where('slug', '!=', $slug)
+            ->orderBy('order_number', 'desc')
+            ->first();
+
+
+        // Fetch the next work item based on order_number
+        $next = Work::where('order_number', '>', $work->order_number)
+            ->orderBy('order_number', 'asc')
+            ->first();
+
+
         return inertia('Work/Details', [
-            'work' => $work
+            'work' => $work,
+            'prev' => $prev,
+            'next' => $next,
         ]);
     }
+
 
     public function contact()
     {
@@ -117,13 +135,21 @@ class HomeController extends Controller
     public function blog()
     {
         // inertia view blog
-        return inertia('Blog/Index');
+        $blogs = Blog::where('status', 1)->get();
+        return inertia('Blog/Index',[
+            'blogs' => $blogs
+        ]);
     }
 
-    public function blogDetail()
+    public function blogDetail($slug)
     {
         // inertia view blog detail
-        return inertia('Blog/Details');
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $relatedBlog = Blog::where('category_id', $blog->category_id)->where('slug', '!=', $slug)->limit(3)->get();
+        return inertia('Blog/Details',[
+            'blog' => $blog,
+            'relatedBlog' => $relatedBlog
+        ]);
     }
 
     public function service()

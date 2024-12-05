@@ -9,7 +9,7 @@
                 <div class="flex flex-col lg:flex-row gap-7 mt-6 mb-5 justify-center lg:justify-start text-center">
                     <NavItem label="About Us" routeName="frontend.about" />
                     <NavItem label="Work" routeName="frontend.work" />
-                    <NavItem label="News & Views" routeName="frontend.blog" />
+                    <NavItem label="News & Interest" routeName="frontend.blog" />
                     <NavItem label="Services" routeName="frontend.service" />
 <!--                    <NavItem label="SHIFT" routeName="frontend.shift" />-->
                     <NavItem label="Contact Us" routeName="frontend.contact" />

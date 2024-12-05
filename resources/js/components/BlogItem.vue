@@ -3,11 +3,10 @@
         <div class="w-full h-[346px] bg-center bg-cover relative"
              :style="{ backgroundImage: `url(${blog.image})` }">
             <div class="absolute bottom-0 w-full backdrop-blur-sm p-4">
-                <h1 class="title bold text-[min(60px,8.3vw)] lg:text-[26px] tracking-[4.5px] text-white">
+                <h1 class="title bold text-[min(60px,8.3vw)] lg:text-[26px] tracking-[4.5px] text-black">
                     {{ blog.title }}
                 </h1>
-                <p class="description font-bold text-[16px] text-white">
-                    {{ blog.description }}
+                <p class="description font-bold text-[16px] text-black" v-html="truncatedDetails">
                 </p>
             </div>
         </div>
@@ -23,7 +22,27 @@ export default {
     },
     name: 'BlogItem',
 
-    data() {
+    props: {
+      blog : Object
+    },
+
+    computed: {
+        truncatedDetails() {
+            const details = this.blog.details || "";
+
+            // Strip HTML tags
+            const plainText = details.replace(/<[^>]*>/g, "");
+
+            // Truncate the plain text
+            const truncatedText =
+                plainText.length > 150 ? plainText.substring(0, 150) + "..." : plainText;
+
+            return truncatedText;
+        },
+
+    },
+
+   /* data() {
         return {
             blog : {}
         }
@@ -35,7 +54,7 @@ export default {
             description: 'How can businesses use VR to deliver inclusive and eco-friendly experiences',
             image: 'https://images.prismic.io/cheil-uk/Zmx3xJm069VX1xVu_thumb_marketplace.png?auto=format,compress'
         };
-    },
+    },*/
 }
 
 </script>

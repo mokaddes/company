@@ -70,8 +70,8 @@
                 <div class="block lg:hidden"></div>
                 <div
                     class="w-full justify-start flex flex-row text-[min(28px,3.88vw)] lg:text-[24px] font-Calibri lg:font-bold italic mb-[min(218px,30vw)] mt-[min(340px,47vw)] lg:mt-0 lg:mb-0 px-[min(20px,2vw)]">
-                    <a class="flex flex-row  items-end w-1/2 lg:w-1/3 justify-start"
-                       href="/work/samsung-baselworld">
+                    <div class="flex flex-row  items-end w-1/2 lg:w-1/3 justify-start">
+                    <Link v-if="prev" :href="route('frontend.work.detail', [prev.slug])" class="flex flex-row  items-end  justify-start">
                         <div class="w-8 inline-block rotate-90">
                             <div>
                                 <svg height="960"
@@ -100,14 +100,16 @@
                                 </svg>
                             </div>
                         </div>
-                        <p>Creating a moment in time at Baselworld</p></a>
-
+                        <p>{{ prev.title }}</p>
+                    </Link>
+                    </div>
                     <Link class="hidden lg:block w-1/2 lg:w-1/3 justify-center text-center" :href="route('frontend.work')">
                         <p>Back to Our Work</p>
                     </Link>
-                    <a class="flex flex-row items-end justify-end w-1/2 lg:w-1/3"
-                       href="/work/nivea-a-message-for-all-men">
-                        <p>Helping Men Embrace their Sensitive Side</p>
+                    <div class="flex flex-row items-end justify-end w-1/2 lg:w-1/3">
+
+                    <Link v-if="next" :href="route('frontend.work.detail', [next.slug])" class="flex flex-row items-end justify-end" >
+                        <p>{{ next.title}}</p>
                         <div class="w-8 inline-block -rotate-90">
                             <div>
                                 <svg height="960"
@@ -136,7 +138,9 @@
                                 </svg>
                             </div>
                         </div>
-                    </a></div>
+                    </Link>
+                    </div>
+                </div>
             </div>
         </div>
     </Layout>
@@ -149,8 +153,11 @@ import { Link } from '@inertiajs/vue3';
 
 export default {
     components: {Layout, Link},
+    name: 'Work/Details',
     props: {
         work: Object,
+        prev: Object,
+        next: Object,
     },
     setup(props) {
         const goToPreviousPage = () => {

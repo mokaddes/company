@@ -142,6 +142,7 @@ class WorkController extends Controller
         $work->client_quote = $request->client_quote;
         $work->client_name = $request->client_name;
         $work->status = $request->status ?? 0 ;
+        $work->order_number = $request->order_number;
 
         // meta
         $work->meta_title = $request->meta_title;
