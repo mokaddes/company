@@ -125,7 +125,7 @@ class HomeController extends Controller
         $contact->save();
 
         // send email
-//        Mail::to(Setting::first()->email)->send(new SendContact($contact));
+        Mail::to(Setting::first()->email)->send(new SendContact($contact));
 
         // redirect back
         Toastr::success('Message sent successfully');
