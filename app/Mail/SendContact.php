@@ -28,7 +28,7 @@ class SendContact extends Mailable
      */
     public function build()
     {
-        return $this->subject('You have a new message from Venmeo.de')
+        return $this->subject('You have a new message from proxima digital')
         ->from(getSetting()->email ?? env('MAIL_FROM_ADDRESS'))
         ->view('emails.send_contact');
     }
