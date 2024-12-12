@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
+import MessengerChat from "@/components/MessengerChat.vue";
 
 
 </script>
@@ -10,6 +11,7 @@ import Footer from "@/components/Footer.vue";
         <Navbar></Navbar>
         <slot/>
         <Footer></Footer>
+        <MessengerChat page-id="1466455226917829"></MessengerChat>
     </div>
 </template>
 

@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>Home</title>
-    </Head>
+   <MetaInfo :title="Home"
+             :metaTitle="metaData.title"
+             :metaDescription="metaData.description"
+             :metaKeywords="metaData.keywords"
+             :ogImage="metaData.image"
+   />
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
             <main class="w-full mx-auto ">
@@ -30,11 +33,12 @@ import ClientsSection from "@/Components/ClientsSection.vue";
 import ContactSection from "@/Components/ContactSection.vue";
 import { Head } from '@inertiajs/vue3';
 import ServiceIconBox from "@/components/ServiceIconBox.vue";
+import MetaInfo from  "@/components/MetaInfo.vue";
 
 export default {
-    props: ["content", "clients", "services", "activeService"],
+    props: ["content", "clients", "services", "activeService", "metaData"],
     name: 'Home',
-    components: {ServiceIconBox, Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection, Head},
+    components: {ServiceIconBox, Layout, SliderSection, AboutUsSection, ClientsSection, ContactSection, Head, MetaInfo},
 
 
 };

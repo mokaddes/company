@@ -47,7 +47,7 @@ class SettingsController extends Controller
             $setting->site_name = $request->site_name;
             $setting->seo_meta_description = $request->seo_meta_desc;
             $setting->seo_keywords = $request->meta_keywords;
-            $setting->tawk_chat_bot_key = $request->tawk_chat_bot_key;
+//            $setting->tawk_chat_bot_key = $request->tawk_chat_bot_key;
             $setting->app_mode = $request->app_mode;
             $setting->copyright_text = $request->copyright_text;
 
@@ -61,6 +61,12 @@ class SettingsController extends Controller
             $setting->contact_form_title = $request->contact_form_title;
             $setting->service_title = $request->service_title;
             $setting->service_description = $request->service_description;
+            $setting->facebook_url = $request->facebook_url;
+            $setting->youtube_url = $request->youtube_url;
+            $setting->twitter_url = $request->twitter_url;
+            $setting->linkedin_url = $request->linkedin_url;
+            $setting->instagram_url = $request->instagram_url;
+            $setting->whatsapp_number = $request->whatsapp_number;
 
             $favicon = $request->file('favicon');
             if (!empty($favicon)) {

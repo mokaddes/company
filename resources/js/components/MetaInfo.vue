@@ -1,71 +1,64 @@
 <template>
-    <div></div> <!-- Empty template since this component only manages meta tags -->
+    <Head>
+        <title>{{ metaTitle }}</title>
+        <meta name="description" :content="metaDescription">
+        <meta name="keywords" :content="metaKeywords">
+        <meta property="og:title" :content="metaTitle">
+        <meta property="og:description" :content="metaDescription">
+        <meta property="og:image" :content="ogImage">
+        <meta property="og:type" content="website">
+        <meta property="og:url" :content="ogUrl">
+    </Head>
 </template>
 
 <script>
+import { Head } from '@inertiajs/vue3';
+
 export default {
+    components: { Head },
+    name: "MetaInfo",
     props: {
-        pageName: {
-            type: String,
-            required: true,
-        },
         title: {
             type: String,
-            default: '',
+            default: "Default title for the site."
         },
-        description: {
+        metaTitle: {
             type: String,
-            default: '',
+            default: null,
+        },
+        metaDescription: {
+            type: String,
+            default: null,
+        },
+        metaKeywords: {
+            type: String,
+            default: null,
+        },
+        ogImage: {
+            type: String,
+            default: null,
+        },
+        ogUrl: {
+            type: String,
+            default: () => window.location.href,
         },
     },
-    watch: {
-        pageName: {
-            handler() {
-                this.setMetaTags();
-            },
-            immediate: true,
+    computed: {
+        // Compute values by prioritizing props, falling back to settings or defaults
+        finalTitle() {
+            return this.metaTitle || this.$page.props.setting?.meta_title || this.title;
         },
-    },
-    methods: {
-        setMetaTags() {
-            const title = this.title || this.defaultTitle();
-            const description = this.description || this.defaultDescription();
-
-            document.title = title;
-            this.updateMetaTag('description', description);
+        metaDescriptionComputed() {
+            return this.metaDescription || this.$page.props.setting?.meta_description || "Default description for the site.";
         },
-        updateMetaTag(name, content) {
-            let tag = document.querySelector(`meta[name="${name}"]`);
-            if (tag) {
-                tag.setAttribute('content', content);
-            } else {
-                tag = document.createElement('meta');
-                tag.setAttribute('name', name);
-                tag.setAttribute('content', content);
-                document.head.appendChild(tag);
-            }
+        metaKeywordsComputed() {
+            return this.metaKeywords || this.$page.props.setting?.meta_keywords || "default, keywords";
         },
-        defaultTitle() {
-            // Customize based on pageName or provide a default fallback
-            switch (this.pageName) {
-                case 'about':
-                    return 'About Us - Your Company';
-                case 'contact':
-                    return 'Contact Us - Your Company';
-                default:
-                    return 'Your Company';
-            }
+        ogImageComputed() {
+            return this.ogImage || this.$page.props.setting?.og_image || "/default-image.jpg";
         },
-        defaultDescription() {
-            // Customize based on pageName or provide a default fallback
-            switch (this.pageName) {
-                case 'about':
-                    return 'Learn more about our company and team.';
-                case 'contact':
-                    return 'Get in touch with us for any inquiries.';
-                default:
-                    return 'Welcome to our website!';
-            }
+        ogUrlComputed() {
+            return this.ogUrl || window.location.href;
         },
     },
 };

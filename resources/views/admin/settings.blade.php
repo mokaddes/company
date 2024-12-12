@@ -292,6 +292,100 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Social URL</h3>
+                                                </div>
+                                                <div class="card-body">
+
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    class="form-label">{{ __('Facebook URL') }}</label>
+                                                                <input type="url" class="form-control"
+                                                                       name="facebook_url"
+                                                                       value="{{ $settings->facebook_url }}"
+                                                                       placeholder="{{ __('Facebook URL') }}...">
+                                                                @error('facebook_url')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">{{ __('Youtube Url') }}</label>
+                                                                <input type="url" class="form-control"
+                                                                       name="youtube_url"
+                                                                       value="{{ $settings->youtube_url }}"
+                                                                       placeholder="{{ __('Youtube Url') }}...">
+                                                                @error('youtube_url')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label class="form-label">{{ __('Twitter Url') }}</label>
+                                                                <input type="url" class="form-control"
+                                                                       name="twitter_url"
+                                                                       value="{{ $settings->twitter_url }}"
+                                                                       placeholder="{{ __('Twitter Url') }}...">
+                                                                @error('twitter_url')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    class="form-label">{{ __('Linkedin url') }}</label>
+                                                                <input type="url" class="form-control"
+                                                                       name="linkedin_url"
+                                                                       value="{{ $settings->linkedin_url }}"
+                                                                       placeholder="{{ __('Linkedin url') }}...">
+                                                                @error('linkedin_url')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    class="form-label">{{ __('Instagram url') }}</label>
+                                                                <input type="url" class="form-control"
+                                                                       name="telegram_url"
+                                                                       value="{{ $settings->instagram_url }}"
+                                                                       placeholder="{{ __('Instagram url') }}...">
+                                                                @error('telegram_url')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label
+                                                                    class="form-label">{{ __('WhatsApp Number') }}</label>
+                                                                <input type="text" class="form-control"
+                                                                       name="whatsapp_number"
+                                                                       value="{{ $settings->whatsapp_number }}"
+                                                                       placeholder="{{ __('WhatsApp Number') }}...">
+                                                                @error('whatsapp_number')
+                                                                <span
+                                                                    class="help-block text-danger">{{ $message }}</span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

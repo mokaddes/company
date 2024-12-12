@@ -45,11 +45,13 @@ class HomeController extends Controller
         });
         $services = Service::orderBy('order_number')->where('status', 1)->get();
         $activeService = Service::orderBy('order_number')->where('status', 1)->first();
+        $metadata = Seo::where('page_slug', 'home')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
         return inertia('Home',[
             'content' => $content,
             'clients' => $clients,
             'services' => $services,
-            'activeService' => $activeService
+            'activeService' => $activeService,
+            'metaData' => $metadata
         ]);
     }
 
@@ -61,9 +63,11 @@ class HomeController extends Controller
             $team->image = asset($team->image);
             return $team;
         });
+        $metadata = Seo::where('page_slug', 'about')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
         return inertia('About',[
             'about' => $about,
-            'teams' => $teams
+            'teams' => $teams,
+            'metaData' => $metadata
         ]);
     }
 
@@ -71,7 +75,7 @@ class HomeController extends Controller
     {
         // inertia view work
         $data['works'] = Work::where('status', 1)->latest()->get();
-        $data['seoData'] = Seo::where('page_slug', 'work')->first();
+        $data['metaData'] = Seo::where('page_slug', 'work')->first();
         return inertia('Work/Index', $data);
     }
 
@@ -103,7 +107,10 @@ class HomeController extends Controller
     public function contact()
     {
         // inertia view contact
-        return inertia('Contact');
+        $metadata = Seo::where('page_slug', 'contact')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
+        return inertia('Contact', [
+            'metaData' => $metadata
+        ]);
     }
 
     public function contactSubmit(Request $request)
@@ -136,8 +143,10 @@ class HomeController extends Controller
     {
         // inertia view blog
         $blogs = Blog::where('status', 1)->get();
+        $metadata = Seo::where('page_slug', 'blog')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
         return inertia('Blog/Index',[
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'metaData' => $metadata
         ]);
     }
 
@@ -158,10 +167,12 @@ class HomeController extends Controller
         $services = Service::orderBy('order_number')->where('status', 1)->get();
         $activeServices = Service::orderBy('order_number')->where('status', 1)->first();
         $why_uses = WhyUse::orderBy('order_number')->where('status', 1)->get();
+        $metadata = Seo::where('page_slug', 'service')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
         return inertia('Service',[
             'services' => $services,
             'activeService' => $activeServices,
             'whyUses' => $why_uses,
+            'metaData' => $metadata
         ]);
     }
 
