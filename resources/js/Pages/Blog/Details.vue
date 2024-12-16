@@ -1,4 +1,9 @@
 <template>
+
+    <MetaInfo :title="blog.title"
+              :metaTitle="blog.title"
+              :og-image="asset(blog.image)"
+    />
     <Layout>
         <div class="mx-auto w-full max-w-[1920px] flex flex-col justify-center overflow-hidden relative bg-black text-white">
             <div
@@ -14,7 +19,7 @@
                     <h1>{{ blog.title }}</h1>
                 </div>
                 <div class="py-[2.5rem]">
-                    <img :src="asset('assets/images/blog_details.webp')" alt="Hero Image" class="w-[1540px] h-[346px]" data-nimg="1" decoding="async"
+                    <img :src="asset(blog.image)" alt="Hero Image" class="w-[1540px] h-[346px]" data-nimg="1" decoding="async"
                          height="346" loading="lazy"
                          style="color: transparent;"
                          width="1540">
@@ -44,10 +49,11 @@
 import Layout from "@/Layouts/Layout.vue";
 import {Link} from "@inertiajs/vue3";
 import BlogItem from "@/components/BlogItem.vue";
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
     name: 'Details',
-    components: {BlogItem, Link, Layout},
+    components: {MetaInfo, BlogItem, Link, Layout},
     props: {
         blog : {
             type : Object

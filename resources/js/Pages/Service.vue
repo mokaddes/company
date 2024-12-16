@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>Service</title>
-    </Head>
+    <MetaInfo :title="metaData.page_slug"
+              :metaTitle="metaData.title"
+              :metaDescription="metaData.description"
+              :metaKeywords="metaData.keywords"
+              :ogImage="metaData.image"
+    />
     <Layout>
         <div class="w-full relative flex flex-col justify-center">
             <section
@@ -73,10 +76,11 @@ import Layout from "@/Layouts/Layout.vue";
 import ServiceIconBox from "@/components/ServiceIconBox.vue";
 import { Head } from '@inertiajs/vue3';
 import WhyChoose from "@/components/WhyChoose.vue";
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
     name: 'Service',
-    components: {WhyChoose, ServiceIconBox, Layout, Head},
+    components: {MetaInfo, WhyChoose, ServiceIconBox, Layout, Head},
     props: {
         services : {
             type: Object,
@@ -87,6 +91,10 @@ export default {
             default: () => ({}),
         },
         whyUses: {
+            type: Object,
+            default: () => ({}),
+        },
+        metaData: {
             type: Object,
             default: () => ({}),
         }

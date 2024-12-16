@@ -24,16 +24,16 @@
                     <a v-if="getSettings.facebook_url" :href="getSettings.facebook_url" target="_blank" aria-label="Facebook" class="hover:text-blue-600">
                         <i class="fab fa-facebook-f text-lg"></i>
                     </a>
-                    <a v-if="getSettings.youtube_url" :href="getSettings.youtube_url" target="_blank" aria-label="Twitter" class="hover:text-blue-400">
+                    <a v-if="getSettings.twitter_url" :href="getSettings.twitter_url" target="_blank" aria-label="Twitter" class="hover:text-blue-400">
                         <i class="fab fa-twitter text-lg"></i>
                     </a>
-                    <a v-if="getSettings.twitter_url" :href="getSettings.twitter_url" target="_blank" aria-label="Instagram" class="hover:text-pink-500">
+                    <a v-if="getSettings.instagram_url" :href="getSettings.instagram_url" target="_blank" aria-label="Instagram" class="hover:text-pink-500">
                         <i class="fab fa-instagram text-lg"></i>
                     </a>
                     <a v-if="getSettings.linkedin_url" :href="getSettings.linkedin_url" target="_blank" aria-label="LinkedIn" class="hover:text-blue-700">
                         <i class="fab fa-linkedin-in text-lg"></i>
                     </a>
-                    <a v-if="getSettings.instagram_url" :href="getSettings.instagram_url" target="_blank" aria-label="YouTube" class="hover:text-red-600">
+                    <a v-if="getSettings.youtube_url" :href="getSettings.youtube_url" target="_blank" aria-label="YouTube" class="hover:text-red-600">
                         <i class="fab fa-youtube text-lg"></i>
                     </a>
                     <a v-if="getSettings.whatsapp_number" :href="`https://wa.me/${getSettings.whatsapp_number}`" target="_blank" aria-label="WhatsApp" class="hover:text-green-500">

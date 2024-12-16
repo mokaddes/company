@@ -1,4 +1,9 @@
 <template>
+    <MetaInfo :title="work.title"
+              :metaTitle="work.title"
+              :work.brief
+              :ogImage="asset(work.image)"
+    />
     <Layout>
         <div
             class="mx-auto w-full max-w-[1920px] bg-black flex flex-col justify-center overflow-hidden relative text-white">
@@ -150,9 +155,10 @@
 import {Inertia} from '@inertiajs/inertia';
 import Layout from "@/Layouts/Layout.vue";
 import { Link } from '@inertiajs/vue3';
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
-    components: {Layout, Link},
+    components: {Layout, Link, MetaInfo},
     name: 'Work/Details',
     props: {
         work: Object,

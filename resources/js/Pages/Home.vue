@@ -1,5 +1,5 @@
 <template>
-   <MetaInfo :title="Home"
+   <MetaInfo :title="metaData.page_slug"
              :metaTitle="metaData.title"
              :metaDescription="metaData.description"
              :metaKeywords="metaData.keywords"

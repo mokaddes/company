@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>Work</title>
-    </Head>
+    <MetaInfo :title="metaData.page_slug"
+              :metaTitle="metaData.title"
+              :metaDescription="metaData.description"
+              :metaKeywords="metaData.keywords"
+              :ogImage="metaData.image"
+    />
     <Layout>
         <div class="mx-auto w-full max-w-[1920px]  bg-black flex flex-col justify-center overflow-hidden relative">
         <!-- Slats Background Image for Large Screens -->
@@ -44,17 +47,18 @@
 import WorkCard from '@/components/WorkCard.vue';
 import Layout from "@/Layouts/Layout.vue";
 import { Head } from '@inertiajs/vue3';
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
     components: {
         Layout,
         WorkCard,
-        Head
+        MetaInfo
     },
     name: 'Work/Index',
     props: {
         works: Object,
-        seoData: Object
+        metaData: Object
     }
 };
 </script>

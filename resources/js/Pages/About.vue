@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>About Us</title>
-    </Head>
+    <MetaInfo :title="metaData.page_slug"
+              :metaTitle="metaData.title"
+              :metaDescription="metaData.description"
+              :metaKeywords="metaData.keywords"
+              :ogImage="metaData.image"
+    />
     <Layout>
         <div class="w-full bg-black flex flex-col justify-center">
         <main class="w-full mx-auto">
@@ -32,10 +35,11 @@ import AboutTeamSection from "@/components/AboutTeamSection.vue";
 import AboutConnectSection from "@/components/AboutConnectSection.vue";
 import AboutMobileImage from "@/components/AboutMobileImage.vue";
 import { Head } from '@inertiajs/vue3';
+import MetaInfo from "@/components/MetaInfo.vue";
 
 
 export default {
-    components: {AboutMobileImage, Layout, AboutBannerSection, AboutTeamSection, AboutConnectSection, Head},
+    components: {AboutMobileImage, Layout, AboutBannerSection, AboutTeamSection, AboutConnectSection, Head, MetaInfo},
 
     props: {
         about: {
@@ -45,10 +49,15 @@ export default {
         teams: {
             type: Object,
             required: true,
+        },
+        metaData: {
+            type: Object,
+            default: () => ({}),
         }
 
     },
     data() {
+        console.log(this.metadata);
         return {
             teamImages: this.teams,
             bannerSrc: this.about.image,

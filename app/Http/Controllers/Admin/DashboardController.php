@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
+use App\Models\Blog;
 use App\Models\Card;
+use App\Models\Contact;
 use App\Models\Plan;
 use App\Models\Role;
+use App\Models\Service;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Models\Work;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -24,8 +28,11 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $data['title'] = __('messages.common.dashboard');
-        $data['users'] = User::get();
-        return view('admin.dashboard',compact('data'));
+        $data['total_works'] = Work::where('status', 1)->count();
+        $data['total_services'] = Service::where('status', 1)->count();
+        $data['total_blogs'] = Blog::where('status', 1)->count();
+        $data['total_contacts'] = Contact::count();
+        return view('admin.dashboard',$data);
     }
 
 

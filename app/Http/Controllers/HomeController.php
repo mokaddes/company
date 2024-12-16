@@ -64,6 +64,7 @@ class HomeController extends Controller
             return $team;
         });
         $metadata = Seo::where('page_slug', 'about')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
+//        dd($metadata);
         return inertia('About',[
             'about' => $about,
             'teams' => $teams,

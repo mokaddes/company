@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>News & Interest</title>
-    </Head>
+    <MetaInfo :title="metaData.page_slug"
+              :metaTitle="metaData.title"
+              :metaDescription="metaData.description"
+              :metaKeywords="metaData.keywords"
+              :ogImage="metaData.image"
+    />
     <Layout>
         <div class="mx-auto w-full max-w-[1920px] flex flex-col justify-center overflow-hidden bg-black relative">
             <div class="hidden md:block absolute top-[0px] right-[0%]  md:left-[calc(50%)] md:w-[864px]"><img
@@ -27,15 +30,19 @@
 import Layout from "@/Layouts/Layout.vue";
 import BlogItem from "@/components/BlogItem.vue";
 import {Link} from "@inertiajs/vue3";
-import { Head } from '@inertiajs/vue3';
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
     name: 'Blog',
-    components: {Link, BlogItem, Layout, Head},
+    components: {Link, BlogItem, Layout, MetaInfo},
     props:{
         blogs: {
             type : Object,
             default : {},
+        },
+        metaData: {
+            type: Object,
+            default: () => ({}),
         }
     }
 };

@@ -1,7 +1,10 @@
 <template>
-    <Head>
-        <title>Contact</title>
-    </Head>
+    <MetaInfo :title="metaData.page_slug"
+              :metaTitle="metaData.title"
+              :metaDescription="metaData.description"
+              :metaKeywords="metaData.keywords"
+              :ogImage="metaData.image"
+    />
     <Layout>
         <div class="w-full  relative flex flex-col justify-center overflow-hidden">
             <section class="relative bg-black w-full max-w-[1920px]    text-white flex flex-col mx-auto">
@@ -79,10 +82,18 @@
 import Layout from "@/Layouts/Layout.vue";
 import ContactForm from "@/components/ContactForm.vue";
 import { Head } from '@inertiajs/vue3';
+import MetaInfo from "@/components/MetaInfo.vue";
 
 export default {
     name: 'Contact',
-    components: {ContactForm, Layout, Head},
+    components: {MetaInfo, ContactForm, Layout, Head},
+
+    props:{
+        metaData: {
+            type: Object,
+            default: () => ({}),
+        }
+    },
 
     data() {
         return {
