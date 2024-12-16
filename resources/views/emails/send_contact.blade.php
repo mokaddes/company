@@ -58,27 +58,27 @@
         New Contact Message from Proxima Digital
     </div>
     <div class="email-body">
-        <p>{{ $greeting }}</p>
-        <p>{{ $body }}</p>
+        <p>{{ $data['greeting'] }}</p>
+        <p>{{ $data['body'] }}</p>
         <table class="email-table">
             <tr>
                 <th>Name</th>
-                <td>{{ $name }}</td>
+                <td>{{ $data['name'] }}</td>
             </tr>
             <tr>
                 <th>Email</th>
-                <td>{{ $email }}</td>
+                <td>{{ $data['email'] }}</td>
             </tr>
             <tr>
                 <th>Phone</th>
-                <td>{{ $phone }}</td>
+                <td>{{ $data['phone'] }}</td>
             </tr>
             <tr>
                 <th>Message</th>
-                <td>{{ $message }}</td>
+                <td>{{ $data['message'] }}</td>
             </tr>
         </table>
-        <p>{{ $footer }}</p>
+        <p>{{ $data['footer'] }}</p>
     </div>
     <div class="email-footer">
         &copy; {{ date('Y') }} Proxima Digital. All Rights Reserved. <br>
