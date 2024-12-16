@@ -57,8 +57,8 @@
     <div class="email-header">
         New  Message from Proxima Digital
     </div>
-    <div class="email-body">
-       <p>This is test message</p>
+    <div class="email-body" style="text-align: center">
+       <h1>This is test message</h1>
     </div>
     <div class="email-footer">
         &copy; {{ date('Y') }} Proxima Digital. All Rights Reserved. <br>
