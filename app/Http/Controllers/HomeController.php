@@ -25,6 +25,7 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -132,8 +133,27 @@ class HomeController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
+        $setting = Setting::first(['site_name', 'email']);
+
+        $data = [
+            'subject' => '📩 New Contact Message Received - Proxima Digital',
+            'greeting' => 'Dear Admin,',
+            'body' => "You've received a new message from Proxima Digital. Below are the details:",
+            'name' => $contact->first_name . ' ' . $contact->last_name,
+            'email' => $contact->email,
+            'phone' => $contact->phone,
+            'message' => $contact->message,
+            'site_name' => $setting->site_name,
+            'footer' => "Thank you for using Proxima Digital. Please review this message at your earliest convenience.",
+        ];
+
+
         // send email
-//        Mail::to(Setting::first()->email)->send(new SendContact($contact));
+        try {
+            Mail::to($setting->email)->send(new SendContact($data));
+        } catch (\Exception $e) {
+            Log::alert($e);
+        }
 
         // redirect back
         Toastr::success('Message sent successfully');

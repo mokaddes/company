@@ -47,8 +47,8 @@ class DashboardController extends Controller
         Artisan::call('cache:forget spatie.permission.cache');
         Artisan::call('config:cache');
 
-        echo 'Done';
-        die();
+        Toastr::success('Cache clear successfully');
+        return back();
     }
 
     public function adminProfile()
