@@ -52,14 +52,14 @@
                          loading="eager" style="color: transparent;" width="641">
                 </div>
                 <div
-                    class="relative top-[0%] sm:top-[-15%] lg:absolute w-full px-[min(14%,104px)] lg:px-0 lg:w-[41.7%] lg:left-[53.75%] lg:top-[60%] xl:top-[42.9%] mb-[min(87px,12vw)] lg:mb-0">
+                    class="relative top-[-35%] lg:absolute w-full px-[min(14%,104px)] lg:px-0 lg:w-[41.7%] lg:left-[53.75%] lg:top-[50%] xl:top-[42.9%] mb-[min(87px,12vw)] lg:mb-0">
                     <p class="text-[min(28px,3.88vw)] lg:text-[min(26px,1.7vw)] xl:text-22px lg:my-11 max-w-[611px] max-975:max-w-[100%]">
                         {{ service_description }}
                     </p>
                 </div>
             </section>
             <section class="w-full relative bg-black text-white lg:pt-[10px] pb-20 md:pb-52 flex flex-col z-[0]">
-                <div class="flex flex-col mx-auto w-full lg:px-[min(7%,104px)] xl:px-0" style="max-width: 1350px;">
+                <div class="flex flex-col mx-auto w-full px-[min(14%,104px)] xl:px-0" style="max-width: 1350px;">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 gap-y-14 items-start justify-center">
                         <ServiceIconBox :services="services" :activeService="activeService" />
                     </div>

@@ -23,7 +23,7 @@
 
 
     <!-- Dynamic Header, Subheader, and Description -->
-    <div class="relative min-h-[470px] overflow-hidden pl-14">
+    <div class="relative min-h-[470px] overflow-hidden pl-0 lg-pl-14">
         <div class="flex flex-col text-[22px]">
             <!-- Dynamic Header -->
             <h1 class="text-[min(60px,8.3vw)] lg:text-[36px] font-Calibri uppercase tracking-widest" :style="{ color: borderColor }">
