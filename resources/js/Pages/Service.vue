@@ -52,7 +52,7 @@
                          loading="eager" style="color: transparent;" width="641">
                 </div>
                 <div
-                    class="relative top-[-35%] lg:absolute w-full px-[min(14%,104px)] lg:px-0 lg:w-[41.7%] lg:left-[53.75%] lg:top-[50%] xl:top-[42.9%] mb-[min(87px,12vw)] lg:mb-0">
+                    class="relative top-[-35%] sm:top-[-15%] lg:absolute w-full px-[min(14%,104px)] lg:px-0 lg:w-[41.7%] lg:left-[53.75%] lg:top-[50%] xl:top-[42.9%] mb-[min(87px,12vw)] lg:mb-0">
                     <p class="text-[min(28px,3.88vw)] lg:text-[min(26px,1.7vw)] xl:text-22px lg:my-11 max-w-[611px] max-975:max-w-[100%]">
                         {{ service_description }}
                     </p>
