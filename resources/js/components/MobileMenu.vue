@@ -23,7 +23,7 @@
                     :active="route().current('frontend.work') || route().current('frontend.work.detail')"
                 />
                 <NavItem
-                    label="News & Interest"
+                    label="News & Insight"
                     routeName="frontend.blog"
                     :active="route().current('frontend.blog') || route().current('frontend.blog.detail')"
                 />
