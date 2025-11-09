@@ -32,6 +32,7 @@ Route::get('/admin', function () {
 });
 
 Auth::routes();
+
 Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 Route::get('/about', [HomeController::class, 'about'])->name('frontend.about');
 Route::get('/work', [HomeController::class, 'work'])->name('frontend.work');
