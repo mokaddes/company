@@ -47,6 +47,7 @@ class HomeController extends Controller
         $services = Service::orderBy('order_number')->where('status', 1)->get();
         $activeService = Service::orderBy('order_number')->where('status', 1)->first();
         $metadata = Seo::where('page_slug', 'home')->first(['page_slug', 'title', 'keywords', 'description', 'image']);
+
         return inertia('Home',[
             'content' => $content,
             'clients' => $clients,

@@ -57,7 +57,6 @@ export default {
 
     },
     data() {
-        console.log(this.metadata);
         return {
             teamImages: this.teams,
             bannerSrc: this.about.image,

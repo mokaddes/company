@@ -10,4 +10,11 @@ class HomeContent extends Model
     use HasFactory;
 
     protected $table = 'home_page_contents';
+
+    protected $casts = [
+        'banner_section' => 'int',
+        'about_section' => 'int',
+        'client_section' => 'int',
+        'contact_section' => 'int',
+    ];
 }
